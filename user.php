@@ -33,10 +33,10 @@ $team = "";
 
 //consulta para obtener el nombre del equipo por id
 $consu = "SELECT
-e.EQU_NOMBRE_EQUIPO 
-FROM 
-equipos e, usuarios u 
-WHERE 
+e.EQU_NOMBRE_EQUIPO
+FROM
+equipos e, usuarios u
+WHERE
 u.EQU_ID_BECARIO = e.ID_EQUIPOS;";
 
 $res = $conn->query($consu);
@@ -277,7 +277,7 @@ if($resultado->num_rows > 0){
 						<a class="navbar-brand">Usuarios</a>
 				</div>
          <div class="collapse navbar-collapse">
-                       
+
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
@@ -298,7 +298,7 @@ if($resultado->num_rows > 0){
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
@@ -306,7 +306,7 @@ if($resultado->num_rows > 0){
                                 <a href="destroy.php" class="btn-rotate">
                                     <i class="ti-settings"></i>
                                     <p class="hidden-md hidden-lg">
-                                     
+
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -342,7 +342,7 @@ if($resultado->num_rows > 0){
 																	<input name="fotico" class="form-control border-input" type="file" required accept="image/png/jpg"> </input></br>
 																	<button name="btnguar"type="submit" class="btn btn-info btn-fill btn-wd ">Guardar</button>
 
-																</form>  
+																</form>
 
                                 </div>
 
@@ -385,7 +385,7 @@ if($resultado->num_rows > 0){
 
 
 
-                    <div class="col-lg-8 col-md-7">
+                      <div class="col-lg-8 col-md-7">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Edit Profile</h4>
