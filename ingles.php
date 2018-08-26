@@ -539,6 +539,9 @@ return patron.test(te);
 
 
 
+
+
+
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
