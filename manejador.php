@@ -12,8 +12,8 @@ if ( (isset($_POST['usuario'])) || (isset($_POST['contraseña'])) ){
 
 
     $var_user = $_POST['usuario'];
-	$var_contra = $_POST['contraseña'];
-	$var_contra2 = md5('$var_contra');
+	//$var_contra = $_POST['contraseña'];
+		$var_contra = md5($_POST['contrasena']);
 
 //if(password_verify($var_contra, $userRow['USU_CONTRA'])){
     include'conexion.php';
