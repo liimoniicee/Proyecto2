@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 
 
 
-if ( (isset($_POST['usuario'])) || (isset($_POST['contraseña'])) ){
+if ( (isset($_POST['usuario'])) || (isset($_POST['contrasena'])) ){
 
 //Prro
     $var_user = $_POST['usuario'];
