@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
 
 if ( (isset($_POST['usuario'])) || (isset($_POST['contraseña'])) ){
 
-
+//Prro
     $var_user = $_POST['usuario'];
 	//$var_contra = $_POST['contraseña'];
 		$var_contra = md5($_POST['contrasena']);
