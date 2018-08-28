@@ -50,7 +50,7 @@ $fechasalida = date('y-m-d',$conversion);
 $sql = " UPDATE USUARIOS SET                             USU_NOMBRE ='$var_nombre',
 														USU_APELLIDO_PATERNO='$var_apellidop',
 														USU_APELLIDO_MATERNO='$var_apellidom',
-														USU_DIRECCION= '$var_direccion',
+														USU_DIRECCION='$var_direccion',
 														USU_COLONIA= '$var_colonia',
 														USU_LUGAR_NACIMIENTO='$var_lugarnac',
 														USU_TELEFONO='$var_telefono',
@@ -58,7 +58,7 @@ $sql = " UPDATE USUARIOS SET                             USU_NOMBRE ='$var_nombr
 														USU_CODIGO_POSTAL='$var_codigopost',
 														USU_FECHA_NAC='$fechasalida',
 														USU_SEXO='$var_sexo'
-														WHERE ID_USUARIO = '$var_id' ";
+														WHERE ID_USUARIO ='$var_id' ";
 		if($conn->query($sql) === TRUE){
 
 

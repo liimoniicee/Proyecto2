@@ -397,7 +397,11 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
                                                 <td><?php echo $fecha; ?></td>
                                                 <td><?php echo $nombre_b; ?></td>
                                                 <td><?php echo $apellido_b; ?></td>
+<<<<<<< HEAD
 
+=======
+                                            <!--SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario=1_>
+>>>>>>> fdf9de05d758159f089e6b469dc9dacf0ba3abcf
                                                 <td>
                                                     <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
                                                     <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
