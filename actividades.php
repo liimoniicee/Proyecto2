@@ -203,7 +203,7 @@ $resultado = $conn->query($query);
                     <a class="navbar-brand" href="#charts">Actividades</a>
                 </div>
                <div class="collapse navbar-collapse">
-                       
+
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
@@ -224,15 +224,15 @@ $resultado = $conn->query($query);
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
-                                     
+
                                 <p>logout</p>
                                     </p>
                                 </a>

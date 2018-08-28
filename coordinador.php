@@ -290,13 +290,13 @@ echo "¡ No se ha encontrado ningún registro !";
                                 </a>
                                 <ul class="dropdown-menu">
                                      <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                    
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -346,7 +346,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                 <hr>
 
                             </div>
-                     
+
                         </div>
 
 

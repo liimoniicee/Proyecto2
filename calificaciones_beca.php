@@ -22,10 +22,10 @@ $team = "";
 
 //consulta para obtener el nombre del equipo por id
 $consu = "SELECT
-e.EQU_NOMBRE_EQUIPO 
-FROM 
-equipos e, usuarios u 
-WHERE 
+e.EQU_NOMBRE_EQUIPO
+FROM
+equipos e, usuarios u
+WHERE
 u.EQU_ID_BECARIO = e.ID_EQUIPOS;";
 
 $res = $conn->query($consu);
@@ -266,7 +266,7 @@ if($resultado->num_rows > 0){
 						<a class="navbar-brand">Usuarios</a>
 				</div>
          <div class="collapse navbar-collapse">
-                       
+
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
@@ -287,15 +287,15 @@ if($resultado->num_rows > 0){
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
-                                     
+
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -313,7 +313,7 @@ if($resultado->num_rows > 0){
                     <div class="row">
                         <div class="col-md-12">
                             <h4 class="title">Calificaciones</h4>
-                       
+
 
                             <br>
 
@@ -326,7 +326,7 @@ if($resultado->num_rows > 0){
                                         <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                             <tr>
-                                            
+
                                                 <th>Nivel</th>
                                                 <th>Calificación</th>
                                                 <th>Unidad</th>
@@ -335,14 +335,14 @@ if($resultado->num_rows > 0){
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>-->
 
-                                                
+
                                                 <th class="disabled-sorting">Actions</th>
                                             </tr>
                                         </thead>
 
       <tfoot>
                                             <tr>
-                                               
+
                                                    <th>Nivel</th>
                                                 <th>Calificacón</th>
                                                 <th>Unidad</th>
@@ -353,10 +353,10 @@ if($resultado->num_rows > 0){
                                             </tr>
                                         </tfoot>
 
-               
-                                        <?php 
+
+                                        <?php
             //Conexión a la base de datos
-            
+
             include 'conexion.php';
             $query2 = "SELECT
 B.ID_BECARIO, U.USU_IMG_PERFIL
@@ -367,41 +367,41 @@ U.ID_USUARIO = $var_clave
 AND
 B.BEC_ID_USUARIO = U.ID_USUARIO";
 
-  $ejecutar2 = mysqli_query($conn, $query2); 
-            
+  $ejecutar2 = mysqli_query($conn, $query2);
+
             $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar2)){         
+
+            while($fila=mysqli_fetch_array($ejecutar2)){
                // $id_c          = $fila['ID_CALIFICACIONES'];
                 $id_becario  = $fila['ID_BECARIO'];
-               // $status  = $fila['BEC_STATUS']; 
-                //$foto_bec  = $fila['BEC_STATUS']; 
+               // $status  = $fila['BEC_STATUS'];
+                //$foto_bec  = $fila['BEC_STATUS'];
 } // fin de la quiery2
             //Consulta para obtener la información del becario
-            $consulta = "SELECT CAL_NIVEL_INGLES,CAL_CALIFICACION,CAL_UNIDAD,CAL_PROMEDIO FROM calificaciones 
-                              
+            $consulta = "SELECT CAL_NIVEL_INGLES,CAL_CALIFICACION,CAL_UNIDAD,CAL_PROMEDIO FROM calificaciones
+
                                 WHERE CAL_ID_BECARIO= $id_becario";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
+
+            while($fila=mysqli_fetch_array($ejecutar)){
                // $id_c          = $fila['ID_CALIFICACIONES'];
                 $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION']; 
-                $unidad        = $fila['CAL_UNIDAD']; 
+                $calificacion  = $fila['CAL_CALIFICACION'];
+                $unidad        = $fila['CAL_UNIDAD'];
                 $promedio      = $fila['CAL_PROMEDIO'];
                  //$id_u            = $fila['CAL_ID_BECARIO'];
                //  $nom_b         = $fila['USU_NOMBRE'];
                  //$apellido_p    =$fila['USU_APELLIDO_PATERNO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
 
-                
-                                  
+
+
                                      <tbody>
                                             <tr>
                                                <!--Ingresas las variables donde aparecera los datos obtenidos de la consulta -->
@@ -419,11 +419,11 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
                                                     <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
                                                     <!--Botones con una variable de cada id del becario que se quiera modificar o eliminar por medio de onclick-->
                                                     <a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>
-                                                    
+
                                                     <!--<button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
                                                     <button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a> -->
 
-                                                </t >   
+                                                </t >
 <?php } ?>
 
 
@@ -432,11 +432,11 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
                                                                </tbody>
 
                                         </table>
-                                            
+
 
                                     </div>
- 
-   
+
+
                                 </div>
                             </div><!--  end card  -->
                         </div> <!-- end col-md-12 -->

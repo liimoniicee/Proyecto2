@@ -3,7 +3,7 @@
  include 'fuctions.php';
  verificar_sesion();
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -13,7 +13,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -178,7 +178,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         <a data-toggle="collapse" href="#formsExamples">
                             <i class="ti-clipboard"></i>
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -205,18 +205,18 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </a>
                                 </li>
 
-                               
+
 
                             </ul>
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -245,7 +245,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -273,7 +273,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -282,41 +282,41 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                 </div>
             </nav>
-                                     <script> 
-function validar(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+                                     <script>
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /[\w\s]/; // Acepta números y letras 
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\d/; // Solo acepta números
+//patron = /[\w\s]/; // Acepta números y letras
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
 </script>
 <!-- onkeypress="return validar(event)"-->
-<script> 
-function validar2(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar2(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+//patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
 
 
-             
+
  <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -338,12 +338,12 @@ return patron.test(te);
                                                 <th>No.Control</th>
                                                 <th>Asistencia</th>
                                                 <th>Fecha</th>
-                                                
+
                                                    <th>Nombre</th>
                                                 <th>Apellido P.</th>
-                                              
 
-                                                
+
+
                                                 <th class="disabled-sorting">Actions</th>
                                             </tr>
                                         </thead>
@@ -353,57 +353,57 @@ return patron.test(te);
                                                   <th>No.Control</th>
                                                   <th>Asistencia</th>
                                                 <th>Fecha</th>
-                                                
+
                                                    <th>Nombre</th>
                                                 <th>Apellido P.</th>
                                             >
                                             </tr>
                                         </tfoot>
 
-               
-                                        <?php 
-            
+
+                                        <?php
+
             include 'conexion.php';
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
 b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO and a.ASI_ID_BECARIO=b.ID_BECARIO";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
+
+            while($fila=mysqli_fetch_array($ejecutar)){
                 $id_c          = $fila['ASI_ID_BECARIO'];
                 $asistencia         = $fila['ASI_ASISTENCIA'];
-                $fecha  = $fila['ASI_FECHA']; 
+                $fecha  = $fila['ASI_FECHA'];
                 $nombre_b        = $fila['USU_NOMBRE'];
-                $apellido_b  = $fila['USU_APELLIDO_PATERNO']; 
-                           
+                $apellido_b  = $fila['USU_APELLIDO_PATERNO'];
 
-                $i++;   
-            
+
+                $i++;
+
         ?>
 
-                
-                                  
+
+
                                      <tbody>
                                             <tr>
-                                               
+
                                                 <!--<td><?php echo $id_c; ?></td>-->
                                                 <td><?php echo $id_c; ?></td>
                                                 <td><?php echo $asistencia; ?></td>
                                                 <td><?php echo $fecha; ?></td>
                                                 <td><?php echo $nombre_b; ?></td>
                                                 <td><?php echo $apellido_b; ?></td>
-                                              
+
                                                 <td>
                                                     <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
                                                     <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
                                                     <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
                                                     <a href="asistencia.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>
-                                                    
+
                                                     <!---<button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
                                                     <button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
 
@@ -419,25 +419,25 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
         if(isset($_GET['editar'])){
         include("editar_calificaciones.php");
         }
-    ?> 
-    <?php 
+    ?>
+    <?php
      include 'conexion.php';
     if(isset($_GET['borrar'])){
-    
+
     $borrar_id = $_GET['borrar'];
-    
+
     $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
-    
-    $ejecutar = mysqli_query($conn,$borrar); 
-        
+
+    $ejecutar = mysqli_query($conn,$borrar);
+
         if($ejecutar){
-        
+
         echo "<script>alert('La calificacón ha sido borrado!')</script>";
         echo "<script>window.open('calificaciones.php','_self')</script>";
         }
-    
+
     }
-    
+
     ?>-->
 
 
@@ -462,9 +462,9 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
                   $("#swal-input0").val(data.data.id);
                   $("#swal-input1").val(data.data.asi);
                   $("#swal-input2").val(data.data.fecha);
-                 
-               
-                 
+
+
+
                 },
 
                 // código a ejecutar si la petición falla;
@@ -532,9 +532,9 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
           '<input type="number" name="swal-input1" onkeypress="return validar(event)" id="swal-input1" class="form-control border-input">' +
           '<label for="exampleInputEmail1">Fecha</label>' +
           '<input type="date" min="0" name="swal-input2" id="swal-input2" class="form-control border-input">' +
-          
-          
-         
+
+
+
           '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar</Button>'+
           '</form>',
           showCancelButton: true,
@@ -558,8 +558,8 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
           };
           </script>
 
- 
-                                        
+
+
                                          <!--   <tr>
                                                     <td><?php echo $nivel; ?></td>
                                                 <td><?php echo $calificacion; ?></td>
@@ -572,7 +572,7 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
                                                     <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
                                                 </td>
                                             </tr>
-                                             <?php } ?> 
+                                             <?php } ?>
                                             <tr>
                                                 <td>Angelica Ramos</td>
 
@@ -591,11 +591,11 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
                                            </tbody>
 
                                         </table>
-                                            
+
 
                                     </div>
- 
-   
+
+
                                 </div>
                             </div><!--  end card  -->
                         </div> <!-- end col-md-12 -->
@@ -603,7 +603,7 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
 
                 </div>
             </div>
-  
+
 
 
 
@@ -670,7 +670,7 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>

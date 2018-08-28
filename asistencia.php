@@ -3,7 +3,7 @@
  include 'fuctions.php';
  verificar_sesion();
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -13,7 +13,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -45,14 +45,14 @@ echo "¡ No se ha encontrado ningún registro !";
 
     <title>Team Interface</title>
 
-  
+
     <!-- Canonical SEO -->
     <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    
+
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -183,7 +183,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             <i class="ti-clipboard" ></i>
 
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -210,18 +210,18 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </a>
                                 </li>
 
-                              
+
 
                             </ul>
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -250,7 +250,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -278,7 +278,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -289,7 +289,7 @@ echo "¡ No se ha encontrado ningún registro !";
             </nav>
 
 
-             
+
  <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -313,48 +313,48 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <th>Apellido</th>
                                                 <th>Fecha</th>
                                                 <th>Asistencia</th>
-                                               
-                                               
+
+
                                                 <th class="disabled-sorting">Actions</th>
                                             </tr>
                                         </thead>
 
       <tfoot>
                                             <tr>
-                                               
+
                                                 <th>No.Control</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                  <th>Fecha</th>
                                                 <th>Asistencia</th>
-                                                
-                                               
+
+
                                             </tr>
                                         </tfoot>
 
-                                        <?php 
+                                        <?php
                                         //Conexón a la base de datos
-            
+
             include 'conexion.php';
             //Consulta para la informacion de los becarios por medio del id
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
                                 b.BEC_ID_USUARIO, b.ID_BECARIO FROM usuarios u, becario b
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
             $fecha_actual=date("d/m/Y");
-            while($row=mysqli_fetch_array($ejecutar)){         
+            while($row=mysqli_fetch_array($ejecutar)){
                 /*$id_c          = $fila['ID_CALIFICACIONES'];
                 $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION']; 
-                $unidad        = $fila['CAL_UNIDAD']; 
+                $calificacion  = $fila['CAL_CALIFICACION'];
+                $unidad        = $fila['CAL_UNIDAD'];
                 $promedio      = $fila['CAL_PROMEDIO'];
                  $id            = $fila['CAL_ID_BECARIO'];*/
-          $var_nombre     =     $row['USU_NOMBRE'];  
+          $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           /*$var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
           $var_direccion  =     $row['USU_DIRECCION'];
@@ -365,31 +365,31 @@ echo "¡ No se ha encontrado ningún registro !";
           $var_codigopost =     $row['USU_CODIGO_POSTAL'];
           $var_fechanac   =     $row['USU_FECHA_NAC'];*/
           $var_idbec       =     $row['ID_BECARIO'];
-        
+
           $var_id         =     $row['ID_USUARIO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
 <!--Envia los datos por el metodo POST para cada input -->
                                                  <form method="post" action="registrar_asistencia.php">
 
-                                  
+
                                      <tbody >
                                             <tr>
-                                               
+
                                                 <td><input class ="col-md-5"type="number"  name = "idbec" value="<?php echo $var_idbec; ?>" readonly="readonly"/></td>
                                                 <td><?php echo $var_nombre ?></td>
                                                 <td><?php echo $var_apellidop; ?></td>
                                                 <!--Obtiene la fecha actual por medio de php-->
                                                 <td><input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" readonly="readonly" /></td>   <!--<?php echo$fecha_actual ?>-->
-                                                
+
                                                <!-- <td contenteditable="true"> </td>-->
                                                 <td> <input type="hidden" id="checkbox"  name="asistencia" value="0" /> <center>
                                                               <input type="checkbox" id="checkbox"  name="asistencia" value="1" /></center></td>
-                                                
 
-                                                
+
+
                                                 <td>
                                                     <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
                                                     <a href="editar_calificaciones.php?editar=<?php echo $var_id; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
@@ -397,8 +397,8 @@ echo "¡ No se ha encontrado ningún registro !";
                                                     <!--boton con submit para agregar los datos por medio de POST-->
                                                   <button type="submit" class="btn btn-fill btn-danger btn-wd">Agregar</button>
 
-                                                          
- 
+
+
 
                                                 </td>
                                              <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
@@ -406,8 +406,8 @@ echo "¡ No se ha encontrado ningún registro !";
                                             </tr>
   </form>
 
-          <?php } ?>                                  
- 
+          <?php } ?>
+
 
 
    <script type="text/javascript">
@@ -424,28 +424,28 @@ echo "¡ No se ha encontrado ningún registro !";
             checkbox_this.attr('value','1');
         } else {
             checkbox_this.prop('checked',true);
-            //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA    
+            //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA
             checkbox_this.attr('value','0');
         }
     })
 })
    </script>
- 
-      
-     
-   
-   
+
+
+
+
+
 
 
 
                                            </tbody>
 
                                         </table>
-                                                                                       
+
 
                                     </div>
- 
-   
+
+
                                 </div>
                             </div><!--  end card  -->
                         </div> <!-- end col-md-12 -->
@@ -487,7 +487,7 @@ echo "¡ No se ha encontrado ningún registro !";
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>

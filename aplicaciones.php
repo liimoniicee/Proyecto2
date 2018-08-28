@@ -269,10 +269,10 @@ echo "¡ No se ha encontrado ningún registro !";
                                     <p><?php echo "Bienvenido: ".$_SESSION['nombre'];?></p>
                                 </a>
                             </li>
-                        
+
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
                                         Settings
                                     </p>
@@ -340,11 +340,11 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <td> <?php echo $row['USU_NOMBRE'];?></td>
                                                 <td><?php echo $row['USU_APELLIDO_PATERNO']; ?></td>
                                                 <td> <?php echo $row['USU_APELLIDO_MATERNO']; ?></td>
-                                                
+
                                                 <td>
 
                                                  <button  onclick="alerta(<?php echo $id_b ?>),enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-info btn-icon table-action view" rel="tooltip" title="Ver Aplicacion" ><i class="ti-image"></i></button>
-                                                
+
                                                  <button  onclick="alerta(<?php echo $id_b ?>),enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-info btn-icon table-action view" rel="tooltip" title="Ver Aplicacion" ><i class="ti-image"></i></button>
 
 

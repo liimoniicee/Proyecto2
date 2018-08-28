@@ -6,7 +6,7 @@
 ?>
 
 
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -16,7 +16,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           //$var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           //$var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -137,7 +137,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>
 
-                
+
 
                         <li class="active">
                         <a data-toggle="collapse" href="#tablesExamples">
@@ -167,7 +167,7 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
                     </li>
-                
+
                    <li>
                         <a data-toggle="collapse" href="#formsExamples">
                             <i class="ti-clipboard"></i>
@@ -207,8 +207,8 @@ echo "¡ No se ha encontrado ningún registro !";
                     </li>
 
 
-                   
-                    
+
+
 
 
                     <!--<li>
@@ -241,12 +241,12 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>-->
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -275,7 +275,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -303,7 +303,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
-                                   <i class="ti-settings" ></i>
+                                   <i class="ti-share-alt" ></i>
                                 <p>logout</p>
 
                                 <!--onclick="demo.showSwal('warning-message-and-confirmation')"-->
@@ -315,26 +315,26 @@ echo "¡ No se ha encontrado ningún registro !";
                 </div>
             </nav>
 
-                             
 
 
 
 
-<?php 
+
+<?php
 include 'conexion.php';
         if(isset($_GET['editar'])){
-            
-            $editar_id = $_GET['editar']; 
-            
+
+            $editar_id = $_GET['editar'];
+
             $consulta = "SELECT * FROM usuarios WHERE ID_USUARIO='$editar_id'";
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
-            $row=mysqli_fetch_array($ejecutar); 
-            
+            $ejecutar = mysqli_query($conn, $consulta);
+
+            $row=mysqli_fetch_array($ejecutar);
+
           $id_c       =     $row['ID_USUARIO'];
-          $var_usu1       =     $row['USU_USUARIO']; 
-          $var_contra1      =    $row['USU_CONTRA']; 
-          $var_roll       =     $row['USU_ROLL'];       
+          $var_usu1       =     $row['USU_USUARIO'];
+          $var_contra1      =    $row['USU_CONTRA'];
+          $var_roll       =     $row['USU_ROLL'];
           $var_apellidop1  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom1  =     $row['USU_APELLIDO_MATERNO'];
           $var_nombre1     =     $row['USU_NOMBRE'];
@@ -349,11 +349,10 @@ include 'conexion.php';
           $var_sexo1       =     $row['USU_SEXO'];
 
 
-                
+
             }
 ?>
 
-           
 
 
 
@@ -362,7 +361,8 @@ include 'conexion.php';
 
 
 
-<!--<?php    
+
+<!--<?php
 
 include 'conexion.php';
 
@@ -372,7 +372,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -395,59 +395,59 @@ echo "¡ No se ha encontrado ningún registro !";
 ?> -->
 
 
-<script> 
-function validar(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /[\w\s]/; // Acepta números y letras 
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\d/; // Solo acepta números
+//patron = /[\w\s]/; // Acepta números y letras
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
 </script>
 <!-- onkeypress="return validar(event)"-->
-<script> 
-function validar2(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar2(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+//patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
 <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                      <div class="card">
-                    <div class="content">             
+                    <div class="content">
 <div class="header">
     <br>
  <h4 class="card-title">Agregar Usuarios</h4>
  <br>
 
- 
+
 </div>
 
 <div class=" card content">
-         
+
 <!-- CODIGO DE FORMULARIO-->
 <!--<div class="col-md-10"> -->
 
 <form class="form-horizontal"  action="" method="post">
- 
+
 
 <!--<div class="form-group">
     <label  class="col-sm-2 control-label">Nombre del Evento</label>
@@ -456,7 +456,7 @@ return patron.test(te);
     </div>
   </div>
 
- 
+
 
   <!--Actividades-->
   <div class="form-group">
@@ -581,7 +581,7 @@ return patron.test(te);
 
 
 
- 
+
 
                 <div class="form-group">
                      <div class="col-sm-offset-2 col-sm-10">
@@ -590,20 +590,20 @@ return patron.test(te);
                          </div>
                         <br>
                         <br>
-                </form>      
+                </form>
 
 
-<?php 
+<?php
 include 'conexion.php';
     if(isset($_POST['actualizar'])){
-    
-      
+
+
 
 
           $id_c            =     $_POST['ID_USUARIO'];
-          $var_usu1        =     $_POST['USU_USUARIO']; 
-          $var_contra1     =    $_POST['USU_CONTRA']; 
-          $var_roll        =     $_POST['USU_ROLL'];       
+          $var_usu1        =     $_POST['USU_USUARIO'];
+          $var_contra1     =    $_POST['USU_CONTRA'];
+          $var_roll        =     $_POST['USU_ROLL'];
           $var_apellidop1  =     $_POST['USU_APELLIDO_PATERNO'];
           $var_apellidom1  =     $_POST['USU_APELLIDO_MATERNO'];
           $var_nombre1     =     $_POST['USU_NOMBRE'];
@@ -623,9 +623,9 @@ $fechasalida = date('y-m-d',$conversion);
 
 
 
-        
-        $actualizar = "UPDATE usuarios SET USU_USUARIO='$var_usu1', 
-        USU_CONTRA='$var_contra1', 
+
+        $actualizar = "UPDATE usuarios SET USU_USUARIO='$var_usu1',
+        USU_CONTRA='$var_contra1',
         USU_ROLL='$var_roll',
         USU_APELLIDO_PATERNO='$var_apellidop1',
         USU_APELLIDO_MATERNO='$var_apellidom1',
@@ -638,20 +638,20 @@ $fechasalida = date('y-m-d',$conversion);
         USU_LUGAR_NACIMIENTO='$var_lugarnac1',
         USU_FECHA_NAC='$var_fechanac1',
         USU_SEXO='$var_sexo1' WHERE  ID_USUARIO='$editar_id'";
-        
+
         $ejecutar = mysqli_query($conn, $actualizar);
-    
+
         if($ejecutar){
-        
+
         echo "<script>alert('Datos actualizados!')</script>";
         echo "<script>window.open('mostrar_empleados.php','_self')</script>";
         } else {
             echo "Error: " . $actualizar . "<br>" . $conn->error;
 }
         }
-    
-    
-    ?> 
+
+
+    ?>
 
 
 
@@ -661,17 +661,17 @@ $fechasalida = date('y-m-d',$conversion);
           </div><!-- cierra el div row-->
         </div> <!-- cierra el div container-fluid-->
      </div><!-- cierra el div content-->
-      
+
 </div>   <!-- cierra el div del panel -->
 
-  
 
 
 
 
 
-                                 
-                                        
+
+
+
 
 
             <footer class="footer">
@@ -704,7 +704,7 @@ $fechasalida = date('y-m-d',$conversion);
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>
@@ -771,5 +771,5 @@ $fechasalida = date('y-m-d',$conversion);
 
     <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
-    
+
 </html>

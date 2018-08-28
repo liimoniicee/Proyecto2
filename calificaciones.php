@@ -3,7 +3,7 @@
  include 'fuctions.php';
  verificar_sesion();
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -13,7 +13,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -178,7 +178,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         <a data-toggle="collapse" href="#formsExamples">
                             <i class="ti-clipboard"></i>
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -193,18 +193,18 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </a>
                                 </li>
 
-                               
+
 
                             </ul>
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -233,7 +233,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -261,7 +261,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -270,47 +270,47 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                 </div>
             </nav>
-                                     <script> 
-function validar(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+                                     <script>
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /[\w\s]/; // Acepta números y letras 
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\d/; // Solo acepta números
+//patron = /[\w\s]/; // Acepta números y letras
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
 </script>
 <!-- onkeypress="return validar(event)"-->
-<script> 
-function validar2(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar2(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+//patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
 
 
-             
+
  <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <h4 class="title">Calificaciones</h4>
-                       
+
 
                             <br>
 
@@ -323,7 +323,7 @@ return patron.test(te);
                                         <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                             <tr>
-                                            
+
                                                 <th>Nivel</th>
                                                 <th>Calificación</th>
                                                 <th>Unidad</th>
@@ -332,14 +332,14 @@ return patron.test(te);
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
 
-                                                
+
                                                 <th class="disabled-sorting">Actions</th>
                                             </tr>
                                         </thead>
 
       <tfoot>
                                             <tr>
-                                               
+
                                                    <th>Nivel</th>
                                                 <th>Calificacón</th>
                                                 <th>Unidad</th>
@@ -350,40 +350,40 @@ return patron.test(te);
                                             </tr>
                                         </tfoot>
 
-               
-                                        <?php 
+
+                                        <?php
             //Conexión a la base de datos
-            
+
             include 'conexion.php';
             //Consulta para obtener la información del becario
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
                                 b.BEC_ID_USUARIO, b.ID_BECARIO,
                                   c.CAL_NIVEL_INGLES, c.CAL_CALIFICACION,c.CAL_UNIDAD,c.CAL_PROMEDIO,c.CAL_ID_BECARIO,c.CAL_ID_BECARIO,c.ID_CALIFICACIONES FROM usuarios u, becario b, calificaciones c
-                              
+
                                 WHERE
-              
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO and c.CAL_ID_BECARIO=b.ID_BECARIO";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
+
+            while($fila=mysqli_fetch_array($ejecutar)){
                 $id_c          = $fila['ID_CALIFICACIONES'];
                 $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION']; 
-                $unidad        = $fila['CAL_UNIDAD']; 
+                $calificacion  = $fila['CAL_CALIFICACION'];
+                $unidad        = $fila['CAL_UNIDAD'];
                 $promedio      = $fila['CAL_PROMEDIO'];
                  $id_u            = $fila['CAL_ID_BECARIO'];
                  $nom_b         = $fila['USU_NOMBRE'];
                  $apellido_p    =$fila['USU_APELLIDO_PATERNO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
 
-                
-                                  
+
+
                                      <tbody>
                                             <tr>
                                                <!--Ingresas las variables donde aparecera los datos obtenidos de la consulta -->
@@ -401,7 +401,7 @@ return patron.test(te);
                                                     <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
                                                     <!--Botones con una variable de cada id del becario que se quiera modificar o eliminar por medio de onclick-->
                                                     <a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>
-                                                    
+
                                                     <button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
                                                     <button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
 
@@ -417,25 +417,25 @@ return patron.test(te);
         if(isset($_GET['editar'])){
         include("editar_calificaciones.php");
         }
-    ?> 
-    <?php 
+    ?>
+    <?php
      include 'conexion.php';
     if(isset($_GET['borrar'])){
-    
+
     $borrar_id = $_GET['borrar'];
-    
+
     $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
-    
-    $ejecutar = mysqli_query($conn,$borrar); 
-        
+
+    $ejecutar = mysqli_query($conn,$borrar);
+
         if($ejecutar){
-        
+
         echo "<script>alert('La calificacón ha sido borrado!')</script>";
         echo "<script>window.open('calificaciones.php','_self')</script>";
         }
-    
+
     }
-    
+
     ?>-->
 
 
@@ -462,7 +462,7 @@ return patron.test(te);
                   $("#swal-input2").val(data.data.mat);
                   $("#swal-input3").val(data.data.vende);
                   $("#swal-input4").val(data.data.canti);
-                 
+
                 },
 
                 // código a ejecutar si la petición falla;
@@ -533,9 +533,9 @@ return patron.test(te);
           '<label for="exampleInputEmail1">Unidad</label>' +
           '<input  type="number" min="0"name="swal-input3" id="swal-input3" required="true" class="form-control border-input">' +
           '<label for="exampleInputEmail1">Promedio</label>' +
-          '<input type="number" min="0" name="swal-input4" id="swal-input4" required="true" class="form-control border-input">' + 
-          
-         
+          '<input type="number" min="0" name="swal-input4" id="swal-input4" required="true" class="form-control border-input">' +
+
+
           '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar</Button>'+
           '</form>',
           showCancelButton: true,
@@ -559,8 +559,8 @@ return patron.test(te);
           };
           </script>
 
- 
-                                        
+
+
                                          <!--   <tr>
                                                     <td><?php echo $nivel; ?></td>
                                                 <td><?php echo $calificacion; ?></td>
@@ -573,7 +573,7 @@ return patron.test(te);
                                                     <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
                                                 </td>
                                             </tr>
-                                             <?php } ?> 
+                                             <?php } ?>
                                             <tr>
                                                 <td>Angelica Ramos</td>
 
@@ -592,11 +592,11 @@ return patron.test(te);
                                            </tbody>
 
                                         </table>
-                                            
+
 
                                     </div>
- 
-   
+
+
                                 </div>
                             </div><!--  end card  -->
                         </div> <!-- end col-md-12 -->
@@ -604,7 +604,7 @@ return patron.test(te);
 
                 </div>
             </div>
-  
+
 
 
 
@@ -671,7 +671,7 @@ return patron.test(te);
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>

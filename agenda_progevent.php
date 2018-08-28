@@ -56,7 +56,7 @@ echo "¡ No se ha encontrado ningún registro !";
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    
+
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -256,7 +256,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -284,7 +284,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
                                         Settings
                                     </p>
@@ -305,7 +305,7 @@ echo "¡ No se ha encontrado ningún registro !";
             <div class="row">
                 <div class="col-md-12">
                      <div class="card">
-                    <div class="content">             
+                    <div class="content">
 <div class="header">
     <br>
  <h4 class="card-title">Programar un Evento</h4>
@@ -313,12 +313,12 @@ echo "¡ No se ha encontrado ningún registro !";
 </div>
 
 <div class=" card content">
-         
+
 <!-- CODIGO DE FORMULARIO-->
 <!--<div class="col-md-10"> -->
 
 <form class="form-horizontal"  action="prog_event.php" method="post">
- 
+
 
 <div class="form-group">
     <label  class="col-sm-2 control-label">Nombre del Evento</label>
@@ -326,7 +326,7 @@ echo "¡ No se ha encontrado ningún registro !";
       <input type="text" class="form-control border-input"  placeholder="Lugar" name="titulo" required="true"  onkeypress="return validar(event)">
     </div>
   </div>
- 
+
 
   <!--Actividades-->
   <div class="form-group">
@@ -372,7 +372,7 @@ echo "¡ No se ha encontrado ningún registro !";
   <div class="form-group">
     <label  class="col-sm-2 control-label">Descripción</label>
     <div class="col-sm-5">
-     <textarea  required="" class="form-control border-input"  placeholder="Ingrese la descripcion del evento" name="descrip"  onkeypress="return validar(event)" ></textarea>      
+     <textarea  required="" class="form-control border-input"  placeholder="Ingrese la descripcion del evento" name="descrip"  onkeypress="return validar(event)" ></textarea>
     </div>
   </div>
 
@@ -383,7 +383,7 @@ echo "¡ No se ha encontrado ningún registro !";
                          </div>
                         <br>
                         <br>
-                </form>      
+                </form>
 
 
 
@@ -401,54 +401,54 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
 
-<script> 
-function validar(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /[\w\s]/; // Acepta números y letras 
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\d/; // Solo acepta números
+//patron = /[\w\s]/; // Acepta números y letras
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
 </script>
 <!-- onkeypress="return validar(event)"-->
-<script> 
-function validar2(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar2(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+//patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
-<script> 
-function validar3(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
+<script>
+function validar3(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 //patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
 
 
 
@@ -482,7 +482,7 @@ return patron.test(te);
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>
@@ -562,6 +562,6 @@ return patron.test(te);
 
 
 
-    
+
 
 </html>

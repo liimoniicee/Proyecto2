@@ -4,7 +4,7 @@
  include 'fuctions.php';
  verificar_sesion();
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -14,7 +14,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -38,8 +38,8 @@ echo "¡ No se ha encontrado ningún registro !";
 <head>
 <script type="text/javascript">
       $(document).ready(function(){
-    habilitar(); 
-    habilitar2(); 
+    habilitar();
+    habilitar2();
 });
 </script>
     <meta charset="utf-8" />
@@ -71,13 +71,13 @@ echo "¡ No se ha encontrado ningún registro !";
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
-    
+
     <script type="text/javascript">
- 
+
 
 
     function habilitar(){
-   
+
        $("input[id='radio_si']").bind('change', function(){
             if($(this).is(":checked") ==true){
               $("input[id='cuenta']").prop('disabled',false);
@@ -90,15 +90,15 @@ echo "¡ No se ha encontrado ningún registro !";
        });
 
     }
-     
+
     </script>
 
     <script type="text/javascript">
- 
+
 
 
     function habilitar2(){
-   
+
        $("input[id='radio_si2']").bind('change', function(){
             if($(this).is(":checked") ==true){
               $("input[id='ingles']").prop('disabled',false);
@@ -111,7 +111,7 @@ echo "¡ No se ha encontrado ningún registro !";
        });
 
     }
-     
+
     </script>
 
 </head>
@@ -139,12 +139,12 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                         
+
                                  <span>
                                 <?php echo $_SESSION['nombre'];?>
                                 <b class="caret"></b>
                             </span>
-                          
+
                         </a>
                         <div class="clearfix"></div>
 
@@ -156,7 +156,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                         <span class="sidebar-normal">Configuración de cuenta</span>
                                     </a>
                                 </li>
-                             
+
                                 <li>
                                     <a href="destroy.php">
                                         <span class="sidebar-mini">L</span>
@@ -171,7 +171,7 @@ echo "¡ No se ha encontrado ningún registro !";
                  <li class="active">
                         <a data-toggle="collapse" href="#tablesExamples">
                             <i class="ti-agenda" ></i>
-                            
+
                             <p>
                                 Solicitar beca
                                <b class="caret"></b>
@@ -240,15 +240,15 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
 
-                   
-               
-                 
-              
+
+
+
+
                     <li>
-                      
+
                         <div class="collapse" id="pagesExamples">
                             <ul class="nav">
-                      
+
                             </ul>
                         </div>
                     </li>
@@ -298,15 +298,15 @@ echo "¡ No se ha encontrado ningún registro !";
                                 </a>
                                 <ul class="dropdown-menu">
                                  <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                   
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
-                                     
+
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -317,38 +317,38 @@ echo "¡ No se ha encontrado ningún registro !";
             </nav>
 
 
-<script> 
-function validar(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /[\w\s]/; // Acepta números y letras 
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\d/; // Solo acepta números
+//patron = /[\w\s]/; // Acepta números y letras
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
 </script>
 <!-- onkeypress="return validar(event)"-->
-<script> 
-function validar2(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar2(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+//patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -357,7 +357,7 @@ return patron.test(te);
                          <form id="wizardForm" action="registrar_beca.php" method="post" enctype="multipart/form-data">  <!-- EL PRIMER FORM -->
                                     <div class="card-header text-center">
                                         <h4 class="card-title">GREEN SCHOLARSHIP PROGRAM </h4>
-                                       
+
                                         <p class="category">PROGRAMA DE BECAS GREEN A.C.</p>
                                     </div>
                                     <div class="card-content">
@@ -365,13 +365,13 @@ return patron.test(te);
                                             <li><a href="#tab1" data-toggle="tab">Datos Familiares</a></li>
                                             <li><a href="#tab2" data-toggle="tab">Datos generales</a></li>
                                             <li><a href="#tab3" data-toggle="tab">Historial Academico </a></li>
-                                            <li><a href="#tab4" data-toggle="tab">Actividades Extra</a></li> 
+                                            <li><a href="#tab4" data-toggle="tab">Actividades Extra</a></li>
                                             <li><a href="#tab5" data-toggle="tab">Reconocimientos Escolares</a></li>
                                             <li><a href="#tab6" data-toggle="tab">Propuesta Estudio</a></li>
                                             <li><a href="#tab7" data-toggle="tab">Guardar Formula</a></li>
                                         </ul>
 
-                                        
+
                                         <div class="tab-content">
                                             <div class="tab-pane" id="tab1">
                                                 <h5 class="text-center">Informacón del Padre.</h5>
@@ -386,13 +386,13 @@ return patron.test(te);
                                                                <!-- <option selected="" disabled="">-Información de -</option>
                                                                 <option value="Padre">Padre</option>-->
                                                                 <option value="Padre">Padre</option>
-                                                                
-                                                          
+
+
                                                             </select>
 
 
 
-                                                          
+
                                                            <!-- <input type="hidden" value="1" name="opcion">-->
                                                         </div>
                                                     </div>
@@ -508,16 +508,16 @@ return patron.test(te);
                                                                 Parentesco Familiar:<star>*</star>
                                                             </label>
                                                               <select name="parentesco2" class="form-control">
-                                                                
-                                                             
+
+
                                                                 <option value="Madre">Madre</option>
-                                                                
-                                                          
+
+
                                                             </select>
 
 
 
-                                                          
+
                                                            <!-- <input type="hidden" value="1" name="opcion">-->
                                                         </div>
                                                     </div>
@@ -622,9 +622,9 @@ return patron.test(te);
                                                             />
                                                         </div>
                                                     </div> <!--Fin de formuario2-->
-                                                     
+
                                                 </div>
-                               
+
                                               <!--  <div class="row">
                                                     <div class="col-md-10 col-md-offset-1">
                                                         <div class="form-group">
@@ -645,7 +645,7 @@ return patron.test(te);
                                                 <h5 class="text-center">Datos generales.</h5>
                                                 <h6 class="text-center">Llenar todos los campos, si no aplica en tu situación, colocar NA.</h6></br>
                                             <div class="row">
-                                
+
                                               <div class="col-md-5 col-md-offset-1">
                                                         <div class="form-group">
                                                             <label class="control-label">Tiempo de residencia<star>*</star></label>
@@ -664,7 +664,7 @@ return patron.test(te);
                                                           <input class="" type="radio" name="opcasa" value="No" > No
                                                         </div>
                                                     </div><!--dIV DEL COLUMNA -->
-                                                   
+
 
                                             </div> <!-- ROW -->
 
@@ -683,8 +683,8 @@ return patron.test(te);
                                                                 <option value="Concreto">Concreto</option>
                                                                 <option value="Madera">Madera</option>
                                                                 <option value="Tabique">Tabique</option>
-                                                               
-                                                          
+
+
                                                             </select>
                                             </div>
                                             </div> <!--dIV DEL COLUMNA -->
@@ -738,10 +738,10 @@ return patron.test(te);
                                                             <label class="control-label">
                                                                 Tienen cuenta bancaria?<star>*</star>
                                                             </label></br>
-                                                           
+
                                                            <input type="radio" name="opbanco" value="Si" id="radio_si" onkeyUp="habliitar()">Si
                                                            <input type="radio" name="opbanco" value="No" id="radio_no" onkeyUp="habliitar()"> No
-                                                           
+
                                                         </div>
                                             </div> <!--dIV DEL COLUMNA -->
 
@@ -757,7 +757,7 @@ return patron.test(te);
                                                                    accept="application/pdf"
                                                                    required="true"
                                                                    placeholder="ex: estado"
-                                                                 
+
                                                             />
                                                         </div>
                                                     </div><!--dIV DEL COLUMNA -->
@@ -824,30 +824,30 @@ return patron.test(te);
                                             </div> <!--FIN DE DIV DE LA TAB2-->
 
 
-                                             
 
 
 
 
-                                               
+
+
                                             <div class="tab-pane" id="tab3">
                                                 <h5 class="text-center">Historial Academico</h5>
                                                 <h6 class="text-center">Llenar todos los campos, si no aplica en tu situación, colocar NA.</h6></br>
                                                 <div class="row">
                                                          <div class="col-md-5 col-md-offset-1">
                                                         <div class="form-group">
-                                                           
+
                                                           <label class="control-label">
                                                                 Que estas cursando<star>*</star>
                                                             </label>
                                                             <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
                                                              -->
                                                             <select name="cursando" class="form-control" required="true">
-                                                               
-                                                                
+
+
                                                                 <option value="Secundaria">Secundaria</option>
-                                                               
-                                                          
+
+
                                                             </select>
                                                         </div>
                                                     </div>
@@ -861,7 +861,7 @@ return patron.test(te);
                                                                    name="nombre_escuela"
                                                                    required="true"
                                                                    placeholder="ex:ites"
-                                                            
+
                                                                    onkeypress="return validar2(event)"
                                                             />
                                                         </div>
@@ -911,7 +911,7 @@ return patron.test(te);
                                                             />
                                                         </div>
                                                     </div>
-                                                    
+
                                                        <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="control-label">
@@ -928,21 +928,21 @@ return patron.test(te);
                                                     </div> </br></br>
  <h5 class="text-center">Informacón de la preparatoria.</h5>
                                                  <h6 class="text-center">Llenar todos los campos, si no aplica en tu situación, colocar NA.</h6></br> </br>
-                                       
+
                                         <div class="col-md-5 col-md-offset-1">
                                                         <div class="form-group">
-                                                           
+
                                                           <label class="control-label">
                                                                 Que estas cursando<star>*</star>
                                                             </label>
                                                             <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
                                                              -->
                                                             <select name="cursando2" class="form-control" required="true">
-                                                                
+
                                                                 <option value="Preparatoria">Preparatoria</option>
-                                                               
-                                                               
-                                                          
+
+
+
                                                             </select>
                                                         </div>
                                                     </div>
@@ -956,7 +956,7 @@ return patron.test(te);
                                                                    name="nombre_escuela2"
                                                                    required="true"
                                                                    placeholder="ex:ites"
-                                                            
+
                                                                    onkeypress="return validar2(event)"
                                                             />
                                                         </div>
@@ -1006,7 +1006,7 @@ return patron.test(te);
                                                             />
                                                         </div>
                                                     </div>
-                                                    
+
                                                        <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="control-label">
@@ -1022,7 +1022,7 @@ return patron.test(te);
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
 
 
 
@@ -1045,7 +1045,7 @@ return patron.test(te);
                                                                    type="date"
                                                                    name="año_inicio"
                                                                    placeholder="ex:año"
-                                                                   min="1990-01-01" max="<?php echo date("Y-m-d");?>" 
+                                                                   min="1990-01-01" max="<?php echo date("Y-m-d");?>"
                                                             />
                                                            <!-- <input type="hidden" value="1" name="opcion">-->
                                                         </div>
@@ -1060,7 +1060,7 @@ return patron.test(te);
                                                                    name="año_final"
                                                                    required="true"
                                                                    placeholder="ex: año"
-                                                                   min="1990-01-01" max="<?php echo date("Y-m-d");?>" 
+                                                                   min="1990-01-01" max="<?php echo date("Y-m-d");?>"
                                                             />
                                                         </div>
                                                     </div>
@@ -1104,7 +1104,7 @@ return patron.test(te);
                                                                    name="descripcion"
                                                                    onkeypress="return validar2(event)"
                                                                    placeholder="ex: descripcion"
-                                                            ></textarea> 
+                                                            ></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1154,7 +1154,7 @@ return patron.test(te);
                                                                    type="text"
                                                                    name="tipo_reconocimiento"
                                                                    onkeypress="return validar2(event)"
-                                                               
+
                                                                    placeholder="ex: tipo de reconocimiento"
                                                             />
                                                         </div>
@@ -1220,7 +1220,7 @@ return patron.test(te);
                                                     <div class="col-md-10 col-md-offset-1">
                                                         <div class="form-group">
                                                             <label class="control-label">
-                                                                           Escribe un ensayo (dos páginas solamente) en donde hablas de ti, tus aspiraciones profesionales, que planeas estudiar y 
+                                                                           Escribe un ensayo (dos páginas solamente) en donde hablas de ti, tus aspiraciones profesionales, que planeas estudiar y
 la razón por la que quieres tener una carrera universitaria(En formato PDF).<star>*</star>
                                                             </label>
                                                             <input class="form-control"
@@ -1294,7 +1294,7 @@ la razón por la que quieres tener una carrera universitaria(En formato PDF).<st
 
                                         </div> <!--FIN DE CONTENT -->
                                     </div>
-                                    
+
                                     <div class="card-footer">
                                         <button type="button" class="btn btn-default btn-fill btn-wd btn-back pull-left">Back</button>
                                         <button type="button" class="btn btn-info btn-fill btn-wd btn-next pull-right">Next</button>
@@ -1302,8 +1302,8 @@ la razón por la que quieres tener una carrera universitaria(En formato PDF).<st
                                         <div class="clearfix"></div>
                                     </div>
                                     </form> <!--Aqui termina el form del php para enviar -->
-                                
-                             
+
+
 
 
                             </div>
@@ -1353,7 +1353,7 @@ la razón por la que quieres tener una carrera universitaria(En formato PDF).<st
                         <span class="badge filter badge-white" data-color="white"></span>
                     </a>
                 </li>
-    
+
                 <li class="header-title">Sidebar Active Color</li>
                 <li class="adjustments-line text-center">
                     <a href="javascript:void(0)" class="switch-trigger active-color">
@@ -1364,24 +1364,24 @@ la razón por la que quieres tener una carrera universitaria(En formato PDF).<st
                             <span class="badge filter badge-danger active" data-color="danger"></span>
                     </a>
                 </li>
-    
+
                 <li class="button-container">
                     <div class="">
                         <a href="http://www.creative-tim.com/product/paper-dashboard?ref=pdp-free-demo" target="_blank" class="btn btn-info btn-block">Get Free Demo</a>
                         <a href="http://www.creative-tim.com/product/paper-dashboard-pro" target="_blank" class="btn btn-danger btn-block btn-fill">Buy for $39</a>
                     </div>
                 </li>
-    
+
                 <li class="header-title">Thank you for sharing!</li>
-    
+
                 <li class="button-container">
                     <button id="twitter" class="btn btn-social btn-twitter btn-round"><i class="fa fa-twitter"></i> </button>
                     <button id="facebook" class="btn btn-social btn-facebook btn-round"><i class="fa fa-facebook-square"></i></button>
                 </li>
-    
+
             </ul>
         </div>
-    </div>  
+    </div>
 
 </body>
 
@@ -1452,7 +1452,7 @@ la razón por la que quieres tener una carrera universitaria(En formato PDF).<st
         $(document).ready(function(){
             demo.initWizard();
             habilitar();
-             habilitar2(); 
+             habilitar2();
         });
     </script>
 

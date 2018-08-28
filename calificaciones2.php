@@ -16,7 +16,7 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
 
-    
+
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -102,7 +102,7 @@
                         </div>
                     </li>
 
-                
+
 
                          <li>
                         <a data-toggle="collapse" href="#tablesExamples">
@@ -143,7 +143,7 @@
                         <a data-toggle="collapse" href="#formsExamples">
                             <i class="ti-clipboard"></i>
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -169,12 +169,12 @@
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -203,7 +203,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -231,7 +231,7 @@
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -242,7 +242,7 @@
             </nav>
 
 
-             
+
  <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -267,14 +267,14 @@
                                                 <th>Calificacón</th>
                                                 <th>Unidad</th>
                                                 <th>Promedio</th>
-                                                
+
                                                 <th class="disabled-sorting">Actions</th>
                                             </tr>
                                         </thead>
 
 
 
-                
+
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
@@ -287,25 +287,25 @@
                                             </tr>
                                         </tfoot>
 
-                                        <?php 
-            
+                                        <?php
+
             include 'conexion.php';
             $consulta = "SELECT * FROM calificaciones";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
+
+            while($fila=mysqli_fetch_array($ejecutar)){
                 $id_c          = $fila['ID_CALIFICACIONES'];
                 $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION']; 
-                $unidad        = $fila['CAL_UNIDAD']; 
+                $calificacion  = $fila['CAL_CALIFICACION'];
+                $unidad        = $fila['CAL_UNIDAD'];
                 $promedio      = $fila['CAL_PROMEDIO'];
                  $id            = $fila['CAL_ID_BECARIO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
                                         <tbody>
                                             <tr>
@@ -317,40 +317,40 @@
                                                  <td><?php echo $id; ?></td>
                                                 <td>
 
-   
+
             <td><a href="calificaciones2.php?editar=<?php echo $id_c; ?>">Editar</a></td>
             <td><a href="calificaciones2.php?borrar=<?php echo $id_c; ?>">Borrar</a></td>
-                                                   
+
                                                 </t >
-                                               
+
                                              <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
                                             </tr>
                                              <?php } ?>
- 
+
 <?php
  include 'conexion.php';
         if(isset($_GET['editar'])){
         include("editar.php");
         }
-    ?> 
-    <?php 
+    ?>
+    <?php
      include 'conexion.php';
     if(isset($_GET['borrar'])){
-    
+
     $borrar_id = $_GET['borrar'];
-    
+
     $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
-    
-    $ejecutar = mysqli_query($conn,$borrar); 
-        
+
+    $ejecutar = mysqli_query($conn,$borrar);
+
         if($ejecutar){
-        
+
         echo "<script>alert('El usuario ha sido borrado!')</script>";
         echo "<script>window.open('calificaciones2.php','_self')</script>";
         }
-    
+
     }
-    
+
     ?>
 
 
@@ -433,7 +433,7 @@
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>
