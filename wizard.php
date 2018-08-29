@@ -305,7 +305,7 @@ echo "¡ No se ha encontrado ningún registro !";
             <!--      Wizard container        -->
             <div class="wizard-container">
                 <div class="card wizard-card" data-color="green" id="wizard">
-                <form action="" method="">
+                <form action="registro_solicitud_registro2.php" method="post" enctype="multipart/form-data">
                 <!--        You can switch ' data-color="green" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
 
                         <div class="wizard-header">
@@ -332,13 +332,13 @@ echo "¡ No se ha encontrado ningún registro !";
                                   <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                         <label>Usuario:</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                                        <input type="text" class="form-control" name="usuario" id="exampleInputEmail1" placeholder="Where is your place located?">
                                       </div>
                                   </div>
                                     <div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Contraseña:</label>
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                   <input type="text" class="form-control" name="contraseña" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                       </div>
                                   </div>
@@ -362,21 +362,21 @@ echo "¡ No se ha encontrado ningún registro !";
                                   <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>Roll:</label>
-                                          <select class="form-control">
+                                          <select  name="roll" class="form-control">
                                             <option disabled="" selected="">- persons -</option>
-                                            <option>1 Person</option>
-                                            <option>2 Persons </option>
-                                            <option>3 Persons</option>
-                                            <option>4 Persons</option>
-                                            <option>5 Persons</option>
-                                            <option>6+ Persons</option>
+                                            <option value="1">1 Aspirante</option>
+                                            <option value="2">2 Coordinador </option>
+                                            <option value="3">3 Becario</option>
+                                            <option value="4">4 Ingles</option>
+                                            <option value="5">5 Administrador</option>
+                                           
                                           </select>
                                       </div>
                                   </div>
                                   <div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Apellido P.:</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+            <input type="text" class="form-control" name="apellido_p" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                       </div>
                                   </div>
@@ -384,14 +384,14 @@ echo "¡ No se ha encontrado ningún registro !";
                                      <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>Apellido M.:</label>
-                 <input type="text" class="form-control" placeholder="Rent price per day">
+                 <input type="text" class="form-control" name="apellido_m" placeholder="Rent price per day">
 
                                       </div>
                                   </div>
                                   <div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Nombre:</label>
-             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+             <input type="text" class="form-control" name="nombre" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                       </div>
                                   </div>
@@ -430,28 +430,28 @@ echo "¡ No se ha encontrado ningún registro !";
                                     <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>Direccón:</label>
-               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+               <input type="text" class="form-control" name="direccion" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                       </div>
                                     </div>
                                     <div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Colonia:</label>
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                   <input type="text" class="form-control" name="colonia" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                       </div>
                                      </div>
                                      <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>Codigo postal:</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                    <input type="text" class="form-control" name="cp" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                        </div>
                                       </div>
                                       <div class="col-sm-5">
                                        <div class="form-group">
-                                          <label>Foto</label>
-                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                                          <label>Fecha de nacimiento</label>
+                     <input type="date" name="fecha_nac" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                        </div>
                                       </div>
@@ -460,29 +460,68 @@ echo "¡ No se ha encontrado ningún registro !";
                                      <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>Telefono:</label>
-                 <input type="text" class="form-control" placeholder="Rent price per day">
+                 <input type="text" class="form-control" name="telefono" placeholder="Rent price per day">
 
                                       </div>
                                   </div>
                                   <div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Celular:</label>
-           <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+           <input type="text" class="form-control"  name="celular" id="exampleInputEmail1" placeholder="Where is your place located?">
 
                                       </div>
                                   </div>
                                   <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>Lugar de nac.:</label>
-                 <input type="text" class="form-control" placeholder="Rent price per day">
-
+   <select  name="lugar_nacimiento" class="form-control">
+                                           <option selected="" disabled="">-Estado donde naciste-</option>
+                                                <option value="Aguascalientes">Aguascalientes</option>
+                                                <option value="Baja California">Baja California</option>
+                                                <option value="Baja California Sur">Baja California Sur</option>
+                                                <option value="Campeche">Campeche</option>
+                                                <option value="Chiapas">Chiapas</option>
+                                                <option value="Chihuahua">Chihuahua</option>
+                                                <option value="Ciudad de Mexico">Ciudad de México</option>
+                                                <option value="Coahuila">Coahuila</option>
+                                                <option value="Colima">Colima</option>
+                                                <option value="Durango">Durango</option>
+                                                <option value="Guanajuato">Guanajuato</option>
+                                                <option value="Guerrero">Guerrero</option>
+                                                <option value="Hidalgo">Hidalgo</option>
+                                                <option value="Jalisco">Jalisco</option>
+                                                <option value="Mexico">México</option>
+                                                <option value="Michoacan">Michoacán</option>
+                                                <option value="Morelos">Morelos</option>
+                                                <option value="Nayarit">Nayarit</option>
+                                                <option value="Nuevo Leon">Nuevo León</option>
+                                                <option value="Oaxaca">Oaxaca</option>
+                                                <option value="Puebla">Puebla</option>
+                                                <option value="Queretaro">Querétaro</option>
+                                                <option value="Quintana Roo">Quintana Roo</option>
+                                                <option value="San Luis Potosi">San Luis Potosí</option>
+                                                <option value="Sinaloa">Sinaloa</option>
+                                                <option value="Sonora">Sonora</option>
+                                                <option value="Tabasco">Tabasco</option>
+                                                <option value="Tamaulipas">Tamaulipas</option>
+                                                <option value="Tlaxcala">Tlaxcala</option>
+                                                <option value="Veracruz">Veracruz</option>
+                                                 <option value="Yucatan">Yucatán</option>
+                                                <option value="Zacatecas">Zacatecas</option>
+                                           
+                                          </select>
                                       </div>
                                   </div>
                                   <div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Sexo:</label>
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
-
+   <select  name="opsexo" class="form-control">
+                                            <option disabled="" selected="">- select -</option>
+                                            <option value="Hombre">Hombre</option>
+                                            <option value="Mujer">Mujer</option>
+                                           
+                                           
+                                          </select>
                                       </div>
                                   </div>
                                 </div>
@@ -510,11 +549,11 @@ echo "¡ No se ha encontrado ningún registro !";
                         <div class="wizard-footer">
                                 <div class="pull-right">
                                     <input type='button' class='btn btn-next btn-fill btn-success btn-wd btn-sm' name='next' value='Next' />
-                                    <input type='button' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='finish' value='Finish' />
+                                    <input  type="submit" type='button' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='finish' value='Finish' />
 
                                 </div>
                                 <div class="pull-left">
-                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />
+                                    <input type="submit" type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />
                                 </div>
                                 <div class="clearfix"></div>
                         </div>

@@ -54,7 +54,8 @@ echo "¡ No se ha encontrado ningún registro !";
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-
+<!-- WIZARDDDDD CSS -->
+<link href="assets2/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -90,34 +91,34 @@ echo "¡ No se ha encontrado ningún registro !";
             </div>
             <div class="sidebar-wrapper">
 
-    						<div class="user">
-    								<div class="info">
-    										<div class="photo">
-    												<img src="<?php echo $var_foto ?>" />
-    										</div>
+                            <div class="user">
+                                    <div class="info">
+                                            <div class="photo">
+                                                    <img src="<?php echo $var_foto ?>" />
+                                            </div>
 
-    										<a data-toggle="collapse" href="#collapseExample" class="collapsed">
-    												<span>
-    														<?php echo $_SESSION['nombre'];?>
-    														<b class="caret"></b>
-    												</span>
-    										</a>
-    										<div class="clearfix"></div>
+                                            <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                                                    <span>
+                                                            <?php echo $_SESSION['nombre'];?>
+                                                            <b class="caret"></b>
+                                                    </span>
+                                            </a>
+                                            <div class="clearfix"></div>
 
-    										<div class="collapse" id="collapseExample">
-    												<ul class="nav">
-    														<li>
-    																<a href="">
-    																		<span class="sidebar-mini"></span>
-    																		<span class="sidebar-normal">c</span>
-    																</a>
-    														</li>
-    												</ul>
-    										</div>
-    								</div>
-    						</div>
+                                            <div class="collapse" id="collapseExample">
+                                                    <ul class="nav">
+                                                            <li>
+                                                                    <a href="">
+                                                                            <span class="sidebar-mini"></span>
+                                                                            <span class="sidebar-normal">c</span>
+                                                                    </a>
+                                                            </li>
+                                                    </ul>
+                                            </div>
+                                    </div>
+                            </div>
 
-    						<ul class="nav">
+                            <ul class="nav">
                     <li  >
                         <a href="admin.php" aria-expanded="true">
                             <i class="ti-panel"></i>
@@ -140,34 +141,34 @@ echo "¡ No se ha encontrado ningún registro !";
                             </p>
                         </a>
                     </li>-->
-    								<li>
-    								<a data-toggle="collapse" href="#tablesExamples">
-    										<i class="ti-agenda"></i>
-    										<p>
-    												Control de empleados
-    											 <b class="caret"></b>
-    										</p>
-    								</a>
-    								<div class="collapse in" id="tablesExamples" aria-expanded="false">
-    										<ul class="nav">
-    												<li class="active">
-    														<a href="registro_empleados.php">
-    																<span class="sidebar-mini"></span>
-    																<span class="sidebar-normal">Agregar empleados</span>
-    														</a>
-    												</li>
+                                    <li>
+                                    <a data-toggle="collapse" href="#tablesExamples">
+                                            <i class="ti-agenda"></i>
+                                            <p>
+                                                    Control de empleados
+                                                 <b class="caret"></b>
+                                            </p>
+                                    </a>
+                                    <div class="collapse in" id="tablesExamples" aria-expanded="false">
+                                            <ul class="nav">
+                                                    <li class="active">
+                                                            <a href="registro_empleados.php">
+                                                                    <span class="sidebar-mini"></span>
+                                                                    <span class="sidebar-normal">Agregar empleados</span>
+                                                            </a>
+                                                    </li>
 
-    												 <li>
-    														<a href="mostrar_empleados.php">
-    																<span class="sidebar-mini"></span>
-    																<span class="sidebar-normal">Mostrar empelados </span>
-    														</a>
-    												</li>
-    										</ul>
-    								</div>
+                                                     <li>
+                                                            <a href="mostrar_empleados.php">
+                                                                    <span class="sidebar-mini"></span>
+                                                                    <span class="sidebar-normal">Mostrar empelados </span>
+                                                            </a>
+                                                    </li>
+                                            </ul>
+                                    </div>
 
 
-    						</li>
+                            </li>
                     <li>
                         <a data-toggle="collapse" href="#dashboardOverview" aria-expanded="false">
                             <i class="ti-book"></i>
@@ -221,7 +222,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </li>-->
 
                 </ul>
-    				</div>
+                    </div>
         </div>
 
         <div class="main-panel">
@@ -297,271 +298,272 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
 
+ <div class="container">
+        <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
 
-<?php
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card" data-color="green" id="wizard">
+                <form action="registro_solicitud_registro2.php" method="post" enctype="multipart/form-data">
+                <!--        You can switch ' data-color="green" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
 
-include 'conexion.php';
+                        <div class="wizard-header">
+                            <h3>
+                               <b>Agregar Usuarios</b><br>
+                               <small>This information will let us know more about your place.</small>
+                            </h3>
+                        </div>
+                        <div class="wizard-navigation">
+                            <ul>
+                                <li><a href="#location" data-toggle="tab">Perfil</a></li>
+                               <!-- <li><a href="#type" data-toggle="tab">Informacón</a></li>-->
+                                <li><a href="#facilities" data-toggle="tab">Detalles</a></li>
+                              <!--  <li><a href="#description" data-toggle="tab">Description</a></li>-->
+                            </ul>
+                        </div>
 
- $id_usuarios = $_SESSION["clave"];
- $sql = "SELECT USU_APELLIDO_PATERNO,USU_APELLIDO_MATERNO,USU_NOMBRE,USU_DIRECCION,USU_COLONIA,USU_CODIGO_POSTAL,USU_IMG_PERFIL,USU_TELEFONO,USU_CELULAR,USU_LUGAR_NACIMIENTO,USU_FECHA_NAC,USU_SEXO,USU_USUARIO FROM USUARIOS WHERE ID_USUARIO = '$id_usuarios' ";
- $resultado = $conn->query($sql);
+                        <div class="tab-content">
+                            <div class="tab-pane" id="location">
+                              <div class="row">
+                                  <div class="col-sm-12">
+                                    <h4 class="info-text"> Agregar la informacón basica del usuario</h4>
+                                  </div>
+                                  <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                        <label>Usuario:</label>
+                                        <input type="text" class="form-control" name="usuario" id="exampleInputEmail1" placeholder="Where is your place located?">
+                                      </div>
+                                  </div>
+                                    <div class="col-sm-5">
+                                      <div class="form-group">
+                                          <label>Contraseña:</label>
+                   <input type="text" class="form-control" name="contraseña" id="exampleInputEmail1" placeholder="Where is your place located?">
 
-if ($resultado->num_rows > 0) {
-         while ($row= $resultado->fetch_assoc()) {
+                                      </div>
+                                  </div>
+                                <!--  <div class="col-sm-5">
+                                       <div class="form-group">
+                                            <label>Country</label><br>
+                                             <select name="country" class="form-control">
+                                                <option disabled="" selected="">- country -</option>
+                                                <option value="Afghanistan"> Afghanistan </option>
+                                                <option value="Albania"> Albania </option>
+                                                <option value="Algeria"> Algeria </option>
+                                                <option value="American Samoa"> American Samoa </option>
+                                                <option value="Andorra"> Andorra </option>
+                                                <option value="Angola"> Angola </option>
+                                                <option value="Anguilla"> Anguilla </option>
+                                                <option value="Antarctica"> Antarctica </option>
+                                                <option value="...">...</option>
+                                            </select>
+                                          </div>
+                                  </div>-->
+                                  <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                          <label>Roll:</label>
+                                          <select  name="roll" class="form-control">
+                                            <option disabled="" selected="">- persons -</option>
+                                            <option value="1">1 Aspirante</option>
+                                            <option value="2">2 Coordinador </option>
+                                            <option value="3">3 Becario</option>
+                                            <option value="4">4 Ingles</option>
+                                            <option value="5">5 Administrador</option>
+                                           
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-5">
+                                      <div class="form-group">
+                                          <label>Apellido P.:</label>
+            <input type="text" class="form-control" name="apellido_p" id="exampleInputEmail1" placeholder="Where is your place located?">
 
-          $var_nombre     =     $row['USU_NOMBRE'];
-          $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
-          $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
-          $var_direccion  =     $row['USU_DIRECCION'];
-          $var_colonia    =     $row['USU_COLONIA'];
-          $var_lugarnac   =     $row['USU_LUGAR_NACIMIENTO'];
-          $var_telefono   =     $row['USU_TELEFONO'];
-          $var_celular    =     $row['USU_CELULAR'];
-          $var_codigopost =     $row['USU_CODIGO_POSTAL'];
-          $var_foto       =     $row['USU_IMG_PERFIL'];
-          $var_fechanac   =     $row['USU_FECHA_NAC'];
-          $var_sexo       =     $row['USU_SEXO'];
-          $var_usu        =     $row['USU_USUARIO'];
-        }
+                                      </div>
+                                  </div>
 
-    }   else {
-echo "¡ No se ha encontrado ningún registro !";
-}
+                                     <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                          <label>Apellido M.:</label>
+                 <input type="text" class="form-control" name="apellido_m" placeholder="Rent price per day">
 
-?>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-5">
+                                      <div class="form-group">
+                                          <label>Nombre:</label>
+             <input type="text" class="form-control" name="nombre" id="exampleInputEmail1" placeholder="Where is your place located?">
 
-<script>
-function validar(e) {
-tecla = (document.all) ? e.keyCode : e.which;
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
-// dejar la línea de patron que se necesite y borrar el resto
-patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números
-//patron = /[\w\s]/; // Acepta números y letras
-//patron = /\D/; // No acepta números
-//
+                                      </div>
+                                  </div>
+                              
+                              </div>
+                            </div>
+                          <!--  <div class="tab-pane" id="type">
+                                <h4 class="info-text">Informacón adicional </h4>
+                                <div class="row">
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this option if you have a house.">
+                                                <input type="radio" name="type" value="House">
+                                                <div class="icon">
+                                                    <i class="fa fa-home"></i>
+                                                </div>
+                                                <h6>House</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this option if you have an appartment">
+                                                <input type="radio" name="type" value="Appartment">
+                                                <div class="icon">
+                                                    <i class="fa fa-building"></i>
+                                                </div>
+                                                <h6>Appartment</h6>
+                                            </div>
+                                        </div>
 
-te = String.fromCharCode(tecla);
-return patron.test(te);
-}
-</script>
-<!-- onkeypress="return validar(event)"-->
-<script>
-function validar2(e) {
-tecla = (document.all) ? e.keyCode : e.which;
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
-// dejar la línea de patron que se necesite y borrar el resto
-//patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números
-//patron = /\w/; // Acepta números y letras
-patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números
-//
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="tab-pane" id="facilities">
+                                <h4 class="info-text">Informacón adicional del usaurio. </h4>
+                                <div class="row">
+                                    <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                          <label>Direccón:</label>
+               <input type="text" class="form-control" name="direccion" id="exampleInputEmail1" placeholder="Where is your place located?">
 
-te = String.fromCharCode(tecla);
-return patron.test(te);
-}
-</script>
-<script>
-function validar3(e) {
-tecla = (document.all) ? e.keyCode : e.which;
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
-// dejar la línea de patron que se necesite y borrar el resto
-//patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-patron = /\d/; // Solo acepta números
-//patron = /\w/; // Acepta números y letras
-//patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números
-//
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                      <div class="form-group">
+                                          <label>Colonia:</label>
+                   <input type="text" class="form-control" name="colonia" id="exampleInputEmail1" placeholder="Where is your place located?">
 
-te = String.fromCharCode(tecla);
-return patron.test(te);
-}
-</script>
-<div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                     <div class="card">
-                    <div class="content">
-<div class="header">
-    <br>
- <h4 class="card-title">Agregar Usuarios</h4>
- <br>
+                                      </div>
+                                     </div>
+                                     <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                          <label>Codigo postal:</label>
+                    <input type="text" class="form-control" name="cp" id="exampleInputEmail1" placeholder="Where is your place located?">
 
+                                       </div>
+                                      </div>
+                                      <div class="col-sm-5">
+                                       <div class="form-group">
+                                          <label>Fecha de nacimiento</label>
+                     <input type="date" name="fecha_nac" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
 
-</div>
-
-<div class=" card content">
-
-<!-- CODIGO DE FORMULARIO-->
-<!--<div class="col-md-10"> -->
-
-<form class="form-horizontal"  action="agregar_usuario.php" method="post">
-
-
-<!--<div class="form-group">
-    <label  class="col-sm-2 control-label">Nombre del Evento</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control border-input"  placeholder="Lugar" name="titulo" required="true">
-    </div>
-  </div>
-
-
-
-  <!Actividades-->
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Correo</label>
-    <div class="col-sm-3">
-
-       <input type="email" name="usuario" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Contraseña</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="contraseña" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Roll</label>
-    <div class="col-sm-4">
- <select name="roll"  class="form-control border-input" required="true"  name="tipo_event" >
-            <option selected value="0">Seleccionar...</option>
-                <option value="2">Coordinador</option>
-                 <option value="3">Becario</option>
-                 <option value="4">Ingles</option>
-                 <option value="5">Administrador</option>
-                </select>
-
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Apellido P:</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="apellido_p" onkeypress="return validar(event)" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Apellido_m</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="apellido_m" onkeypress="return validar(event)" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Nombre:</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="nombre" onkeypress="return validar(event)" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Dirección:</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="direccion" onkeypress="return validar2(event)"  class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Colonia</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="colonia" onkeypress="return validar(event)" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Codigo Postal:</label>
-    <div class="col-sm-3">
-
-       <input type="number" name="cp" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Telefono:</label>
-    <div class="col-sm-3">
-
-       <input type="number" name="telefono" class="form-control border-input" min="0" required="true" autocomplete="off" minlength="7" maxlength="7" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Celular:</label>
-    <div class="col-sm-3">
-
-       <input type="number" name="celular" class="form-control border-input" min="0" required="true" autocomplete="off" minlength="10" maxlength="10" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Lugar de nacimiento:</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="lugar_nacimiento" onkeypress="return validar(event)" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-  <div class="form-group">
-    <label  class="col-sm-2 control-label">Fecha de nacimiento:</label>
-    <div class="col-sm-3">
-
-       <input type="date" name="fecha_nac" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación" min="1980-01-01" max="2008-12-31" >
-     </div>
-  </div>
-<!--fin div Actividades-->
-
-<!--Fecha de inicio-->
-<div class="form-group">
-    <label  class="col-sm-2 control-label">Sexo</label>
-    <div class="col-sm-3">
-
-       <input type="text" name="opsexo" class="form-control border-input" min="0" required="true" autocomplete="off" placeholder="calificación">
-     </div>
-  </div>
-<!--fin fecha inicio-->
-
-<!--Fecha fin
-<div class="form-group">
-    <label class="col-sm-2 control-label">Unidad</label>
-    <div class="col-sm-3">
-       <input type="date" name="fecha_fin" class="form-control border-input" required="true" autocomplete="off">
-     </div>
-  </div>
-<!--fin fecha fins-->
-
- <!--Actividades-->
+                                       </div>
+                                      </div>
 
 
+                                     <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                          <label>Telefono:</label>
+                 <input type="text" class="form-control" name="telefono" placeholder="Rent price per day">
 
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-5">
+                                      <div class="form-group">
+                                          <label>Celular:</label>
+           <input type="text" class="form-control"  name="celular" id="exampleInputEmail1" placeholder="Where is your place located?">
 
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-5 col-sm-offset-1">
+                                      <div class="form-group">
+                                          <label>Lugar de nac.:</label>
+   <select  name="lugar_nacimiento" class="form-control">
+                                           <option selected="" disabled="">-Estado donde naciste-</option>
+                                                <option value="Aguascalientes">Aguascalientes</option>
+                                                <option value="Baja California">Baja California</option>
+                                                <option value="Baja California Sur">Baja California Sur</option>
+                                                <option value="Campeche">Campeche</option>
+                                                <option value="Chiapas">Chiapas</option>
+                                                <option value="Chihuahua">Chihuahua</option>
+                                                <option value="Ciudad de Mexico">Ciudad de México</option>
+                                                <option value="Coahuila">Coahuila</option>
+                                                <option value="Colima">Colima</option>
+                                                <option value="Durango">Durango</option>
+                                                <option value="Guanajuato">Guanajuato</option>
+                                                <option value="Guerrero">Guerrero</option>
+                                                <option value="Hidalgo">Hidalgo</option>
+                                                <option value="Jalisco">Jalisco</option>
+                                                <option value="Mexico">México</option>
+                                                <option value="Michoacan">Michoacán</option>
+                                                <option value="Morelos">Morelos</option>
+                                                <option value="Nayarit">Nayarit</option>
+                                                <option value="Nuevo Leon">Nuevo León</option>
+                                                <option value="Oaxaca">Oaxaca</option>
+                                                <option value="Puebla">Puebla</option>
+                                                <option value="Queretaro">Querétaro</option>
+                                                <option value="Quintana Roo">Quintana Roo</option>
+                                                <option value="San Luis Potosi">San Luis Potosí</option>
+                                                <option value="Sinaloa">Sinaloa</option>
+                                                <option value="Sonora">Sonora</option>
+                                                <option value="Tabasco">Tabasco</option>
+                                                <option value="Tamaulipas">Tamaulipas</option>
+                                                <option value="Tlaxcala">Tlaxcala</option>
+                                                <option value="Veracruz">Veracruz</option>
+                                                 <option value="Yucatan">Yucatán</option>
+                                                <option value="Zacatecas">Zacatecas</option>
+                                           
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-5">
+                                      <div class="form-group">
+                                          <label>Sexo:</label>
+   <select  name="opsexo" class="form-control">
+                                            <option disabled="" selected="">- select -</option>
+                                            <option value="Hombre">Hombre</option>
+                                            <option value="Mujer">Mujer</option>
+                                           
+                                           
+                                          </select>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                           <!-- <div class="tab-pane" id="description">
+                                <div class="row">
+                                    <h4 class="info-text"> Drop us a small description. </h4>
+                                    <div class="col-sm-6 col-sm-offset-1">
+                                         <div class="form-group">
+                                            <label>Place description</label>
+                                            <textarea class="form-control" placeholder="" rows="9">
 
-                <div class="form-group">
-                     <div class="col-sm-offset-2 col-sm-10">
-                         <button type="submit" class="btn btn-info btn-fill btn-wd">Agregar usaurio</button>
-                         </div>
-                         </div>
-                        <br>
-                        <br>
-                </form>
+                                            </textarea>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                         <div class="form-group">
+                                            <label>Example</label>
+                                            <p class="description">"The place is really nice. We use it every sunday when we go fishing. It is so awesome."</p>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="wizard-footer">
+                                <div class="pull-right">
+                                    <input type='button' class='btn btn-next btn-fill btn-success btn-wd btn-sm' name='next' value='Next' />
+                                    <input  type="submit" type='button' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='finish' value='Finish' />
 
+                                </div>
+                                <div class="pull-left">
+                                    <input  type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />
+                                </div>
+                                <div class="clearfix"></div>
+                        </div>
 
-
-
-
-                    </div><!-- cierra el div content final -->
-                </div> <!-- cierra el div card -->
-            </div><!-- cierra el div col-md-12 -->
-          </div><!-- cierra el div row-->
-        </div> <!-- cierra el div container-fluid-->
-     </div><!-- cierra el div content-->
-
-</div>   <!-- cierra el div del panel -->
-
-
-
-
-
-
-
+                    </form>
+                </div>
+            </div> <!-- wizard container -->
+        </div>
+        </div> <!-- row -->
+    </div> <!--  big container -->
 
 
 
@@ -663,5 +665,11 @@ return patron.test(te);
 
     <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
+
+    <!-- WIZARDDDD -->
+    <script src="assets2/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+    <script src="assets2/js/gsdk-bootstrap-wizard.js"></script>
+    <script src="assets2/js/jquery.validate.min.js"></script>
+
 
 </html>

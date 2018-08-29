@@ -331,7 +331,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                       <h4 class="card-title"><?php echo $_SESSION['nombre'];?><br />
                                          <a href="#"><small>@gmail.com</small></a>
                                       </h4>
-                                        <form action="guardar_foto_ingles.php" method="post" enctype="multipart/form-data">
+                                        <form action="guardar_foto_ingles.php" method="post" enctype="multipart/form-data"> 
                                       <input name="foto" class="form-control border-input"  type="file" required accept="image/gif, image/jpeg, image/png"> </input> </br>
                                       <button name="boton_foto" type="submit" class="btn btn-info btn-fill btn-wd ">Guardar</button>
                                       </form>
