@@ -3,7 +3,7 @@
  include 'fuctions.php';
  verificar_sesion();
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -13,7 +13,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -45,14 +45,14 @@ echo "¡ No se ha encontrado ningún registro !";
 
     <title>Team Interface</title>
 
-  
+
     <!-- Canonical SEO -->
     <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    
+
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -148,7 +148,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </p>
                         </a>
                     </li>
-                
+
 
                               <li>
                         <a data-toggle="collapse" href="#tablesExamples">
@@ -185,7 +185,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             <i class="ti-clipboard" ></i>
 
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -206,18 +206,18 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </a>
                                 </li>
 
-                              
+
 
                             </ul>
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -246,7 +246,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -274,7 +274,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -285,23 +285,23 @@ echo "¡ No se ha encontrado ningún registro !";
             </nav>
 
 
-           
+
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3 col-sm-6">
-                            
+
                         </div>
-                      
-                      
-                      
+
+
+
                     </div>
 
                        <!--<p> hoola</p>
                        <iframe src="assets/manual/manual.pdf"></iframe>-->
-                   
+
                  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-         
+
 
 
         <script type="text/javascript">
@@ -313,7 +313,7 @@ Highcharts.chart('container', {
     },
     title: { <?php $fecha_actual=date("d/m/Y");?>
         text: 'Asistencias . <?php echo date("Y-m-d");?>'
-    }, 
+    },
     subtitle: {
         text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
     },
@@ -349,86 +349,86 @@ Highcharts.chart('container', {
             "name": "Browsers",
             "colorByPoint": true,
             "data": [
-                           <?php 
-            
+                           <?php
+
             include 'conexion.php';
             /*$consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
                                 b.BEC_ID_USUARIO, b.ID_BECARIO FROM usuarios u, becario b
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO";
 
             $consulta2 = "SELECT a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO,
-                                 b.ID_BECARIO,b.BEC_ID_USUARIO from asistencia a, becario b 
+                                 b.ID_BECARIO,b.BEC_ID_USUARIO from asistencia a, becario b
                                  where a.ASI_ID_BECARIO = b.ID_BECARIO"; */
              $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
 b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO and a.ASI_ID_BECARIO=b.ID_BECARIO";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            //$ejecutar2 = mysqli_query($conn, $consulta2); 
+
+            $ejecutar = mysqli_query($conn, $consulta);
+            //$ejecutar2 = mysqli_query($conn, $consulta2);
             $i = 0;
             $fecha_actual=date("d/m/Y");
-            while($row=mysqli_fetch_array($ejecutar)){ 
-                    
-                
-          $var_nombre     =     $row['USU_NOMBRE'];  
+            while($row=mysqli_fetch_array($ejecutar)){
+
+
+          $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
-         
+
           $var_idbec       =     $row['ID_BECARIO'];
-        
+
           $var_id         =     $row['ID_USUARIO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
                 {
                     "name": "<?php echo $var_nombre ?>",
                     "y": <?php echo $row['ASI_ASISTENCIA']; ?> ,
                     "drilldown": "Chrome"
-                }, 
+                },
               <?php }     ?>
             ]
         }
     ],
     "drilldown": {
         "series": [
-        <?php 
-            
+        <?php
+
             include 'conexion.php';
             /*$consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
                                 b.BEC_ID_USUARIO, b.ID_BECARIO FROM usuarios u, becario b
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO";
 
             $consulta2 = "SELECT a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO,
-                                 b.ID_BECARIO,b.BEC_ID_USUARIO from asistencia a, becario b 
+                                 b.ID_BECARIO,b.BEC_ID_USUARIO from asistencia a, becario b
                                  where a.ASI_ID_BECARIO = b.ID_BECARIO"; */
              $consulta2 = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
 b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO and a.ASI_ID_BECARIO=b.ID_BECARIO";
-            
-            $ejecutar = mysqli_query($conn, $consulta2); 
-            //$ejecutar2 = mysqli_query($conn, $consulta2); 
+
+            $ejecutar = mysqli_query($conn, $consulta2);
+            //$ejecutar2 = mysqli_query($conn, $consulta2);
             $i = 0;
             $fecha_actual=date("d/m/Y");
-            while($row2=mysqli_fetch_array($ejecutar)){ 
-                    
-                
-          $var_nombre     =     $row2['USU_NOMBRE'];  
+            while($row2=mysqli_fetch_array($ejecutar)){
+
+
+          $var_nombre     =     $row2['USU_NOMBRE'];
           $var_apellidop  =     $row2['USU_APELLIDO_PATERNO'];
-         
+
           $var_idbec       =     $row2['ID_BECARIO'];
-        
+
           $var_id         =     $row2['ID_USUARIO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
 
             {
@@ -439,7 +439,7 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
                         "<?php echo $row2['ASI_FECHA']; ?>",
                         0.1
                     ],
-                     
+
                 ]
 
             },
@@ -451,7 +451,7 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
 
 
         </script>
- 
+
 
  <!--<div id="container" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 
@@ -532,33 +532,33 @@ Highcharts.chart('container', {
             "name": "Browsers",
             "colorByPoint": true,
             "data": [
-                    <?php 
-            
+                    <?php
+
             include 'conexion.php';
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
                                 b.BEC_ID_USUARIO, b.ID_BECARIO FROM usuarios u, becario b
                                 WHERE
-                                
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
             $fecha_actual=date("d/m/Y");
-            while($row=mysqli_fetch_array($ejecutar)){         
-                
-          $var_nombre     =     $row['USU_NOMBRE'];  
+            while($row=mysqli_fetch_array($ejecutar)){
+
+          $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
-         
+
           $var_idbec       =     $row['ID_BECARIO'];
-        
+
           $var_id         =     $row['ID_USUARIO'];
 
-                $i++;   
-            
+                $i++;
+
         ?>
                 {
-            
+
                     "name": '<?php echo $row['USU_NOMBRE']; ?>',
                     "y": <?php echo $row['ID_USUARIO']; ?>  ,
                     "drilldown": "Chrome"
@@ -821,7 +821,7 @@ Highcharts.chart('container', {
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>

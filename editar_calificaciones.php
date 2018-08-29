@@ -3,7 +3,7 @@
  include 'fuctions.php';
  verificar_sesion();
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -13,7 +13,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -136,7 +136,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>
 
-                
+
 
                         <li class="active">
                         <a data-toggle="collapse" href="#tablesExamples">
@@ -176,7 +176,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         <a data-toggle="collapse" href="#formsExamples">
                             <i class="ti-clipboard"></i>
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -202,12 +202,12 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -236,7 +236,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -264,7 +264,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -274,7 +274,7 @@ echo "¡ No se ha encontrado ningún registro !";
                 </div>
             </nav>
 
-                             
+
 
 
 
@@ -295,7 +295,7 @@ echo "¡ No se ha encontrado ningún registro !";
             <div class="row">
                 <div class="col-md-12">
                      <div class="card">
-                    <div class="content">             
+                    <div class="content">
 <div class="header">
     <br>
  <h4 class="card-title">Editar calificaciones</h4>
@@ -303,39 +303,39 @@ echo "¡ No se ha encontrado ningún registro !";
 </div>
 
 <div class=" card content">
-         
+
 <!-- CODIGO DE FORMULARIO-->
 <!--<div class="col-md-10"> -->
 
 
 
 
-<?php 
+<?php
 include 'conexion.php';
         if(isset($_GET['editar'])){
-            
-            $editar_id = $_GET['editar']; 
-            
+
+            $editar_id = $_GET['editar'];
+
             $consulta = "SELECT * FROM calificaciones WHERE ID_CALIFICACIONES='$editar_id'";
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
-            $fila=mysqli_fetch_array($ejecutar); 
-            
-          
+            $ejecutar = mysqli_query($conn, $consulta);
+
+            $fila=mysqli_fetch_array($ejecutar);
+
+
 
 
                 //$id_c          = $fila['ID_CALIFICACIONES'];
                 $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION']; 
-                $unidad        = $fila['CAL_UNIDAD']; 
+                $calificacion  = $fila['CAL_CALIFICACION'];
+                $unidad        = $fila['CAL_UNIDAD'];
                 $promedio      = $fila['CAL_PROMEDIO'];
                 $id            = $fila['CAL_ID_BECARIO'];
-            
+
             }
 ?>
 
 <form class="form-horizontal"  action="" method="post">
- 
+
 
 <!--<div class="form-group">
     <label  class="col-sm-2 control-label">Nombre del Evento</label>
@@ -343,7 +343,7 @@ include 'conexion.php';
       <input type="text" class="form-control border-input"  placeholder="Lugar" name="titulo" required="true">
     </div>
   </div>
- 
+
 
   <!--Actividades                         value="<?php echo $nivel ;?>"-->
   <div class="form-group">
@@ -413,7 +413,7 @@ include 'conexion.php';
   </div>
 
 
- 
+
 
                 <div class="form-group">
                      <div class="col-sm-offset-2 col-sm-10">
@@ -422,35 +422,35 @@ include 'conexion.php';
                          </div>
                         <br>
                         <br>
-                </form>      
+                </form>
 
-<?php 
+<?php
 include 'conexion.php';
     if(isset($_POST['actualizar'])){
-    
-      
+
+
 
 
                 $var_nivel         = $_POST['nivel'];
-                $var_calificacion  = $_POST['calificacion']; 
-                $var_unidad        = $_POST['unidad']; 
+                $var_calificacion  = $_POST['calificacion'];
+                $var_unidad        = $_POST['unidad'];
                 $var_promedio      = $_POST['promedio'];
                // $var_id            = $_POST['id_foranea2'];
 
 
-        
+
         $actualizar = "UPDATE calificaciones SET CAL_NIVEL_INGLES='$var_nivel', CAL_CALIFICACION='$var_calificacion', CAL_UNIDAD='$var_unidad',CAL_PROMEDIO='$var_promedio'  WHERE  ID_CALIFICACIONES='$editar_id'";
-        
+
         $ejecutar = mysqli_query($conn, $actualizar);
-    
+
         if($ejecutar){
-        
+
         echo "<script>alert('Datos actualizados!')</script>";
         echo "<script>window.open('calificaciones.php','_self')</script>";
         }
     }
-    
-    ?> 
+
+    ?>
 
 
 
@@ -460,10 +460,10 @@ include 'conexion.php';
           </div><!-- cierra el div row-->
         </div> <!-- cierra el div container-fluid-->
      </div><!-- cierra el div content-->
-      
+
 </div>   <!-- cierra el div del panel -->
 
-  
+
 
 
 
@@ -516,7 +516,7 @@ include 'conexion.php';
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>

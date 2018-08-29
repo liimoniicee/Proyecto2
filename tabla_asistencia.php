@@ -273,7 +273,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -341,7 +341,7 @@ return patron.test(te);
 
                                                    <th>Nombre</th>
                                                 <th>Apellido P.</th>
-
+    <th>Porcentaje A.</th>
 
 
                                                 <th class="disabled-sorting">Actions</th>
@@ -356,7 +356,8 @@ return patron.test(te);
 
                                                    <th>Nombre</th>
                                                 <th>Apellido P.</th>
-                                            >
+                                                <th>Porcentaje A.</th>
+
                                             </tr>
                                         </tfoot>
 
@@ -364,8 +365,9 @@ return patron.test(te);
                                         <?php
 
             include 'conexion.php';
+
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
-b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
+b.BEC_ID_USUARIO, b.ID_BECARIO,a.ID_ASISTENCIA,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
                                 WHERE
 
                                 b.BEC_ID_USUARIO = u.ID_USUARIO and a.ASI_ID_BECARIO=b.ID_BECARIO";
@@ -375,6 +377,7 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
             $i = 0;
 
             while($fila=mysqli_fetch_array($ejecutar)){
+              $id_a            =$fila['ID_ASISTENCIA'];
                 $id_c          = $fila['ASI_ID_BECARIO'];
                 $asistencia         = $fila['ASI_ASISTENCIA'];
                 $fecha  = $fila['ASI_FECHA'];
@@ -383,6 +386,18 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
 
 
                 $i++;
+                $consu=  "SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario='$id_c'";
+                $ejecutar3 = mysqli_query($conn, $consu);
+
+                $i = 0;
+
+                while($fila=mysqli_fetch_array($ejecutar3)){
+
+                    $porcentaje  = $fila['total'];
+
+
+                    $i++;
+      }
 
         ?>
 
@@ -397,15 +412,16 @@ b.BEC_ID_USUARIO, b.ID_BECARIO,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FRO
                                                 <td><?php echo $fecha; ?></td>
                                                 <td><?php echo $nombre_b; ?></td>
                                                 <td><?php echo $apellido_b; ?></td>
+                                                <td><?php echo $porcentaje; ?>%</td>
                                             <!--SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario=1-->
                                                 <td>
                                                     <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
                                                     <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
                                                     <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
-                                                    <a href="asistencia.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>
+                                                  <!--  <a href="asistencia.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>-->
 
-                                                    <!---<button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
-                                                    <button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+                                                    <button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
+                                                    <!--<button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
 
                                                 </t >
 

@@ -12,7 +12,7 @@ if($var_tipo != 4) {
    echo "<script>window.open('index.html','_self')</script>";
  }
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -22,7 +22,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -178,7 +178,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </a>
                                 </li>
 
-                            
+
                             </ul>
                         </div>
                     </li>
@@ -188,7 +188,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         <a data-toggle="collapse" href="#formsExamples">
                             <i class="ti-clipboard"></i>
                             <p>
-                                Asistencia 
+                                Asistencia
                                <b class="caret"></b>
                             </p>
                         </a>
@@ -203,18 +203,18 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </a>
                                 </li>
 
-                            
+
 
                             </ul>
                         </div>
                     </li>
                     <li>
-                      
+
                         <div class="collapse" id="mapsExamples">
                             <ul class="nav">
-                          
+
                                 <li>
-                               
+
                                 </li>
                             </ul>
                         </div>
@@ -243,7 +243,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -271,7 +271,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -281,7 +281,7 @@ echo "¡ No se ha encontrado ningún registro !";
                 </div>
             </nav>
 
-                             
+
 
 
 
@@ -302,7 +302,7 @@ echo "¡ No se ha encontrado ningún registro !";
             <div class="row">
                 <div class="col-md-12">
                      <div class="card">
-                    <div class="content">             
+                    <div class="content">
    <div class="card-header">
    <h4 class="card-title">Asignar calificacones</h4>
   </div>
@@ -314,7 +314,7 @@ echo "¡ No se ha encontrado ningún registro !";
 <!--<div class="col-md-10"> -->
 <!--Metodo POST para agregar la calificación de cada input -->
 <form class="form-horizontal"  action="registrar_calificacion.php" method="post">
- 
+
 
 <!--<div class="form-group">
     <label  class="col-sm-2 control-label">Nombre del Evento</label>
@@ -322,7 +322,7 @@ echo "¡ No se ha encontrado ningún registro !";
       <input type="text" class="form-control border-input"  placeholder="Lugar" name="titulo" required="true">
     </div>
   </div>
- 
+
 
   <!--Actividades-->
   <div class="form-group">
@@ -393,7 +393,7 @@ echo "¡ No se ha encontrado ningún registro !";
   </div>
 
 
- 
+
 
                 <div class="form-group">
                      <div class="col-sm-offset-2 col-sm-10">
@@ -403,7 +403,7 @@ echo "¡ No se ha encontrado ningún registro !";
                          </div>
                         <br>
                         <br>
-                </form>      
+                </form>
 
 
 
@@ -436,13 +436,13 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <th>Nombre</th>
                                                 <th>Apellido P.</th>
                                                 <th>Apellido M.</th>
-                                              
-                                                
+
+
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                               
+
                                             </tr>
                                         </tfoot>
                                         <?php
@@ -453,24 +453,24 @@ echo "¡ No se ha encontrado ningún registro !";
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO,u.USU_APELLIDO_MATERNO, u.ID_USUARIO,
                                 b.BEC_ID_USUARIO, b.ID_BECARIO
                                  FROM usuarios u, becario b
-                              
+
                                 WHERE
-              
+
                                 b.BEC_ID_USUARIO = u.ID_USUARIO ";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
             $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
+
+            while($fila=mysqli_fetch_array($ejecutar)){
                 $id_c          = $fila['ID_BECARIO'];
                 $nombre_b         = $fila['USU_NOMBRE'];
-                $ape_p  = $fila['USU_APELLIDO_PATERNO']; 
+                $ape_p  = $fila['USU_APELLIDO_PATERNO'];
                 $ape_m        = $fila['USU_APELLIDO_MATERNO'];
-              
-                           
 
-                $i++;   
+
+
+                $i++;
             ?>
                                         <tbody>
                                             <tr>
@@ -479,9 +479,9 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <td><?php echo $nombre_b; ?></td>
                                                 <td><?php echo $ape_p; ?></td>
                                                  <td><?php echo $ape_m; ?></td>
-                                             
+
                                             </tr>
-                                        
+
                                            </tbody> <?php }?>
                                         </table>
                                     </div>
@@ -498,10 +498,10 @@ echo "¡ No se ha encontrado ningún registro !";
 
         </div> <!-- cierra el div container-fluid-->
      </div><!-- cierra el div content-->
-      
+
 </div>   <!-- cierra el div del panel -->
 
-  
+
 
 
 
@@ -554,7 +554,7 @@ echo "¡ No se ha encontrado ningún registro !";
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>
@@ -622,5 +622,5 @@ echo "¡ No se ha encontrado ningún registro !";
 
     <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
-    
+
 </html>

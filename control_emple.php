@@ -35,7 +35,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
-  
+
   <script language="javascript" src="javascript/reloj_actual.js" ></script>
 
 </head>
@@ -129,7 +129,7 @@
                         </li>
                         <li>
                             <a href="destroy.php">
-                                <i class="ti-settings"></i>
+                                <i class="ti-share-alt"></i>
                                 <p>Logout</p>
                             </a>
                         </li>
@@ -156,10 +156,10 @@
 
 
 <div class="content table-responsive table-full-width">
-         
+
 
 <!-- CODIGO DE FORMULARIO-->
-<!--<div class="col-md-10"> --> 
+<!--<div class="col-md-10"> -->
 <div class="">
     <div class="form-group">
         <label>Numero de empleado:</label>
@@ -190,7 +190,7 @@
 
 
 <!--<input type="file" name="curriculum" />-->
-                            
+
 
 
                              </div>
@@ -258,6 +258,5 @@
 
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
- 
-</html>
 
+</html>

@@ -259,7 +259,7 @@ if($var_tipo != 5) {
 												</li>
 												<li>
 														<a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
-															 <i class="ti-settings" ></i>
+															 <i class="ti-share-alt" ></i>
 														<p>logout</p>
 
 														<!--onclick="demo.showSwal('warning-message-and-confirmation')"-->

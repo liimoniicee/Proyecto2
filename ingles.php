@@ -9,7 +9,7 @@ include 'fuctions.php';
 include 'conexion.php';
 verificar_sesion();
 //if (isset($_SESSION['usuario'])){
-   
+
  //if($_SESSION['USU_NOMBRE']['$tipo'] !=4 ){
 //header("Location: index.html");
 
@@ -18,7 +18,7 @@ verificar_sesion();
    //}else {
   //  header('Location: index.html');
 //}
-  
+
 //variables
 $var_name=$_SESSION['nombre'];
 $var_clave= $_SESSION['clave'];
@@ -285,13 +285,13 @@ echo "¡ No se ha encontrado ningún registro !";
                                 </a>
                                 <ul class="dropdown-menu">
                                      <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                    
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                   <i class="ti-settings"></i>
+                                   <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -341,7 +341,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                 <hr>
 
                             </div>
-                           
+
                         </div>
 
 

@@ -16,10 +16,10 @@
 
     <!-- Canonical SEO -->
     <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
- 
+
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-    
+
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -225,7 +225,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -253,7 +253,7 @@
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
                                         Settings
                                     </p>
@@ -274,7 +274,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                      <div class="card">
-                         <div class="content">             
+                         <div class="content">
                             <div class=" card content">
 
 
@@ -291,10 +291,10 @@
 </div>
 </br>
 </br>
-                                
+
 
                                     <form method="post" action="repo_pdfasp.php">
-                                       
+
                                         <div class="col-md-12 col-md-offset-1">
                                             <div class="col-md-3 ">
                                                 <div class="form-group">
@@ -747,7 +747,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
+
                                     <div class="col-md-12 col-md-offset-1">
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -862,7 +862,7 @@
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>

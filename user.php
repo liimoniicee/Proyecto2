@@ -48,13 +48,11 @@ while($row = $res->fetch_assoc()){
 
 //consulta para rellenar los campos del equipo
 
-$consu_team = "SELECT U.USU_NOMBRE
+$consu_team = "SELECT U.USU_NOMBRE, u.USU_IMG_PERFIL, E.EQU_NOMBRE_EQUIPO
 FROM
-usuarios U, equipos E, becario B
+usuarios U, equipos E
 WHERE
-E.EQU_NOMBRE_EQUIPO = '$team'
-AND
-B.BEC_ID_USUARIO = U.ID_USUARIO;";
+U.EQU_ID_BECARIO = E.ID_EQUIPOS";
 
 $res_team = $conn->query($consu_team);
 
@@ -304,7 +302,7 @@ if($resultado->num_rows > 0){
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
 
                                 <p>logout</p>
@@ -334,7 +332,7 @@ if($resultado->num_rows > 0){
                                 <div class="author">
                                   <img class="avatar border-white" src="<?php echo $img ?>" alt="..."/>
                                   <h4 class="title"><?php echo $var_name ?><br />
-                                     <a href="#"><small>@CORREO</small></a>
+                                     <a href="#"><small><?php echo $usu ?></small></a>
                                   </h4>
 
 
@@ -367,7 +365,7 @@ if($resultado->num_rows > 0){
                                                 <div class='row'>
                                                     <div class='col-xs-3'>
                                                         <div class='avatar'>
-                                                            <img src='assets/img/faces/face-0.jpg' alt='Circle Image' class='img-circle img-no-padding img-responsive'>
+                                                            <img src=".$row["USU_IMG_PERFIL"]." alt='Circle Image' class='img-circle img-no-padding img-responsive'>
                                                         </div>
                                                     </div>
                                                     <div class='col-xs-6'>

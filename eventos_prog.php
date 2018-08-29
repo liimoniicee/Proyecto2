@@ -17,7 +17,7 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
 
-    
+
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -222,7 +222,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
 
-    
+
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -250,7 +250,7 @@
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-share-alt"></i>
                                     <p class="hidden-md hidden-lg">
                                         Settings
                                     </p>
@@ -271,10 +271,10 @@
             <div class="row">
                 <div class="col-md-12">
                      <div class="card">
-                         <div class="content">             
+                         <div class="content">
                             <div class=" card content">
 
-                                    
+
                                 <div class="card-header">
 
                                     <h4 class="card-title">Eventos Programados</h4>
@@ -290,22 +290,22 @@
 
                                              <?php
 
-        
+
                    include 'conexion.php';
 
                    $sql = " SELECT
                    ID_ACTIVIDAD,
-                   ACT_TITULO_ACTVI, 
+                   ACT_TITULO_ACTVI,
                    ACT_TIPO_ACTIVIDAD ,
                    ACT_FECHA_INICIO ,
                    ACT_FECHA_TERMINO ,
-                   ACT_LUGAR ,  
-                   ACT_DESCRIPCION 
-                   FROM 
+                   ACT_LUGAR ,
+                   ACT_DESCRIPCION
+                   FROM
                    actividades ";
 
 
- ?>                            
+ ?>
                                             <tr>
                                             <th data-field="id"        class="text-center"    >Id                </th>
                                             <th data-field="titulo"    class="text-center"    >Titulo            </th>
@@ -315,7 +315,7 @@
                                             <th data-field="lugar"     class="text-center"    >Lugar             </th>
                                             <th data-field="descrip"   class="text-center"    >Descripción       </th>
                                             <th class="text-right"     class="text-center"    >Actions           </th>
-                                           
+
 
 
 
@@ -342,20 +342,20 @@
                                              <?php $id_b=$row['ID_ACTIVIDAD'];  ?>
 
                                                 <td class="td-actions text-right">
-                                                          
+
                                                           <button onclick="alerta(<?php echo $id_b ?>), enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
                                                          <!-- <button onclick="borrar(<?php echo $id_b ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
 
                                                 </td>
-                                            </tr> 
+                                            </tr>
 
 
                                              <?php  }
 
                                             }   else {
-                                   
+
                                                      }
-                                           ?>        
+                                           ?>
                                         </tbody>
                                     </table>
 
@@ -442,7 +442,7 @@
     </div>
 
     <div class="fixed-plugin">
-       
+
     </div>
 
 </body>
@@ -512,7 +512,7 @@
 
 
 
-   
+
 
     <script type="text/javascript">
 
@@ -699,53 +699,53 @@ function enviarmod(id){
 </script>
 
 
-<script> 
-function validar(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /[\w\s]/; // Acepta números y letras 
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\d/; // Solo acepta números
+//patron = /[\w\s]/; // Acepta números y letras
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
 </script>
 <!-- onkeypress="return validar(event)"-->
-<script> 
-function validar2(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+<script>
+function validar2(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-//patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+//patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
-<script> 
-function validar3(e) { 
-tecla = (document.all) ? e.keyCode : e.which; 
-if (tecla==8) return true; //Tecla de retroceso (para poder borrar) 
-// dejar la línea de patron que se necesite y borrar el resto 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
+<script>
+function validar3(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+// dejar la línea de patron que se necesite y borrar el resto
 //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-patron = /\d/; // Solo acepta números 
-//patron = /\w/; // Acepta números y letras 
+patron = /\d/; // Solo acepta números
+//patron = /\w/; // Acepta números y letras
 //patron = /[\w\s]/;// Acepta números y letras y espacio
-//patron = /\D/; // No acepta números 
-// 
+//patron = /\D/; // No acepta números
+//
 
-te = String.fromCharCode(tecla); 
-return patron.test(te); 
-} 
-</script> 
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+</script>
 
 </html>

@@ -128,7 +128,7 @@
                         </li>
                         <li>
                             <a href="destroy.php">
-                                <i class="ti-settings"></i>
+                                <i class="ti-share-alt"></i>
                                 <p>Logout</p>
                             </a>
                         </li>

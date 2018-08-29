@@ -67,8 +67,8 @@ else
 {
 
 
-$sql = "INSERT INTO usuarios (usu_usuario, usu_contra,usu_roll,usu_apellido_paterno,usu_apellido_materno,usu_nombre,usu_direccion,usu_colonia,usu_codigo_postal,usu_telefono,usu_celular,usu_lugar_nacimiento,usu_fecha_nac,usu_sexo,EQU_ID_BECARIO)
-VALUES ('$var_usuario' , '$pass_encriptada', '1' , '$var_apellidop' , '$var_apellidom' ,'$var_nombre','$var_direccion','$var_colonia','$var_cp','$var_telefono','$var_celular','$var_lugar_nacimiento','$var_fecha_nac','$var_opsexo','0')";
+$sql = "INSERT INTO usuarios (usu_usuario, usu_contra,usu_roll,usu_apellido_paterno,usu_apellido_materno,usu_nombre,usu_direccion,usu_colonia,usu_codigo_postal,USU_IMG_PERFIL,usu_telefono,usu_celular,usu_lugar_nacimiento,usu_fecha_nac,usu_sexo,EQU_ID_BECARIO)
+VALUES ('$var_usuario' , '$pass_encriptada', '1' , '$var_apellidop' , '$var_apellidom' ,'$var_nombre','$var_direccion','$var_colonia','$var_cp','assets/img/perfil.png','$var_telefono','$var_celular','$var_lugar_nacimiento','$var_fecha_nac','$var_opsexo','0')";
 
 
 

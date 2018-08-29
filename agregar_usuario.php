@@ -52,22 +52,22 @@ echo "Sexo:".$var_opsexo = $_POST['opsexo'];
 echo "<br>";
 
 
-$validar="SELECT USU_USUARIO FROM usuarios WHERE USU_USUARIO='$var_usuario' "; 
+$validar="SELECT USU_USUARIO FROM usuarios WHERE USU_USUARIO='$var_usuario' ";
 //if(mysqli_num_rows($nuevo_usuario)>0)
 $resultado = $conn->query($validar);
-if ($resultado->num_rows > 0){  
-  
+if ($resultado->num_rows > 0){
+
     echo "<script>alert('*ERROR* Ya existe ese usuario, intenta con otro!')</script>";
     echo "<script>window.open('registro.html','_self')</script>";
-    
-} 
-// ------------ Si no esta registrado el usuario continua el script 
-else 
-{ 
+
+}
+// ------------ Si no esta registrado el usuario continua el script
+else
+{
 
 
-$sql = "INSERT INTO usuarios (usu_usuario, usu_contra,usu_roll,usu_apellido_paterno,usu_apellido_materno,usu_nombre,usu_direccion,usu_colonia,usu_codigo_postal,usu_telefono,usu_celular,usu_lugar_nacimiento,usu_fecha_nac,usu_sexo)
-VALUES ('$var_usuario' , '$var_contraseña', '$var_roll' , '$var_apellidop' , '$var_apellidom' ,'$var_nombre','$var_direccion','$var_colonia','$var_cp','$var_telefono','$var_celular','$var_lugar_nacimiento','$var_fecha_nac','$var_opsexo')";
+$sql = "INSERT INTO usuarios (usu_usuario, usu_contra,usu_roll,usu_apellido_paterno,usu_apellido_materno,usu_nombre,usu_direccion,usu_colonia,usu_codigo_postal,usu_img_perfil,usu_telefono,usu_celular,usu_lugar_nacimiento,usu_fecha_nac,usu_sexo,equ_id_becario)
+VALUES ('$var_usuario' , '$var_contraseña', '$var_roll' , '$var_apellidop' , '$var_apellidom' ,'$var_nombre','$var_direccion','$var_colonia','$var_cp','assets/img/user.PNG','$var_telefono','$var_celular','$var_lugar_nacimiento','$var_fecha_nac','$var_opsexo','0')";
 
 $sql2 = "INSERT INTO empleados (emp_status, emp_id_usuario)
 VALUES ('Activo' , '$var_usuario')";
@@ -82,7 +82,7 @@ if ($conn->query($sql) === TRUE) {
 
         echo "<script>alert('Se a guardado el registro correctamente!')</script>";
         echo "<script>window.open('mostrar_empleados.php','_self')</script>";
-        
+
 
 } else {
       echo "<script>alert('No se pudo guardar correctamente, intentelo de nuevo!')</script>";
@@ -99,7 +99,7 @@ if ($conn->query($sql2) === TRUE) {
 
        // echo "<script>alert('Se a guardado el registro correctamente!')</script>";
         //echo "<script>window.open('mostrar_empleados.php','_self')</script>";
-        
+
 
 } else {
      // echo "<script>alert('No se pudo guardar correctamente, intentelo de nuevo!')</script>";
@@ -112,8 +112,3 @@ $conn->close();
 }
 
 ?>
-
-
-
-
-

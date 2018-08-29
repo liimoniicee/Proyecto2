@@ -259,13 +259,13 @@ echo "¡ No se ha encontrado ningún registro !";
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                 
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
-                                   <i class="ti-settings" ></i>
+                                   <i class="ti-share-alt" ></i>
                                 <p>logout</p>
 
                                 <!--onclick="demo.showSwal('warning-message-and-confirmation')"-->
@@ -357,7 +357,7 @@ if ($resultado->num_rows > 0) {
         }
 
     }   else {
-        //Mande mesnaje si no existe ningun dato 
+        //Mande mesnaje si no existe ningun dato
 echo "¡ No se ha encontrado ningún registro !";
 }
 
