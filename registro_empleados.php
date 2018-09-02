@@ -3,6 +3,16 @@
  session_start();
  include 'fuctions.php';
  verificar_sesion();
+ //variables
+ $var_name=$_SESSION['nombre'];
+ $var_clave= $_SESSION['clave'];
+ $var_tipo = $_SESSION['tipo'];
+
+ if($var_tipo != 5) {
+  //echo "<script>alert('No tienes acceso a esta página!')</script>";
+    //echo "<script>window.open('index.html','_self')</script>";
+    header("Location: error509.html");
+  }
 ?>
 
 
@@ -369,7 +379,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                             <option value="3">3 Becario</option>
                                             <option value="4">4 Ingles</option>
                                             <option value="5">5 Administrador</option>
-                                           
+
                                           </select>
                                       </div>
                                   </div>
@@ -395,7 +405,7 @@ echo "¡ No se ha encontrado ningún registro !";
 
                                       </div>
                                   </div>
-                              
+
                               </div>
                             </div>
                           <!--  <div class="tab-pane" id="type">
@@ -508,7 +518,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <option value="Veracruz">Veracruz</option>
                                                  <option value="Yucatan">Yucatán</option>
                                                 <option value="Zacatecas">Zacatecas</option>
-                                           
+
                                           </select>
                                       </div>
                                   </div>
@@ -519,8 +529,8 @@ echo "¡ No se ha encontrado ningún registro !";
                                             <option disabled="" selected="">- select -</option>
                                             <option value="Hombre">Hombre</option>
                                             <option value="Mujer">Mujer</option>
-                                           
-                                           
+
+
                                           </select>
                                       </div>
                                   </div>

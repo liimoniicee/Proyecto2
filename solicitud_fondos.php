@@ -5,6 +5,16 @@
  include 'fuctions.php';
  include 'conexion.php';
  verificar_sesion();
+ //variables
+ $var_name=$_SESSION['nombre'];
+ $var_clave= $_SESSION['clave'];
+ $var_tipo = $_SESSION['tipo'];
+
+ if($var_tipo != 3) {
+  //echo "<script>alert('No tienes acceso a esta página!')</script>";
+    //echo "<script>window.open('index.html','_self')</script>";
+    header("Location: error509.html");
+  }
 
  $ahora = time(); //obtenemos la fecha actual a partir de la función time().
  $formateado= date('Y-m-d', $ahora) ; // obtenemos la cadena en el formato YYYY-MM-DD

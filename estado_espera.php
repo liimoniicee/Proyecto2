@@ -3,8 +3,18 @@
  session_start();
  include 'fuctions.php';
  verificar_sesion();
+ //variables
+ $var_name=$_SESSION['nombre'];
+ $var_clave= $_SESSION['clave'];
+ $var_tipo = $_SESSION['tipo'];
+
+ if($var_tipo != 1) {
+  //echo "<script>alert('No tienes acceso a esta página!')</script>";
+    //echo "<script>window.open('index.html','_self')</script>";
+    header("Location: error509.html");
+  }
 ?>
-<?php    
+<?php
 
 include 'conexion.php';
 
@@ -14,7 +24,7 @@ include 'conexion.php';
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
           $var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
@@ -90,12 +100,12 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                         
+
                                  <span>
                                 <?php echo $_SESSION['nombre'];?>
                                 <b class="caret"></b>
                             </span>
-                          
+
                         </a>
                         <div class="clearfix"></div>
 
@@ -107,7 +117,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                         <span class="sidebar-normal">Configuración de cuenta</span>
                                     </a>
                                 </li>
-                             
+
                                 <li>
                                     <a href="destroy.php">
                                         <span class="sidebar-mini">L</span>
@@ -122,7 +132,7 @@ echo "¡ No se ha encontrado ningún registro !";
                  <li class="active">
                         <a data-toggle="collapse" href="#tablesExamples">
                             <i class="ti-agenda" ></i>
-                            
+
                             <p>
                                 Solicitar beca
                                <b class="caret"></b>
@@ -191,15 +201,15 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
 
-                   
-               
-                 
-              
+
+
+
+
                     <li>
-                      
+
                         <div class="collapse" id="pagesExamples">
                             <ul class="nav">
-                      
+
                             </ul>
                         </div>
                     </li>
@@ -223,7 +233,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         <a class="navbar-brand" href="#wizard">Aspirantes</a>
                     </div>
                     <div class="collapse navbar-collapse">
-                       
+
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
@@ -244,7 +254,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
-                                
+
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
@@ -252,7 +262,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                 <a href="destroy.php" class="btn-rotate">
                                     <i class="ti-settings"></i>
                                     <p class="hidden-md hidden-lg">
-                                     
+
                                 <p>logout</p>
                                     </p>
                                 </a>
@@ -284,33 +294,33 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <div class="timeline-body">
                                                     <p>*Requisitos: Comprobar necesidad económica, tener promedio mayor a 9.0 en la preparatoria, asistir diariamente a clases de inglés, cumplir con servicio comunitario, no tener otros compromisos. </p>
                                                 </div>
-                                                  
+
                                                 <h6  href="http://gspcabo.com/?page_id=16">
-                                                    <i class="ti-time"></i> 
-                                               
+                                                    <i class="ti-time"></i>
+
                                                     Estado del aspirante:
                                                 </h6> </br>
                                                        <div class="col-md-5">
                                                 <div class="form-group">
-<?php 
+<?php
 
 //Conexicón a la base de datos
 include 'conexion.php';
 
  $id_usuarios = $_SESSION["clave"];
- //Consulta para seleccionar el estado por medio del id 
+ //Consulta para seleccionar el estado por medio del id
  $sql = "SELECT ASP_STATUS FROM aspirantes WHERE ASP_ID_USUARIO = '$id_usuarios' ";
  $resultado = $conn->query($sql);
 
 if ($resultado->num_rows > 0) {
          while ($row= $resultado->fetch_assoc()) {
-       
+
           $var_status     =     $row['ASP_STATUS'];
-       
+
         }
 
     }   else {
-        //Mostrar mensjae si no encuentra dato en la tabla 
+        //Mostrar mensjae si no encuentra dato en la tabla
 echo "¡ No se ha encontrado ningún registro !";
 }
 
@@ -434,7 +444,7 @@ Candidates must meet the following general requirements:
                         <span class="badge filter badge-white" data-color="white"></span>
                     </a>
                 </li>
-    
+
                 <li class="header-title">Sidebar Active Color</li>
                 <li class="adjustments-line text-center">
                     <a href="javascript:void(0)" class="switch-trigger active-color">
@@ -445,24 +455,24 @@ Candidates must meet the following general requirements:
                             <span class="badge filter badge-danger active" data-color="danger"></span>
                     </a>
                 </li>
-    
+
                 <li class="button-container">
                     <div class="">
                         <a href="http://www.creative-tim.com/product/paper-dashboard?ref=pdp-free-demo" target="_blank" class="btn btn-info btn-block">Get Free Demo</a>
                         <a href="http://www.creative-tim.com/product/paper-dashboard-pro" target="_blank" class="btn btn-danger btn-block btn-fill">Buy for $39</a>
                     </div>
                 </li>
-    
+
                 <li class="header-title">Thank you for sharing!</li>
-    
+
                 <li class="button-container">
                     <button id="twitter" class="btn btn-social btn-twitter btn-round"><i class="fa fa-twitter"></i> </button>
                     <button id="facebook" class="btn btn-social btn-facebook btn-round"><i class="fa fa-facebook-square"></i></button>
                 </li>
-    
+
             </ul>
         </div>
-    </div>  
+    </div>
 
 </body>
 

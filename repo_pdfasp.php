@@ -2,6 +2,16 @@
  session_start();
  include 'fuctions.php';
  verificar_sesion();
+ //variables
+ $var_name=$_SESSION['nombre'];
+ $var_clave= $_SESSION['clave'];
+ $var_tipo = $_SESSION['tipo'];
+
+ if($var_tipo != 2) {
+  //echo "<script>alert('No tienes acceso a esta página!')</script>";
+    //echo "<script>window.open('index.html','_self')</script>";
+    header("Location: error509.html");
+  }
 
 
 include 'plantila_repo.php';
@@ -126,7 +136,7 @@ ob_start ();
    $pdf->SetXY(50,116);
    $pdf->Cell(150, 10, $var_fechanac, 0, 1, 'L');
 
-//PARA OBTENER EL ID DEL ASPIRANTE 
+//PARA OBTENER EL ID DEL ASPIRANTE
 $sql1 = " SELECT ID_ASPIRANTES FROM aspirantes WHERE ASP_ID_USUARIO = '$id' ";
 
 $resultado = $conn->query($sql1);
@@ -283,7 +293,7 @@ if ($resultado->num_rows > 0) {
    $pdf->MultiCell(40,10 ,'$'.$var_ingreso_informalm,0 ,'L' ,0);
 
 
- //CONSULTAR DATOS GENERALES 
+ //CONSULTAR DATOS GENERALES
 $sql4 = " SELECT GEN_TIEMPO_RESI,GEN_CASA_PROP,GEN_DESCRP_CASA,GEN_AUTO,GEN_PERSONAS_FAMILIA,GEN_PERSONAS_CASA,GEN_BANCARIAS,GEN_ESTADO_CUENTA,GEN_TRABAJO,GEN_TIPO_BECA,GEN_INTERNET,GEN_HABLAR_ING,GEN_PORCENTAJE FROM datos_generales WHERE GEN_ID_ASPIRANTES = '$var_idasp' ";
 
 $resultado = $conn->query($sql4);
@@ -344,7 +354,7 @@ if ($resultado->num_rows > 0) {
    $pdf->SetFont('Helvetica','i',10);
    $pdf->SetXY(150,206);
    $pdf->MultiCell(50,10 ,$var_personas_fam,0 ,'L' ,0);
-  
+
 
 
 

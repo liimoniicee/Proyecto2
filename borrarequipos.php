@@ -22,6 +22,16 @@
 	<?php
 		include 'conexion.php';
 		session_start();
+		//variables
+		$var_name=$_SESSION['nombre'];
+		$var_clave= $_SESSION['clave'];
+		$var_tipo = $_SESSION['tipo'];
+
+		if($var_tipo != 5) {
+		 //echo "<script>alert('No tienes acceso a esta página!')</script>";
+		   //echo "<script>window.open('index.html','_self')</script>";
+		   header("Location: error509.html");
+		 }
 		$id_usuario = $_SESSION["clave"];
 		$sql= "SELECT USU_NOMBRE, USU_APELLIDO_PATERNO, USU_ROLL from usuarios where ID_USUARIO = '$id_usuario'";
 		$resultado = $conn->query($sql);

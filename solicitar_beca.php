@@ -3,6 +3,16 @@
  session_start();
  include 'fuctions.php';
  verificar_sesion();
+ //variables
+ $var_name=$_SESSION['nombre'];
+ $var_clave= $_SESSION['clave'];
+ $var_tipo = $_SESSION['tipo'];
+
+ if($var_tipo != 3) {
+  //echo "<script>alert('No tienes acceso a esta página!')</script>";
+    //echo "<script>window.open('index.html','_self')</script>";
+    header("Location: error509.html");
+  }
 ?>
 <?php
 
