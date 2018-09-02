@@ -124,18 +124,17 @@
                         </li>
                         <li class="dropdown">
                               <a  class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <p class="notification">5</p>
-                                    <p>Notifications</p>
+                                <i class="ti-help-alt"></i>
+
+                                <p class="hidden-md hidden-lg">
+                                    Notifications
                                     <b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+
+                            </ul>
                         </li>
                         <li>
                             <a href="destroy.php">

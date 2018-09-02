@@ -264,20 +264,17 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li class="dropdown">
                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <span class="notification">5</span>
-                                    <p class="hidden-md hidden-lg">
-                                        Notifications
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#not1">Notification 1</a></li>
-                                    <li><a href="#not2">Notification 2</a></li>
-                                    <li><a href="#not3">Notification 3</a></li>
-                                    <li><a href="#not4">Notification 4</a></li>
-                                    <li><a href="#another">Another notification</a></li>
-                                </ul>
+                                  <i class="ti-help-alt"></i>
+
+                                  <p class="hidden-md hidden-lg">
+                                      Notifications
+                                      <b class="caret"></b>
+                                  </p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+
+                              </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">

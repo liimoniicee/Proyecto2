@@ -225,8 +225,8 @@ $resultado = $conn->query($query);
                             </li>
                             <li class="dropdown">
                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <span class="notification">5</span>
+                                    <i class="ti-help-alt"></i>
+                                    
                                     <p class="hidden-md hidden-lg">
                                         Notifications
                                         <b class="caret"></b>
@@ -235,7 +235,6 @@ $resultado = $conn->query($query);
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
 
-                                    <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
