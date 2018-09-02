@@ -129,22 +129,21 @@ if($tipo == 1){
     	 }//aqui termina el while
 
 	}else{
-   echo"
+   ?>
     <body>
     <script>
-    $(document).ready(function() {
-   swal({
-     title: 'Error',
-      text: 'wrong user or password',
-       type: 'error'
-     },
-     function(){
-       window.location.href = 'index.html';
-   });
- });
+    swal({
+  title: "Error!",
+  text: "Usuario y/o contraseña incorrecto",
+  type: "error"
+  }).then(function() {
+  // Redirect the user
+  window.location.href = "index.html";
+  console.log('The Ok Button was clicked.');
+  });
         </script>
 </body>
-    ";
+    <?php
 
 }
 
