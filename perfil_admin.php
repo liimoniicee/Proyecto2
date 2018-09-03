@@ -406,12 +406,12 @@ return patron.test(te);
 }
 </script>
 
-                                 <form method="post" action="editar_perfil.php">
+                                 <form method="post" action="editar_admin.php">
                                         <div class="row">
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label>Apelllido Paterno</label>
-                                                    <input type="text" class="form-control border-input" value=" <?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
+                                                    <input type="text" class="form-control border-input" value="<?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -431,7 +431,7 @@ return patron.test(te);
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control border-input" value= " <?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
+                                                    <input type="text" class="form-control border-input" value= "<?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -486,7 +486,7 @@ return patron.test(te);
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-info btn-fill btn-wd " onclick="demo.showSwal('success-message')" name="submit" >Actualizar Perfil</button>
+                                            <button type="submit" class="btn btn-info btn-fill btn-wd " name="submit" >Actualizar Perfil</button>
                                         </div>
                                         <div class="clearfix"></div>
                                     </form>

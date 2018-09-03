@@ -216,7 +216,7 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
                                     <i class="ti-user"></i>
                                     <p> <?php
-                               echo "Bienvenido:".$_SESSION["nombre"];
+                               echo "Bienvenido: ".$_SESSION["nombre"];
                                      ?> </p>
                                 </a>
                             </li>

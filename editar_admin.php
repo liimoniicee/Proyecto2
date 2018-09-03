@@ -1,5 +1,4 @@
 
-
 <head>
   <!-- Bootstrap core CSS     -->
   <link href= "assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -90,7 +89,7 @@ $sql = " UPDATE USUARIOS SET
       type: "success"
       }).then(function() {
       // Redirect the user
-      window.location.href = "ingles.php";
+      window.location.href = "perfil_admin.php";
       console.log('The Ok Button was clicked.');
       });
            </script>
@@ -106,7 +105,7 @@ $sql = " UPDATE USUARIOS SET
    type: "error"
    }).then(function() {
    // Redirect the user
-   window.location.href = "ingles.php";
+   window.location.href = "aspirante.php";
    console.log('The Ok Button was clicked.');
    });
          </script>

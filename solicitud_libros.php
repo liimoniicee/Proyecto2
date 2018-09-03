@@ -219,7 +219,7 @@ $res = $conn->query($query2);
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
                                     <i class="ti-user"></i>
                                     <p> <?php
-                               echo "Bienvenido:".$_SESSION["nombre"];
+                               echo "Bienvenido: ".$_SESSION["nombre"];
                                      ?> </p>
                                 </a>
                             </li>
