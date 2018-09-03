@@ -96,11 +96,11 @@ echo "¡ No se ha encontrado ningún registro !";
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CE
+                <a href="" class="simple-text logo-mini">
+                    SH
                 </a>
 
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="" class="simple-text logo-normal">
                       SCHOOLAR
                 </a>
             </div>
@@ -152,14 +152,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>
 
-                    <!--<li>
-                        <a data-toggle="collapse" href="#componentsExamples">
-                            <i class="ti-id-badge"></i>
-                            <p>Control Empleados
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-                    </li>-->
 
                         <li>
                         <a data-toggle="collapse" href="#tablesExamples">
@@ -199,18 +191,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         <div class="collapse" id="formsExamples">
                             <ul class="nav">
 
-                                <!--<li>
-                                    <a href="forms/regular.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Bitacora de Limpieza</span>
-                                    </a>
-                                </li>-->
-
-                               <!-- <li>
-                                    <a href="reporte_aspirantes.php">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Asistencia Ingles</span>
-                                    </a>-->
                                 </li>
 
                                  <li>
@@ -223,39 +203,6 @@ echo "¡ No se ha encontrado ningún registro !";
                             </ul>
                         </div>
                     </li>
-                <!--    <li>
-                        <a data-toggle="collapse" href="#mapsExamples">
-                            <i class="ti-comments-smiley"></i>
-                            <p>
-                                Equipos
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse" id="mapsExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="../maps/google.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Ver Equipos</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../maps/vector.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Nuevo Equipo</span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        <div class="collapse" id="mapsExamples">
-                            <ul class="nav">
-
-                                <li>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </li>-->
 
                 </ul>
             </div>
@@ -315,21 +262,6 @@ echo "¡ No se ha encontrado ningún registro !";
                 </div>
             </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -357,14 +289,6 @@ echo "¡ No se ha encontrado ningún registro !";
                             </div>
 
                         </div>
-
-
-
-
-
-
-
-
 
                         <div class="col-lg-8 col-md-7">
                             <div class="card">
@@ -444,7 +368,7 @@ return patron.test(te);
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label>Apelllido Paterno</label>
-                                                    <input type="text" class="form-control border-input" value=" <?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
+                                                    <input type="text" class="form-control border-input" value="<?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -464,7 +388,7 @@ return patron.test(te);
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control border-input" value= " <?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
+                                                    <input type="text" class="form-control border-input" value= "<?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

@@ -1,24 +1,42 @@
 
+<head>
+  <!-- Bootstrap core CSS     -->
+  <link href= "assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!--  Paper Dashboard core CSS    -->
+  <link href= "assets/css/paper-dashboard.css?v=1.2.1" rel="stylesheet"/>
 
 
-<header>
-<link rel="stylesheet" type="text/css" href="....'path to ur sweet alert.css'">
-<script type="text/javascript" src="....'path to ur sweetalert.js'"></script>
-<script type="text/javascript">
+  <!--  CSS for Demo Purpose, don't include it in your project     -->
+  <link href= "assets/css/demo.css" rel="stylesheet" />
 
-function myFn(){
-        swal({
-              title: "Success",
-              text: "Thank you for contacting us. We will get back to you soon!",
-              type: "success"
-        },
-             function(){
-                //event to perform on click of ok button of sweetalert
-        });
-}
-</script>
+</head>
 
-</header>
+<script src= "assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src= "assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src= "assets/js/perfect-scrollbar.min.js" type="text/javascript"></script>
+<script src= "assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
+<script src= "assets/js/paper-dashboard.js?v=1.2.1"></script>
+
+  <!--   Sharrre Library    -->
+  <script src= "assets/js/jquery.sharrre.js"></script>
+
+<!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+
+<!-- Promise Library for SweetAlert2 working on IE -->
+<script src= "assets/js/es6-promise-auto.min.js"></script>
+
+<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+<script src= "assets/js/moment.min.js"></script>
+
+<!--  Date Time Picker Plugin is included in this js file -->
+<script src= "assets/js/bootstrap-datetimepicker.js"></script>
+
+<!-- Sweet Alert 2 plugin -->
+<script src= "assets/js/sweetalert2.js"></script>
 
 
 
@@ -47,54 +65,90 @@ $fechasalida = date('y-m-d',$conversion);
 
 
 
-$sql = " UPDATE USUARIOS SET                             USU_NOMBRE ='$var_nombre',
+$sql = " UPDATE USUARIOS SET
+                            USU_NOMBRE='$var_nombre',
 														USU_APELLIDO_PATERNO='$var_apellidop',
 														USU_APELLIDO_MATERNO='$var_apellidom',
 														USU_DIRECCION='$var_direccion',
-														USU_COLONIA= '$var_colonia',
+														USU_COLONIA='$var_colonia',
 														USU_LUGAR_NACIMIENTO='$var_lugarnac',
 														USU_TELEFONO='$var_telefono',
 														USU_CELULAR='$var_celular',
 														USU_CODIGO_POSTAL='$var_codigopost',
 														USU_FECHA_NAC='$fechasalida',
 														USU_SEXO='$var_sexo'
-														WHERE ID_USUARIO ='$var_id' ";
+														WHERE ID_USUARIO='$var_id' ";
 		if($conn->query($sql) === TRUE){
 
-
-      //echo '<script type="text/javascript">';
-      //echo 'setTimeout(function () { swal("Actualizado!","Message!","success");';
-
-     // echo '}, 9000);</script>';
-
-
-
-  echo "<script>alert('Actualización correcta!')</script>";
-  echo "<script>window.open('coordinador.php','_self')</script>";
-
-  //header("location:aspirante.php");
+      ?>
+       <body>
+       <script>
+       swal({
+      title: "Success",
+      text: "Actualizacion correcta",
+      type: "success"
+      }).then(function() {
+      // Redirect the user
+      window.location.href = "coordinador.php";
+      console.log('The Ok Button was clicked.');
+      });
+           </script>
+      </body>
+       <?php
 	}else {
-		echo "<script>alert('No se actualizo!')</script>";
-        echo "<script>window.open('coordinador.php','_self')</script>";
+    ?>
+     <body>
+     <script>
+     swal({
+   title: "Error!",
+   text: "Algo esta mal",
+   type: "error"
+   }).then(function() {
+   // Redirect the user
+   window.location.href = "coordinador.php";
+   console.log('The Ok Button was clicked.');
+   });
+         </script>
+  </body>
+     <?php
 	}
-			//header( "location:aspirante.php");
 
-		//}
-		//else {
-		//	echo ("Error: ". mysqli_error($conn));
-		//}
 		$conn->close();
 
 ?>
 
-<!--
-echo '<script type="text/javascript">';
-echo 'setTimeout(function () { swal("Actualizado!","Message!","success");';
+<script src= "assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src= "assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src= "assets/js/perfect-scrollbar.min.js" type="text/javascript"></script>
+<script src= "assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-echo '}, 9000);</script>';
-echo "<script>window.open('aspirante.php','_self')</script>";-->
+<!--  Forms Validations Plugin -->
+<script src= "assets/js/jquery.validate.min.js"></script>
 
-<!--echo '<script type="text/javascript">';
-echo 'setTimeout(function () { swal("Actualizado!","Message!","success");';
 
-echo '}, 9000);</script>';}-->
+
+<!-- Vector Map plugin -->
+<script src= "assets/js/jquery-jvectormap.js"></script>
+
+
+
+<!-- Wizard Plugin    -->
+<script src= "assets/js/jquery.bootstrap.wizard.min.js"></script>
+
+<!--  Bootstrap Table Plugin    -->
+<script src= "assets/js/bootstrap-table.js"></script>
+
+<!--  Plugin for DataTables.net  -->
+<script src= "assets/js/jquery.datatables.js"></script>
+
+<!--  Full Calendar Plugin    -->
+<script src= "assets/js/fullcalendar.min.js"></script>
+
+<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
+<script src= "assets/js/paper-dashboard.js?v=1.2.1"></script>
+
+  <!--   Sharrre Library    -->
+  <script src= "assets/js/jquery.sharrre.js"></script>
+
+<!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>

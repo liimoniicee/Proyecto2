@@ -93,11 +93,11 @@ echo "¡ No se ha encontrado ningún registro !";
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CT
+                <a href="" class="simple-text logo-mini">
+                    SH
                 </a>
 
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="" class="simple-text logo-normal">
                  SCHOOLAR
                 </a>
             </div>
@@ -152,15 +152,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>
 
-                   <!-- <li>
-                        <a data-toggle="collapse" href="#componentsExamples">
-                            <i class="ti-id-badge"></i>
-                            <p>Control Empleados
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-                    </li >-->
-
 
                         <li class="active">
                         <a data-toggle="collapse" href="#tablesExamples">
@@ -200,12 +191,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         <div class="collapse" id="formsExamples">
                             <ul class="nav">
 
-                               <!-- <li>
-                                    <a href="forms/regular.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Bitacora de Limpieza</span>
-                                    </a>
-                                </li>-->
 
                                 <li>
                                     <a href="aplicaciones.php">
@@ -217,31 +202,7 @@ echo "¡ No se ha encontrado ningún registro !";
                             </ul>
                         </div>
                     </li>
-                  <!--  <li>
-                        <a data-toggle="collapse" href="#mapsExamples">
-                            <i class="ti-comments-smiley"></i>
-                            <p>
-                                Equipos
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse" id="mapsExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="../maps/google.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Ver Equipos</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../maps/vector.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Nuevo Equipo</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>-->
+
 
                 </ul>
             </div>
@@ -271,7 +232,7 @@ echo "¡ No se ha encontrado ningún registro !";
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
-                                    <i class="ti-panel"></i>
+                                    <i class="ti-user"></i>
                                     <p><?php echo "Bienvenido: ".$_SESSION['nombre'];?></p>
                                 </a>
                             </li>
@@ -371,7 +332,7 @@ echo "¡ No se ha encontrado ningún registro !";
   <div class="form-group">
     <label  class="col-sm-2 control-label">Lugar</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control border-input"  placeholder="Lugar" name="lugar"  onkeypress="return validar(event)">
+      <input type="text" class="form-control border-input" required  placeholder="Lugar" name="lugar"  onkeypress="return validar(event)">
     </div>
   </div>
 
@@ -379,7 +340,7 @@ echo "¡ No se ha encontrado ningún registro !";
   <div class="form-group">
     <label  class="col-sm-2 control-label">Descripción</label>
     <div class="col-sm-5">
-     <textarea  required="" class="form-control border-input"  placeholder="Ingrese la descripcion del evento" name="descrip"  onkeypress="return validar(event)" ></textarea>
+     <textarea  class="form-control border-input"  placeholder="Ingrese la descripcion del evento" name="descrip"  onkeypress="return validar(event)" ></textarea>
     </div>
   </div>
 

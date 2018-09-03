@@ -8,7 +8,7 @@
  $var_clave= $_SESSION['clave'];
  $var_tipo = $_SESSION['tipo'];
 
- if($var_tipo != 3) {
+ if($var_tipo != 1) {
   //echo "<script>alert('No tienes acceso a esta página!')</script>";
     //echo "<script>window.open('index.html','_self')</script>";
     header("Location: error509.html");
@@ -198,7 +198,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                 </li>
 
                                  <li>
-                                    <a href="solicitar_beca.php">
+                                    <a href="estado_espera.php">
                                         <span class="sidebar-mini"></span>
                                         <span class="sidebar-normal">Resultados beca </span>
                                     </a>
@@ -206,52 +206,6 @@ echo "¡ No se ha encontrado ningún registro !";
                             </ul>
                         </div>
                     </li>
-
-                   <!-- <li>
-                        <a data-toggle="collapse" href="#formsExamples">
-                            <i class="ti-clipboard"></i>
-                            <p>
-                                Noticias
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-
-                        <div class="collapse" id="formsExamples">
-                            <ul class="nav">
-
-                                <li>
-                                    <a href="forms/regular.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Becados green</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="forms/extended.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Acerca de Green</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </li> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                     <li>

@@ -123,30 +123,7 @@ $res = $conn->query($query2);
 	                          <b class="caret"></b>
 	            </span>
 	                    </a>
-	         <!-- <div class="clearfix"></div>
 
-	                    <div class="collapse" id="collapseExample">
-	                        <ul class="nav">
-	                            <li>
-	                <a href="#profile">
-	                  <span class="sidebar-mini">Mp</span>
-	                  <span class="sidebar-normal">My Profile</span>
-	                </a>
-	              </li>
-	                            <li>
-	                <a href="#edit">
-	                  <span class="sidebar-mini">Ep</span>
-	                  <span class="sidebar-normal">Edit Profile</span>
-	                </a>
-	              </li>
-	                            <li>
-	                <a href="#settings">
-	                  <span class="sidebar-mini">S</span>
-	                  <span class="sidebar-normal">Settings</span>
-	                </a>
-	              </li>
-	                        </ul>
-	                    </div>-->
 	                </div>
 	            </div>
 	            <ul class="nav">
@@ -190,12 +167,32 @@ $res = $conn->query($query2);
 										</div>
 					                </li>
 
-                          <!-- <li>
-                               <a href="">
-                                   <i class="ti-comments"></i>
-                                   <p>Grupos</p>
-                               </a>
-                           </li>-->
+                          <li class="">
+                                                  <a data-toggle="collapse" href="#tablesExamples">
+                                                      <i class="ti-agenda"></i>
+                                                      <p>
+                                                          Ingles
+                                                         <b class="caret"></b>
+                                                      </p>
+                                                  </a>
+                                                  <div class="collapse" id="tablesExamples">
+                                                      <ul class="nav">
+
+                                                         <li class="">
+                                                              <a href="calificaciones_beca.php">
+                                                                  <span class="sidebar-mini"></span>
+                                                                  <span class="sidebar-normal">Calificaciones </span>
+                                                              </a>
+                                                          </li>
+                                                          <li>
+                                                              <a href="asignar_calificaciones_beca.php">
+                                                                  <span class="sidebar-mini"></span>
+                                                                  <span class="sidebar-normal">Asistencia</span>
+                                                              </a>
+                                                          </li>
+                                                      </ul>
+                                                  </div>
+                                              </li>
 	            </ul>
 	      </div>
 	    </div>

@@ -241,20 +241,11 @@ if($resultado->num_rows > 0){
                                         <span class="sidebar-normal">Asistencia</span>
                                     </a>
                                 </li>
-
-
                             </ul>
                         </div>
                     </li>
 
 
-                <!--<li>
-                    <a href="">
-                        <i class="ti-comments"></i>
-                        <p>Ingles</p>
-                    </a>
-
-                </li>-->
 
             </ul>
       </div>
@@ -283,7 +274,7 @@ if($resultado->num_rows > 0){
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
                                     <i class="ti-user"></i>
                                     <p> <?php
-                               echo "Bienvenido:".$_SESSION["nombre"];
+                               echo "Bienvenido: ".$_SESSION["nombre"];
                                      ?> </p>
                                 </a>
                             </li>
