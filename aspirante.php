@@ -90,7 +90,7 @@ echo "¡ No se ha encontrado ningún registro !";
         -->
             <div class="logo">
                 <a href="aspirante.php" class="simple-text logo-mini">
-                    CT
+                    SH
                 </a>
 
                 <a href="aspirante.php" class="simple-text logo-normal">
@@ -175,35 +175,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         </div>
                     </li>
 
-                    <!--<li>
-                        <a data-toggle="collapse" href="#formsExamples">
-                            <i class="ti-clipboard"></i>
-                            <p>
-                                Noticias
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-
-                        <div class="collapse" id="formsExamples">
-                            <ul class="nav">
-
-                                <li>
-                                    <a href="forms/regular.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Noticia1</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="forms/extended.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Asistencia Ingles</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </li>-->
                     <li>
 
                         <div class="collapse" id="mapsExamples">
@@ -250,18 +221,17 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li class="dropdown">
                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <span class="notification">5</span>
-                                    <p class="hidden-md hidden-lg">
-                                        Notifications
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+                                  <i class="ti-help-alt"></i>
 
-                                    <li><a href="#another">Another notification</a></li>
-                                </ul>
+                                  <p class="hidden-md hidden-lg">
+                                      Notifications
+                                      <b class="caret"></b>
+                                  </p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+
+                              </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
@@ -276,13 +246,6 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                 </div>
             </nav>
-
-
-
-
-
-
-
 
             <div class="content">
                 <div class="container-fluid">
@@ -313,14 +276,6 @@ echo "¡ No se ha encontrado ningún registro !";
                             </div>
 
                         </div>
-
-
-
-
-
-
-
-
 
                         <div class="col-lg-8 col-md-7">
                             <div class="card">
@@ -402,7 +357,7 @@ return patron.test(te);
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label>Apelllido Paterno</label>
-                                                    <input type="text" class="form-control border-input" value=" <?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
+                                                    <input type="text" class="form-control border-input" value="<?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -414,7 +369,7 @@ return patron.test(te);
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Nombre</label>
-                                                    <input type="text" class="form-control border-input"´ value= "<?php echo $var_nombre ?>"  name="nombre" onkeypress="return validar(event)" required>
+                                                    <input type="text" class="form-control border-input"´ value="<?php echo $var_nombre ?>"  name="nombre" onkeypress="return validar(event)" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -422,7 +377,7 @@ return patron.test(te);
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control border-input" value= " <?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
+                                                    <input type="text" class="form-control border-input" value= "<?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

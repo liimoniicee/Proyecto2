@@ -241,20 +241,11 @@ if($resultado->num_rows > 0){
                                         <span class="sidebar-normal">Asistencia</span>
                                     </a>
                                 </li>
-
-
                             </ul>
                         </div>
                     </li>
 
 
-                <!--<li>
-                    <a href="">
-                        <i class="ti-comments"></i>
-                        <p>Ingles</p>
-                    </a>
-
-                </li>-->
 
             </ul>
       </div>
@@ -283,24 +274,23 @@ if($resultado->num_rows > 0){
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
                                     <i class="ti-user"></i>
                                     <p> <?php
-                               echo "Bienvenido:".$_SESSION["nombre"];
+                               echo "Bienvenido: ".$_SESSION["nombre"];
                                      ?> </p>
                                 </a>
                             </li>
                             <li class="dropdown">
                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <span class="notification">5</span>
-                                    <p class="hidden-md hidden-lg">
-                                        Notifications
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+                                  <i class="ti-help-alt"></i>
 
-                                    <li><a href="#another">Another notification</a></li>
-                                </ul>
+                                  <p class="hidden-md hidden-lg">
+                                      Notifications
+                                      <b class="caret"></b>
+                                  </p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+
+                              </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">

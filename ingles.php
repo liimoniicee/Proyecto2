@@ -279,18 +279,17 @@ echo "¡ No se ha encontrado ningún registro !";
                             </li>
                             <li class="dropdown">
                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <span class="notification">5</span>
-                                    <p class="hidden-md hidden-lg">
-                                        Notifications
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <ul class="dropdown-menu">
-                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+                                  <i class="ti-help-alt"></i>
 
-                                    <li><a href="#another">Another notification</a></li>
-                                </ul>
+                                  <p class="hidden-md hidden-lg">
+                                      Notifications
+                                      <b class="caret"></b>
+                                  </p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+
+                              </ul>
                             </li>
                             <li>
                                 <a href="destroy.php" class="btn-rotate">
@@ -303,19 +302,6 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                 </div>
             </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -334,7 +320,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                       <h4 class="card-title"><?php echo $_SESSION['nombre'];?><br />
                                          <a href="#"><small>@gmail.com</small></a>
                                       </h4>
-                                        <form action="guardar_foto_ingles.php" method="post" enctype="multipart/form-data"> 
+                                        <form action="guardar_foto_ingles.php" method="post" enctype="multipart/form-data">
                                       <input name="foto" class="form-control border-input"  type="file" required accept="image/gif, image/jpeg, image/png"> </input> </br>
                                       <button name="boton_foto" type="submit" class="btn btn-info btn-fill btn-wd ">Guardar</button>
                                       </form>
@@ -433,7 +419,7 @@ return patron.test(te);
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label>Apelllido Paterno</label>
-                                                    <input type="text" class="form-control border-input" value=" <?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
+                                                    <input type="text" class="form-control border-input" value="<?php echo $var_apellidop ?>" name="ape_pat" onkeypress="return validar(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -453,7 +439,7 @@ return patron.test(te);
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control border-input" value= " <?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
+                                                    <input type="text" class="form-control border-input" value= "<?php echo $var_direccion ?>" name="direccion" onkeypress="return validar2(event)" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

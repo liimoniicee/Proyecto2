@@ -41,7 +41,7 @@
 		$var_clave= $_SESSION['clave'];
 		$var_tipo = $_SESSION['tipo'];
 
-		if($var_tipo != 5) {
+		if($var_tipo > 4) {
 		 //echo "<script>alert('No tienes acceso a esta página!')</script>";
 		   //echo "<script>window.open('index.html','_self')</script>";
 		   header("Location: error509.html");
@@ -274,18 +274,17 @@
 												</li>
 												<li class="dropdown">
 														<a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-																<i class="ti-bell"></i>
-																<span class="notification">5</span>
-																<p class="hidden-md hidden-lg">
-																		Notifications
-																		<b class="caret"></b>
-																</p>
-														</a>
-														<ul class="dropdown-menu">
-																<li><a href="#not1">Notification 1</a></li>
+															<i class="ti-help-alt"></i>
 
-																<li><a href="#another">Another notification</a></li>
-														</ul>
+															<p class="hidden-md hidden-lg">
+																	Notifications
+																	<b class="caret"></b>
+															</p>
+													</a>
+													<ul class="dropdown-menu">
+															<li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
+
+													</ul>
 												</li>
 												<li>
 														<a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">

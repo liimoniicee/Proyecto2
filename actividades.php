@@ -45,7 +45,9 @@ if($resultado->num_rows > 0){
 }
 
 $query = "SELECT ACT_TITULO_ACTVI, ACT_FECHA_INICIO, ACT_FECHA_TERMINO, ACT_LUGAR, ACT_ID_BECARIO
-                   FROM actividades";
+                   FROM actividades
+                    WHERE ACT_ID_BECARIO = $id_bec
+                   ";
 
 $resultado = $conn->query($query);
 
@@ -114,30 +116,7 @@ $resultado = $conn->query($query);
                           <b class="caret"></b>
             </span>
                     </a>
-          <!--<div class="clearfix"></div>
 
-                    <div class="collapse" id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                <a href="#profile">
-                  <span class="sidebar-mini">Mp</span>
-                  <span class="sidebar-normal">My Profile</span>
-                </a>
-              </li>
-                            <li>
-                <a href="#edit">
-                  <span class="sidebar-mini">Ep</span>
-                  <span class="sidebar-normal">Edit Profile</span>
-                </a>
-              </li>
-                            <li>
-                <a href="#settings">
-                  <span class="sidebar-mini">S</span>
-                  <span class="sidebar-normal">Settings</span>
-                </a>
-              </li>
-                        </ul>
-                    </div>-->
                 </div>
             </div>
 
@@ -184,13 +163,34 @@ $resultado = $conn->query($query);
                   </div>
                         </li>
 
+                        <li class="">
+                                                <a data-toggle="collapse" href="#tablesExamples">
+                                                    <i class="ti-agenda"></i>
+                                                    <p>
+                                                        Ingles
+                                                       <b class="caret"></b>
+                                                    </p>
+                                                </a>
+                                                <div class="collapse" id="tablesExamples">
+                                                    <ul class="nav">
 
-            <!--    <li>
-                    <a href="">
-                        <i class="ti-comments"></i>
-                        <p>Grupos</p>
-                    </a>
-                </li>-->
+                                                       <li class="">
+                                                            <a href="calificaciones_beca.php">
+                                                                <span class="sidebar-mini"></span>
+                                                                <span class="sidebar-normal">Calificaciones </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="asignar_calificaciones_beca.php">
+                                                                <span class="sidebar-mini"></span>
+                                                                <span class="sidebar-normal">Asistencia</span>
+                                                            </a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                </li>
+
+
             </ul>
 
             <!-- fin Contenido del panel desplegable -->
@@ -225,8 +225,8 @@ $resultado = $conn->query($query);
                             </li>
                             <li class="dropdown">
                                 <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <span class="notification">5</span>
+                                    <i class="ti-help-alt"></i>
+
                                     <p class="hidden-md hidden-lg">
                                         Notifications
                                         <b class="caret"></b>
@@ -235,7 +235,6 @@ $resultado = $conn->query($query);
                                 <ul class="dropdown-menu">
                                     <li><a href="assets/manual/usuario.pdf">Manual de usuario</a></li>
 
-                                    <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
                             <li>
