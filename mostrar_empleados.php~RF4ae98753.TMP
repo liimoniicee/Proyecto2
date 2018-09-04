@@ -80,16 +80,6 @@ echo "¡ No se ha encontrado ningún registro !";
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
-
-
-
-
-
-
-
-
-    <!-- Custom Theme Style 
-    <link href="assets/build/css/custom.min.css" rel="stylesheet">-->
 </head>
 
 <body>
@@ -701,14 +691,49 @@ return patron.test(te);
 
 
                                     </div>
-                                   
+                                    <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                                                          <div class="well profile_view">
+                                                            <div class="col-sm-12">
+                                                              <h4 class="brief"><i>Digital Strategist</i></h4>
+                                                              <div class="left col-xs-7">
+                                                                <h2>Nicole Pearson</h2>
+                                                                <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                                                                <ul class="list-unstyled">
+                                                                  <li><i class="fa fa-building"></i> Address: </li>
+                                                                  <li><i class="fa fa-phone"></i> Phone #: </li>
+                                                                </ul>
+                                                              </div>
+                                                              <div class="right col-xs-5 text-center">
+                                                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-xs-12 bottom text-center">
+                                                              <div class="col-xs-12 col-sm-6 emphasis">
+                                                                <p class="ratings">
+                                                                  <a>4.0</a>
+                                                                  <a href="#"><span class="fa fa-star"></span></a>
+                                                                  <a href="#"><span class="fa fa-star"></span></a>
+                                                                  <a href="#"><span class="fa fa-star"></span></a>
+                                                                  <a href="#"><span class="fa fa-star"></span></a>
+                                                                  <a href="#"><span class="fa fa-star-o"></span></a>
+                                                                </p>
+                                                              </div>
+                                                              <div class="col-xs-12 col-sm-6 emphasis">
+                                                                <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                                                  </i> <i class="fa fa-comments-o"></i> </button>
+                                                                <button type="button" class="btn btn-primary btn-xs">
+                                                                  <i class="fa fa-user"> </i> View Profile
+                                                                </button>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
 
                                 </div>
                             </div><!--  end card  -->
                         </div> <!-- end col-md-12 -->
                     </div> <!-- end row -->
-                   
-
 
                 </div>
             </div>
@@ -722,25 +747,18 @@ return patron.test(te);
 
 
 
-
-            
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="#">
-                                    Creative Tim
+                                <a href="http://www.facebook.com">
+                                   Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                   Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Licenses
+                               <a href="http://gspcabo.com/?page_id=16">
+                                   Green Schoolarship
                                 </a>
                             </li>
                         </ul>
@@ -756,6 +774,8 @@ return patron.test(te);
     <div class="fixed-plugin">
 
     </div>
+
+</body>
 
  <!--   Core JS Files. Extra: TouchPunch for touch library inside jquery-ui.min.js   -->
     <script src="assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -809,16 +829,6 @@ return patron.test(te);
 
     <!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
     <script src="assets/js/paper-dashboard.js?v=1.2.1"></script>
-
-
-
-
-
-     
-
-
-
-
 
 
 

@@ -103,6 +103,8 @@ echo "¡ No se ha encontrado ningún registro !";
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
+
+   
 </head>
 
 <body>
@@ -640,5 +642,6 @@ return patron.test(te);
 
     <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
+
 
 </html>
