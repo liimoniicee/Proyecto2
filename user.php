@@ -52,9 +52,13 @@ while($row = $res->fetch_assoc()){
 
 $consu_team = "SELECT U.USU_NOMBRE, u.USU_IMG_PERFIL, E.EQU_NOMBRE_EQUIPO
 FROM
-usuarios U, equipos E
+usuarios U, equipos E, becario B
 WHERE
-U.EQU_ID_BECARIO = E.ID_EQUIPOS";
+U.EQU_ID_BECARIO = E.ID_EQUIPOS
+and
+B.BEC_ID_USUARIO = U.ID_USUARIO
+AND
+E.EQU_NOMBRE_EQUIPO = '$team';";
 
 $res_team = $conn->query($consu_team);
 
@@ -152,30 +156,7 @@ if($resultado->num_rows > 0){
                           <b class="caret"></b>
             </span>
                     </a>
-                  <!--   <div class="clearfix"></div>
 
-         <div class="collapse" id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                <a href="#profile">
-                  <span class="sidebar-mini">Mp</span>
-                  <span class="sidebar-normal">My Profile</span>
-                </a>
-              </li>
-                            <li>
-                <a href="#edit">
-                  <span class="sidebar-mini">Ep</span>
-                  <span class="sidebar-normal">Edit Profile</span>
-                </a>
-              </li>
-                            <li>
-                <a href="#settings">
-                  <span class="sidebar-mini">S</span>
-                  <span class="sidebar-normal">Settings</span>
-                </a>
-              </li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
 						<ul class="nav">
@@ -218,7 +199,7 @@ if($resultado->num_rows > 0){
                     </ul>
                   </div>
                         </li>
-<li class="">
+                        <li>
                         <a data-toggle="collapse" href="#tablesExamples">
                             <i class="ti-agenda"></i>
                             <p>
@@ -416,12 +397,7 @@ if($resultado->num_rows > 0){
 																			<div class="col-md-4">
 																					<div class="form-group">
 																							<label for="exampleInputEmail1">Sexo</label>
-																							<select name="sex" class="form-control border-input">
-
-																								<option value="Masculino">Masculino</option>
-  																						<option value="Femenino">Femenino</option>
-  																					<option value="Indistinto">Indistinto</option>
-																										</select>
+																						<input type="text" name="sex" maxlength="15" onkeypress="return validar(event)" required class="form-control border-input" placeholder="Horientación sexual" value="<?php echo $sex?>" >
 																							<!--<input type="text" class="form-control border-input" placeholder="Orientación sexual">-->
 																					</div>
 																			</div>
