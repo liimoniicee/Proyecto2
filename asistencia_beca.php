@@ -225,7 +225,7 @@ if($resultado->num_rows > 0){
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="asistencia_beca.php">
+                                    <a href="asignar_calificaciones_beca.php">
                                         <span class="sidebar-mini"></span>
                                         <span class="sidebar-normal">Asistencia</span>
                                     </a>
@@ -305,144 +305,307 @@ if($resultado->num_rows > 0){
         </nav>
 
 
+				 <div class="content">
+				                <div class="container-fluid">
+				                    <div class="row">
+				                        <div class="col-md-12">
+				                            <h4 class="title">Tabla asistencias</h4>
+				                            <p class="category"><a href="https://datatables.net/" target="_blank">dataTables.net</a> <a href="https://datatables.net/manual/index" target="_blank">full documentation.</a></p>
+
+				                            <br>
+
+				                            <div class="card">
+				                                <div class="card-content">
+				                                    <div class="toolbar">
+				                                        <!--Here you can write extra buttons/actions for the toolbar-->
+				                                    </div>
+				                                    <div class="fresh-datatables">
+				                                        <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+				                                        <thead>
+				                                            <tr>
+				                                                <th>No.Control</th>
+				                                                <th>Asistencia</th>
+				                                                <th>Fecha</th>
+
+				                                                   <th>Nombre</th>
+				                                                <th>Apellido P.</th>
+				    <th>Porcentaje A.</th>
 
 
-<div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4 class="title">Calificaciones</h4>
+				                                                <th class="disabled-sorting">Actions</th>
+				                                            </tr>
+				                                        </thead>
+
+				      <tfoot>
+				                                            <tr>
+				                                                  <th>No.Control</th>
+				                                                  <th>Asistencia</th>
+				                                                <th>Fecha</th>
+
+				                                                   <th>Nombre</th>
+				                                                <th>Apellido P.</th>
+				                                                <th>Porcentaje A.</th>
+
+				                                            </tr>
+				                                        </tfoot>
 
 
-                            <br>
+				                                        <?php
 
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="toolbar">
-                                        <!--Here you can write extra buttons/actions for the toolbar-->
-                                    </div>
-                                    <div class="fresh-datatables">
-                                        <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                                        <thead>
-                                            <tr>
-
-                                                <th>Nivel</th>
-                                                <th>Calificación</th>
-                                                <th>Unidad</th>
-                                                <th>Promedio</th>
-                                              <!--  <th>No.Control</th>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>-->
-
-
-                                                <!--<th class="disabled-sorting">Actions</th>-->
-                                            </tr>
-                                        </thead>
-
-      <tfoot>
-                                            <tr>
-
-                                                   <th>Nivel</th>
-                                                <th>Calificacón</th>
-                                                <th>Unidad</th>
-                                                <th>Promedio</th>
-                                               <!-- <th>No.Control</th>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>-->
-                                            </tr>
-                                        </tfoot>
-
-
-                                        <?php
-            //Conexión a la base de datos
-
-            include 'conexion.php';
-            $query2 = "SELECT
-B.ID_BECARIO, U.USU_IMG_PERFIL
-FROM
-becario B, usuarios U
-WHERE
-U.ID_USUARIO = $var_clave
-AND
-B.BEC_ID_USUARIO = U.ID_USUARIO";
-
-  $ejecutar2 = mysqli_query($conn, $query2);
-
-            $i = 0;
-
-            while($fila=mysqli_fetch_array($ejecutar2)){
-               // $id_c          = $fila['ID_CALIFICACIONES'];
-                $id_becario  = $fila['ID_BECARIO'];
-               // $status  = $fila['BEC_STATUS'];
-                //$foto_bec  = $fila['BEC_STATUS'];
-} // fin de la quiery2
-            //Consulta para obtener la información del becario
-            $consulta = "SELECT CAL_NIVEL_INGLES,CAL_CALIFICACION,CAL_UNIDAD,CAL_PROMEDIO FROM calificaciones
-
-                                WHERE CAL_ID_BECARIO= $id_becario";
-
-            $ejecutar = mysqli_query($conn, $consulta);
-
-            $i = 0;
-
-            while($fila=mysqli_fetch_array($ejecutar)){
-               // $id_c          = $fila['ID_CALIFICACIONES'];
-                $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION'];
-                $unidad        = $fila['CAL_UNIDAD'];
-                $promedio      = $fila['CAL_PROMEDIO'];
-                 //$id_u            = $fila['CAL_ID_BECARIO'];
-               //  $nom_b         = $fila['USU_NOMBRE'];
-                 //$apellido_p    =$fila['USU_APELLIDO_PATERNO'];
-
-                $i++;
-
-        ?>
+				            include 'conexion.php';
 
 
 
-                                     <tbody>
-                                            <tr>
-                                               <!--Ingresas las variables donde aparecera los datos obtenidos de la consulta -->
-                                                <!--<td><?php echo $id_c; ?></td>-->
-                                                <td><?php echo $nivel; ?></td>
-                                                <td><?php echo $calificacion; ?></td>
-                                                <td><?php echo $unidad; ?></td>
-                                                <td><?php echo $promedio; ?></td>
-                                                <!-- <td><?php echo $id_u; ?></td>
-                                                <td><?php echo $nom_b; ?></td>
-                                                 <td><?php echo $apellido_p; ?></td>-->
-                                                <td>
-                                                    <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-                                                    <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
-                                                    <!--Botones con una variable de cada id del becario que se quiera modificar o eliminar por medio de onclick-->
-                                                  <!--  <a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>-->
+									/* $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
+				b.BEC_ID_USUARIO, b.ID_BECARIO,a.ID_ASISTENCIA,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
+				                                WHERE
 
-                                                    <!--<button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
-                                                    <button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a> -->
+				                                b.BEC_ID_USUARIO = u.ID_USUARIO and a.ASI_ID_BECARIO=b.ID_BECARIO";
 
-                                                </t >
-<?php } ?>
+				            $ejecutar = mysqli_query($conn, $consulta);
+
+				            $i = 0;
+
+				            while($fila=mysqli_fetch_array($ejecutar)){
+				              $id_a            =$fila['ID_ASISTENCIA'];
+				                $id_c          = $fila['ASI_ID_BECARIO'];
+				                $asistencia         = $fila['ASI_ASISTENCIA'];
+				                $fecha  = $fila['ASI_FECHA'];
+				                $nombre_b        = $fila['USU_NOMBRE'];
+				                $apellido_b  = $fila['USU_APELLIDO_PATERNO'];
 
 
-                                             <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
-                                            </tr>
-                                                               </tbody>
+				                $i++;*/
+				                $consu=  "SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario='$var_clave'";
+				                $ejecutar3 = mysqli_query($conn, $consu);
 
-                                        </table>
+				                $i = 0;
+
+				                while($fila=mysqli_fetch_array($ejecutar3)){
+
+				                    $porcentaje  = $fila['total'];
 
 
-                                    </div>
+				                    $i++;
+				      }
+
+				        ?>
 
 
-                                </div>
-                            </div><!--  end card  -->
-                        </div> <!-- end col-md-12 -->
-                    </div> <!-- end row -->
 
-                </div>
-            </div>
+				                                     <tbody>
+				                                            <tr>
+
+				                                                <!--<td><?php echo $id_c; ?></td>-->
+
+				                                                <td><?php echo $porcentaje; ?>%</td>
+				                                            <!--SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario=1-->
+				                                                <td>
+				                                                    <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
+				                                                    <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
+				                                                    <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
+				                                                  <!--  <a href="asistencia.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>-->
+
+				                                                    <button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
+				                                                    <!--<button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+
+				                                                </t >
+
+
+
+				                                             <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
+				                                            </tr>
+
+				   <!--<?php
+				 include 'conexion.php';
+				        if(isset($_GET['editar'])){
+				        include("editar_calificaciones.php");
+				        }
+				    ?>
+				    <?php
+				     include 'conexion.php';
+				    if(isset($_GET['borrar'])){
+
+				    $borrar_id = $_GET['borrar'];
+
+				    $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
+
+				    $ejecutar = mysqli_query($conn,$borrar);
+
+				        if($ejecutar){
+
+				        echo "<script>alert('La calificacón ha sido borrado!')</script>";
+				        echo "<script>window.open('calificaciones.php','_self')</script>";
+				        }
+
+				    }
+
+				    ?>-->
+
+
+
+				    <script>
+				          function enviarmod(id){
+				            $.ajax({
+				                // la URL para la petición
+				                url : 'mod_asi.php',
+				                // la información a enviar
+				                // (también es posible utilizar una cadena de datos)
+				                data : {
+				                   id : id
+				                },
+				                // especifica si será una petición POST o GET
+				                type : 'POST',
+				                // el tipo de información que se espera de respuesta
+				                dataType : 'json',
+				                // código a ejecutar si la petición es satisfactoria;
+				                // la respuesta es pasada como argumento a la función
+				                success : function(data) {
+				                  $("#swal-input0").val(data.data.id);
+				                  $("#swal-input1").val(data.data.asi);
+				                  $("#swal-input2").val(data.data.fecha);
+
+
+
+				                },
+
+				                // código a ejecutar si la petición falla;
+				                // son pasados como argumentos a la función
+				                // el objeto de la petición en crudo y código de estatus de la petición
+				                error : function(xhr, status) {
+
+				                },
+
+				                // código a ejecutar sin importar si la petición falló o no
+				                complete : function(xhr, status) {
+
+				                }
+				            });
+				          }
+				          </script>
+
+				          <script>
+				          function borrar(id){
+				          swal({
+				             title: 'Are you sure?',
+				             text: "You won't be able to revert this!",
+				             type: 'warning',
+				             showCancelButton: true,
+				             confirmButtonColor: '#3085d6',
+				             cancelButtonColor: '#d33',
+				             confirmButtonText: 'Yes, delete it!',
+				             showLoaderOnConfirm: true,
+				             preConfirm: function() {
+				               return new Promise(function(resolve) {
+
+				                 $.ajax({
+				                  url: 'borrar_asi.php',
+				                  type: 'POST',
+				                  data: 'delete='+id,
+				                  dataType: 'json'
+				               })
+				               .done(function(response){
+				                  swal('Deleted!', response.message, response.status);
+				                location.reload();
+				               })
+				               .fail(function(){
+				                  swal('Oops...', 'Something went wrong with ajax !', 'error');
+				               });
+				               });
+				             },
+				             allowOutsideClick: false
+				          });
+				          }
+				          </script>
+
+				          <script type="text/javascript">
+
+				          function alerta(id){
+
+
+				          swal({
+				          title: 'Editar asistencia',
+				          html:
+				          //type="hidden"  ES PARA PCULTAR UN INPUT
+
+				          '<form action="actual_asi" method="post" name="data">'+
+				         '<input type="hidden" name="swal-input0" id="swal-input0" class="form-control border-input">' +
+				          '<label  for="exampleInputEmail1">Asistencia</label>' +
+				          '<input type="number" name="swal-input1" onkeypress="return validar(event)" id="swal-input1" class="form-control border-input">' +
+				          '<label for="exampleInputEmail1">Fecha</label>' +
+				          '<input type="date" min="0" name="swal-input2" id="swal-input2" class="form-control border-input">' +
+
+
+
+				          '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar</Button>'+
+				          '</form>',
+				          showCancelButton: true,
+				          confirmButtonColor: '#3085d6',
+				          cancelButtonColor: '#d33',
+				          confirmButtonText: '</form> Actualizar solicitud',
+				          cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+				          showConfirmButton: false,
+				          focusConfirm: false,
+				          buttonsStyling: false,
+				          reverseButtons: true
+				          }).then(function (result) {
+
+				          swal(
+				          'Actualizado!',
+				          'La solicitud ha sido actualizada',
+				          'success'
+				          )
+				          }).catch(swal.noop);
+
+				          };
+				          </script>
+
+
+
+				                                         <!--   <tr>
+				                                                    <td><?php echo $nivel; ?></td>
+				                                                <td><?php echo $calificacion; ?></td>
+				                                                <td><?php echo $unidad; ?></td>
+				                                                <td><?php echo $promedio; ?></td>
+				                                                 <td><?php echo $id; ?></td>
+				                                                <td>
+				                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
+				                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
+				                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+				                                                </td>
+				                                            </tr>
+				                                             <?php } ?>
+				                                            <tr>
+				                                                <td>Angelica Ramos</td>
+
+				                                                <td>Chief Executive Officer (CEO)</td>
+				                                                <td>London</td>
+				                                                <td>47</td>
+				                                                <td>2009/10/09</td>
+				                                                <td>
+				                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
+				                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
+				                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+
+				                                                </td>
+				                                            </tr> -->
+
+				                                           </tbody>
+
+				                                        </table>
+
+
+				                                    </div>
+
+
+				                                </div>
+				                            </div><!--  end card  -->
+				                        </div> <!-- end col-md-12 -->
+				                    </div> <!-- end row -->
+
+				                </div>
+				            </div>
+
 
 
 
@@ -578,7 +741,50 @@ return patron.test(te);
   <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
   <script src="assets/js/demo.js"></script>
 
+	<script type="text/javascript">
+			$(document).ready(function(){
+					demo.initOverviewDashboard();
+					demo.initCirclePercentage();
 
+			});
+	</script>
+	<script type="text/javascript">
+			$(document).ready(function() {
+
+					$('#datatables').DataTable({
+							"pagingType": "full_numbers",
+							"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+							responsive: true,
+							language: {
+							search: "_INPUT_",
+									searchPlaceholder: "Search records",
+							}
+					});
+
+
+					var table = $('#datatables').DataTable();
+					 // Edit record
+					 table.on( 'click', '.edit', function () {
+							$tr = $(this).closest('tr');
+
+							var data = table.row($tr).data();
+							alert( 'You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.' );
+					 } );
+
+					 // Delete a record
+					 table.on( 'click', '.remove', function (e) {
+							$tr = $(this).closest('tr');
+							table.row($tr).remove().draw();
+							e.preventDefault();
+					 } );
+
+					//Like record
+					table.on( 'click', '.like', function () {
+							alert('You clicked on Like button');
+					 });
+
+			});
+	</script>
 
 
 </html>
