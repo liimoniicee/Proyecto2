@@ -1,6 +1,21 @@
 
+<head>
+  <!-- Bootstrap core CSS     -->
+ <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+ <!--  Paper Dashboard core CSS    -->
+ <link href="assets/css/paper-dashboard.css?v=1.2.1" rel="stylesheet"/>
+
+
+ <!--  CSS for Demo Purpose, don't include it in your project     -->
+ <link href="assets/css/demo.css" rel="stylesheet" />
+
+ </head>
+
 <!-- Sweet Alert 2 plugin -->
 <script src= "assets/js/sweetalert2.js"></script>
+
+
 <?php
 
 require_once"conexion.php";

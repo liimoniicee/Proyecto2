@@ -251,7 +251,7 @@ echo "¡ No se ha encontrado ningún registro !";
                               </ul>
                             </li>
                             <li>
-                                <a href="destroy.php" class="btn-rotate">
+                                <a href="checkout.php" class="btn-rotate">
                                    <i class="ti-share-alt"></i>
                                 <p>logout</p>
                                     </p>

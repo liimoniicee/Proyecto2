@@ -59,7 +59,7 @@ if($tipo == 1){
 	      //echo "<script>alert('Ingresado correctamente!')</script>";
         //echo "<script>window.open('coordinador.php','_self')</script>";
          //echo "<script>window.open('perfil_admin.php','_self')</script>";
-		header("location:coordinador.php");
+		header("location:checkin_cord.php");
 	}//primer roll
 	if($tipo == 3){
 		$_SESSION['clave'] = $row["ID_USUARIO"];

@@ -59,7 +59,7 @@ echo "¡ No se ha encontrado ningún registro !";
     <title>Team Interface</title>
 
     <!-- Canonical SEO -->
-    <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
+
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -88,7 +88,7 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
 
-    <!-- Custom Theme Style 
+    <!-- Custom Theme Style
     <link href="assets/build/css/custom.min.css" rel="stylesheet">-->
 </head>
 
@@ -301,20 +301,6 @@ echo "¡ No se ha encontrado ningún registro !";
             </nav>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 
 include 'conexion.php';
@@ -403,7 +389,7 @@ return patron.test(te);
                                         <!--Here you can write extra buttons/actions for the toolbar-->
                                     </div>
                                     <div class="fresh-datatables">
-                                        <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                        <table id="a-tables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                             <tr>
 
@@ -698,38 +684,23 @@ return patron.test(te);
 
 
                                     </div>
-                                   
+
 
                                 </div>
                             </div><!--  end card  -->
                         </div> <!-- end col-md-12 -->
                     </div> <!-- end row -->
-                   
+
 
 
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-            
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    Creative Tim
-                                </a>
-                            </li>
+
                             <li>
                                 <a href="#">
                                    Blog
@@ -807,17 +778,10 @@ return patron.test(te);
     <!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
     <script src="assets/js/paper-dashboard.js?v=1.2.1"></script>
 
-
-
-
-
-     
-
-
-
-
-
-
+      <!--tables  -->
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
 
 
     <script type="text/javascript">

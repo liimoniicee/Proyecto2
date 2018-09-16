@@ -9,11 +9,10 @@
 
  <!--  CSS for Demo Purpose, don't include it in your project     -->
  <link href="assets/css/demo.css" rel="stylesheet" />
-
- </head>
-
 <!-- Sweet Alert 2 plugin -->
 <script src= "assets/js/sweetalert2.js"></script>
+
+
 
 
 <?php
@@ -43,7 +42,7 @@ if($resu->num_rows > 0){
  type: "error"
  }).then(function() {
  // Redirect the user
- window.location.href = "admin.php";
+ window.location.href = "coordinador.php";
  console.log('The Ok Button was clicked.');
  });
        </script>
@@ -68,7 +67,7 @@ $sql = "INSERT INTO control_empleados (CONT_CLAVE_AREA, CONT_FECHA, CONT_HORA_SA
       type: "success"
       }).then(function() {
       // Redirect the user
-      window.location.href = "admin.php";
+      window.location.href = "coordinador.php";
       console.log('The Ok Button was clicked.');
       });
            </script>
@@ -85,7 +84,7 @@ $sql = "INSERT INTO control_empleados (CONT_CLAVE_AREA, CONT_FECHA, CONT_HORA_SA
      type: "error"
      }).then(function() {
      // Redirect the user
-     window.location.href = "admin.php";
+     window.location.href = "coordinador.php";
      console.log('The Ok Button was clicked.');
      });
            </script>
