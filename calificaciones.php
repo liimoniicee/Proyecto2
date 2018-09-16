@@ -582,17 +582,14 @@ return patron.test(te);
                                             </tr>
                                              <?php } ?>
                                             <tr>
-                                                <td>Angelica Ramos</td>
+                                                <td>Sin registro</td>
 
-                                                <td>Chief Executive Officer (CEO)</td>
-                                                <td>London</td>
-                                                <td>47</td>
-                                                <td>2009/10/09</td>
+                                                <td>Sin Registro</td>
+                                                <td>Sin registro</td>
+                                                <td>Sin registro</td>
+                                                <td>Sin registro</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
-
+                                                   
                                                 </td>
                                             </tr> -->
 

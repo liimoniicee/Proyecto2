@@ -323,27 +323,26 @@ if($resultado->num_rows > 0){
 				                                        <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
 				                                        <thead>
 				                                            <tr>
-				                                                <th>No.Control</th>
+				                                                <th>Nombre</th>
+				                                                <th>Apellido P</th>
 				                                                <th>Asistencia</th>
-				                                                <th>Fecha</th>
 
-				                                                   <th>Nombre</th>
-				                                                <th>Apellido P.</th>
-				    <th>Porcentaje A.</th>
+				                                                   <th>Fecha</th>
+				                                                
+				                                                <th>Porcentaje A.</th>
 
 
-				                                                <th class="disabled-sorting">Actions</th>
 				                                            </tr>
 				                                        </thead>
 
 				      <tfoot>
 				                                            <tr>
-				                                                  <th>No.Control</th>
-				                                                  <th>Asistencia</th>
-				                                                <th>Fecha</th>
+				                                                  <th>Nombre</th>
+				                                                  <th>Apellido P.</th>
+				                                                <th>Asistencia</th>
 
-				                                                   <th>Nombre</th>
-				                                                <th>Apellido P.</th>
+				                                                   <th>Fecha</th>
+				                                               
 				                                                <th>Porcentaje A.</th>
 
 				                                            </tr>
@@ -352,15 +351,24 @@ if($resultado->num_rows > 0){
 
 				                                        <?php
 
+
 				            include 'conexion.php';
+//cONSULTA PARA OBTENER EL ID DEL BECARIO
+                $sql_id_b="SELECT ID_BECARIO FROM becario where BEC_ID_USUARIO='$var_clave'"  ;      
 
+                   $ejecutar4 = mysqli_query($conn, $sql_id_b);
 
+                        $i = 0;
 
-									/* $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
-				b.BEC_ID_USUARIO, b.ID_BECARIO,a.ID_ASISTENCIA,a.ASI_ASISTENCIA,a.ASI_FECHA,a.ASI_ID_BECARIO FROM usuarios u, becario b , asistencia a
-				                                WHERE
+                        while($fila=mysqli_fetch_array($ejecutar4)){
 
-				                                b.BEC_ID_USUARIO = u.ID_USUARIO and a.ASI_ID_BECARIO=b.ID_BECARIO";
+                            $var_id_bec  = $fila['ID_BECARIO']; 
+                          }
+        
+
+//CONSULTA PARA OBTENER LA ASISTENCIA Y NOMBRE INDIVIDUAL DEL BECARIO
+									$consulta = "  SELECT USU_NOMBRE, USU_APELLIDO_PATERNO,ID_USUARIO,ID_ASISTENCIA,ASI_ASISTENCIA,ASI_FECHA,ASI_ID_BECARIO,BEC_ID_USUARIO FROM usuarios,asistencia,becario
+ WHERE ASI_ID_BECARIO='$var_id_bec' AND BEC_ID_USUARIO='$var_clave' AND ID_USUARIO='$var_clave'";
 
 				            $ejecutar = mysqli_query($conn, $consulta);
 
@@ -375,8 +383,8 @@ if($resultado->num_rows > 0){
 				                $apellido_b  = $fila['USU_APELLIDO_PATERNO'];
 
 
-				                $i++;*/
-				                $consu=  "SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario='$var_clave'";
+				                $i++;
+				                $consu=  "SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario='$var_id_bec'";
 				                $ejecutar3 = mysqli_query($conn, $consu);
 
 				                $i = 0;
@@ -397,19 +405,15 @@ if($resultado->num_rows > 0){
 				                                            <tr>
 
 				                                                <!--<td><?php echo $id_c; ?></td>-->
-
-				                                                <td><?php echo $porcentaje; ?>%</td>
+                                                        <td><?php echo $nombre_b; ?></td>
+                                                         <td><?php echo $apellido_b; ?></td>
+                                                        <td><?php echo $asistencia; ?></td>
+                                                        <td><?php echo $fecha; ?></td>
+                                                        <td><?php echo $porcentaje; ?>%</td>
+				                                               
 				                                            <!--SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario=1-->
 				                                                <td>
-				                                                    <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-				                                                    <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-				                                                    <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
-				                                                  <!--  <a href="asistencia.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>-->
-
-				                                                    <button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
-				                                                    <!--<button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
-
-				                                                </t >
+				                                                 
 
 
 
@@ -576,16 +580,14 @@ if($resultado->num_rows > 0){
 				                                            </tr>
 				                                             <?php } ?>
 				                                            <tr>
-				                                                <td>Angelica Ramos</td>
+				                                                <td>Sin datos</td>
 
-				                                                <td>Chief Executive Officer (CEO)</td>
-				                                                <td>London</td>
-				                                                <td>47</td>
-				                                                <td>2009/10/09</td>
+				                                                <td>Sin datos</td>
+				                                                <td>Sin datos</td>
+				                                                <td>Sin datos</td>
+				                                                <td>Sin datos</td>
 				                                                <td>
-				                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-				                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-				                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+				                                                    
 
 				                                                </td>
 				                                            </tr> -->
