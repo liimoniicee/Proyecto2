@@ -297,13 +297,14 @@ echo "¡ No se ha encontrado ningún registro !";
 
 
 
+
  <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <h4 class="title">Asistencias</h4>
-                           <!-- <p class="category"><a href="https://datatables.net/" target="_blank">dataTables.net</a> <a href="https://datatables.net/manual/index" target="_blank">full documentation.</a></p>-->
-                            <p> Nota: En el apartado de asistencia marcar la casilla con una "palomita"  en caso de asistencia y en caso de que no asistio dejar "vacia" la casilla, una vez finalizado dar clic en guardar.
+                            <h4 class="title">Calificaciones</h4>
+
+
                             <br>
 
                             <div class="card">
@@ -313,9 +314,10 @@ echo "¡ No se ha encontrado ningún registro !";
                                     </div>
                                     <div class="fresh-datatables">
                                         <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                                      <thead>
+                                        <thead>
                                             <tr>
-                                                <th>No.Control</th>
+
+                                                   <th>No.Control</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                 <th>Fecha</th>
@@ -329,17 +331,16 @@ echo "¡ No se ha encontrado ningún registro !";
       <tfoot>
                                             <tr>
 
-                                                <th>No.Control</th>
+                                                   <th>No.Control</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                  <th>Fecha</th>
                                                 <th>Asistencia</th>
-
-
                                             </tr>
                                         </tfoot>
 
-                                        <?php
+
+                                         <?php
                                         //Conexón a la base de datos
 
             include 'conexion.php';
@@ -355,22 +356,10 @@ echo "¡ No se ha encontrado ningún registro !";
             $i = 0;
             $fecha_actual=date("d/m/Y");
             while($row=mysqli_fetch_array($ejecutar)){
-                /*$id_c          = $fila['ID_CALIFICACIONES'];
-                $nivel         = $fila['CAL_NIVEL_INGLES'];
-                $calificacion  = $fila['CAL_CALIFICACION'];
-                $unidad        = $fila['CAL_UNIDAD'];
-                $promedio      = $fila['CAL_PROMEDIO'];
-                 $id            = $fila['CAL_ID_BECARIO'];*/
+             
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
-          /*$var_apellidom  =     $row['USU_APELLIDO_MATERNO'];
-          $var_direccion  =     $row['USU_DIRECCION'];
-          $var_colonia    =     $row['USU_COLONIA'];
-          $var_lugarnac   =     $row['USU_LUGAR_NACIMIENTO'];
-          $var_telefono   =     $row['USU_TELEFONO'];
-          $var_celular    =     $row['USU_CELULAR'];
-          $var_codigopost =     $row['USU_CODIGO_POSTAL'];
-          $var_fechanac   =     $row['USU_FECHA_NAC'];*/
+      
           $var_idbec       =     $row['ID_BECARIO'];
 
           $var_id         =     $row['ID_USUARIO'];
@@ -378,14 +367,14 @@ echo "¡ No se ha encontrado ningún registro !";
                 $i++;
 
         ?>
-<!--Envia los datos por el metodo POST para cada input -->
-                                                 <form method="post" action="registrar_asistencia.php">
 
+ <form method="post" action="registrar_asistencia.php">
 
-                                     <tbody >
+                                     <tbody>
                                             <tr>
-
-                                                <td><input class ="col-md-5"type="number"  name = "idbec" value="<?php echo $var_idbec; ?>" readonly="readonly"/></td>
+                                               <!--Ingresas las variables donde aparecera los datos obtenidos de la consulta -->
+                                                <!--<td><?php echo $id_c; ?></td>-->
+                                              <td><input class ="col-md-5"type="number"  name = "idbec" value="<?php echo $var_idbec; ?>" readonly="readonly"/></td>
                                                 <td><?php echo $var_nombre ?></td>
                                                 <td><?php echo $var_apellidop; ?></td>
                                                 <!--Obtiene la fecha actual por medio de php-->
@@ -393,57 +382,190 @@ echo "¡ No se ha encontrado ningún registro !";
 
                                                <!-- <td contenteditable="true"> </td>-->
                                                 <td> <input type="hidden" id="checkbox"  name="asistencia" value="0" /> <center>
-                                                              <input type="checkbox" id="checkbox"  name="asistencia" value="1" /></center></td>
-
-
-
+                                                     <input type="checkbox" id="checkbox"  name="asistencia" value="1" /></center></td>
                                                 <td>
-                                                    <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-                                                    <a href="editar_calificaciones.php?editar=<?php echo $var_id; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="calificaciones.php?borrar=<?php echo $var_id; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
-                                                    <!--boton con submit para agregar los datos por medio de POST-->
-                                                  <button type="submit" class="btn btn-fill btn-danger btn-wd">Agregar</button>
+                                                    <button type="submit" class="btn btn-fill btn-danger btn-wd">Add</button>
+                                                </t > </form>
 
 
 
+                                             <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
+                                            </tr>
+
+   <!--<?php
+ include 'conexion.php';
+        if(isset($_GET['editar'])){
+        include("editar_calificaciones.php");
+        }
+    ?>
+    <?php
+     include 'conexion.php';
+    if(isset($_GET['borrar'])){
+
+    $borrar_id = $_GET['borrar'];
+
+    $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
+
+    $ejecutar = mysqli_query($conn,$borrar);
+
+        if($ejecutar){
+
+        echo "<script>alert('La calificacón ha sido borrado!')</script>";
+        echo "<script>window.open('calificaciones.php','_self')</script>";
+        }
+
+    }
+
+    ?>-->
+
+
+
+    <script>
+          function enviarmod(id){
+            $.ajax({
+                // la URL para la petición
+                url : 'mod_cal.php',
+                // la información a enviar
+                // (también es posible utilizar una cadena de datos)
+                data : {
+                   id : id
+                },
+                // especifica si será una petición POST o GET
+                type : 'POST',
+                // el tipo de información que se espera de respuesta
+                dataType : 'json',
+                // código a ejecutar si la petición es satisfactoria;
+                // la respuesta es pasada como argumento a la función
+                success : function(data) {
+                  $("#swal-input0").val(data.data.id);
+                  $("#swal-input1").val(data.data.nom);
+                  $("#swal-input2").val(data.data.mat);
+                  $("#swal-input3").val(data.data.vende);
+                  $("#swal-input4").val(data.data.canti);
+
+                },
+
+                // código a ejecutar si la petición falla;
+                // son pasados como argumentos a la función
+                // el objeto de la petición en crudo y código de estatus de la petición
+                error : function(xhr, status) {
+
+                },
+
+                // código a ejecutar sin importar si la petición falló o no
+                complete : function(xhr, status) {
+
+                }
+            });
+          }
+          </script>
+
+          <script>
+          function borrar(id){
+          swal({
+             title: 'Are you sure?',
+             text: "You won't be able to revert this!",
+             type: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             confirmButtonText: 'Yes, delete it!',
+             showLoaderOnConfirm: true,
+             preConfirm: function() {
+               return new Promise(function(resolve) {
+
+                 $.ajax({
+                  url: 'borrar_cal.php',
+                  type: 'POST',
+                  data: 'delete='+id,
+                  dataType: 'json'
+               })
+               .done(function(response){
+                  swal('Deleted!', response.message, response.status);
+                location.reload();
+               })
+               .fail(function(){
+                  swal('Oops...', 'Something went wrong with ajax !', 'error');
+               });
+               });
+             },
+             allowOutsideClick: false
+          });
+          }
+          </script>
+
+          <script type="text/javascript">
+
+          function alerta(id){
+
+
+          swal({
+          title: 'Editar calificacón',
+          html:
+          //type="hidden"  ES PARA PCULTAR UN INPUT
+
+          '<form action="actual_cal" method="post" name="data">'+
+         '<input type="hidden" name="swal-input0" id="swal-input0" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Nivel de ingles</label>' +
+          '<input name="swal-input1" onkeypress="return validar(event)" id="swal-input1"  required="true" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Calificación</label>' +
+          '<input type="number" min="0" name="swal-input2" id="swal-input2" required="true" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Unidad</label>' +
+          '<input  type="number" min="0"name="swal-input3" id="swal-input3" required="true" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Promedio</label>' +
+          '<input type="number" min="0" name="swal-input4" id="swal-input4" required="true" class="form-control border-input">' +
+
+
+          '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar</Button>'+
+          '</form>',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: '</form> Actualizar solicitud',
+          cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+          showConfirmButton: false,
+          focusConfirm: false,
+          buttonsStyling: false,
+          reverseButtons: true
+          }).then(function (result) {
+
+          swal(
+          'Actualizado!',
+          'La solicitud ha sido actualizada',
+          'success'
+          )
+          }).catch(swal.noop);
+
+          };
+          </script>
+
+
+
+                                         <!--   <tr>
+                                                    <td><?php echo $nivel; ?></td>
+                                                <td><?php echo $calificacion; ?></td>
+                                                <td><?php echo $unidad; ?></td>
+                                                <td><?php echo $promedio; ?></td>
+                                                 <td><?php echo $id; ?></td>
+                                                <td>
+                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
+                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
+                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+                                                </td>
+                                            </tr>
+                                             <?php } ?>
+                                            <tr>
+                                                <td>Sin datos</td>
+
+                                                <td>Sin datos</td>
+                                                <td>Sin datos</td>
+                                                <td>Sin datos</td>
+                                                <td>Sin datos</td>
+                                                <td>
+                                                    
 
                                                 </td>
-                                             <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
-
-                                            </tr>
-  </form>
-
-          <?php } ?>
-
-
-
-   <script type="text/javascript">
-
-    $("form").submit(function () {
-
-    var this_master = $(this);
-
-    this_master.find('input[type="checkbox"]').each( function () {
-        var checkbox_this = $(this);
-
-
-        if( checkbox_this.is(":checked") == true ) {
-            checkbox_this.attr('value','1');
-        } else {
-            checkbox_this.prop('checked',true);
-            //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA
-            checkbox_this.attr('value','0');
-        }
-    })
-})
-   </script>
-
-
-
-
-
-
-
+                                            </tr> -->
 
                                            </tbody>
 
@@ -460,7 +582,7 @@ echo "¡ No se ha encontrado ningún registro !";
 
                 </div>
             </div>
-
+ 
 
 
 

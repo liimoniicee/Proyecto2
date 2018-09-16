@@ -307,7 +307,7 @@ if($resultado->num_rows > 0){
 
 
 
-<div class="content">
+ <div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -330,12 +330,12 @@ if($resultado->num_rows > 0){
                                                 <th>Calificación</th>
                                                 <th>Unidad</th>
                                                 <th>Promedio</th>
-                                              <!--  <th>No.Control</th>
+                                                <!--<th>No.Control</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>-->
 
 
-                                                <!--<th class="disabled-sorting">Actions</th>-->
+                                             
                                             </tr>
                                         </thead>
 
@@ -353,7 +353,8 @@ if($resultado->num_rows > 0){
                                         </tfoot>
 
 
-                                        <?php
+
+               <?php
             //Conexión a la base de datos
 
             include 'conexion.php';
@@ -405,30 +406,196 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
                                             <tr>
                                                <!--Ingresas las variables donde aparecera los datos obtenidos de la consulta -->
                                                 <!--<td><?php echo $id_c; ?></td>-->
-                                                <td><?php echo $nivel; ?></td>
+                                              <td><?php echo $nivel; ?></td>
                                                 <td><?php echo $calificacion; ?></td>
                                                 <td><?php echo $unidad; ?></td>
                                                 <td><?php echo $promedio; ?></td>
                                                 <!-- <td><?php echo $id_u; ?></td>
                                                 <td><?php echo $nom_b; ?></td>
-                                                 <td><?php echo $apellido_p; ?></td>-->
+                                                 <td><?php echo $apellido_p; ?></td>
                                                 <td>
-                                                    <!--<a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-                                                    <a href="editar_calificaciones.php?editar=<?php echo $id_c; ?>" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="calificaciones.php?borrar=<?php echo $id_c; ?>" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
-                                                    <!--Botones con una variable de cada id del becario que se quiera modificar o eliminar por medio de onclick-->
-                                                  <!--  <a href="asignar_calificaciones.php" class="btn btn-simple btn-info btn-icon like"><i class="ti-pencil"></i></a>-->
-
-                                                    <!--<button onclick="alerta(<?php echo $id_c ?>), enviarmod(<?php echo $id_c ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
-                                                    <button onclick="borrar(<?php echo $id_c ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a> -->
+                                                   
 
                                                 </t >
-<?php } ?>
+
 
 
                                              <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
                                             </tr>
-                                                               </tbody>
+
+   <!--<?php
+ include 'conexion.php';
+        if(isset($_GET['editar'])){
+        include("editar_calificaciones.php");
+        }
+    ?>
+    <?php
+     include 'conexion.php';
+    if(isset($_GET['borrar'])){
+
+    $borrar_id = $_GET['borrar'];
+
+    $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
+
+    $ejecutar = mysqli_query($conn,$borrar);
+
+        if($ejecutar){
+
+        echo "<script>alert('La calificacón ha sido borrado!')</script>";
+        echo "<script>window.open('calificaciones.php','_self')</script>";
+        }
+
+    }
+
+    ?>-->
+
+
+
+    <script>
+          function enviarmod(id){
+            $.ajax({
+                // la URL para la petición
+                url : 'mod_cal.php',
+                // la información a enviar
+                // (también es posible utilizar una cadena de datos)
+                data : {
+                   id : id
+                },
+                // especifica si será una petición POST o GET
+                type : 'POST',
+                // el tipo de información que se espera de respuesta
+                dataType : 'json',
+                // código a ejecutar si la petición es satisfactoria;
+                // la respuesta es pasada como argumento a la función
+                success : function(data) {
+                  $("#swal-input0").val(data.data.id);
+                  $("#swal-input1").val(data.data.nom);
+                  $("#swal-input2").val(data.data.mat);
+                  $("#swal-input3").val(data.data.vende);
+                  $("#swal-input4").val(data.data.canti);
+
+                },
+
+                // código a ejecutar si la petición falla;
+                // son pasados como argumentos a la función
+                // el objeto de la petición en crudo y código de estatus de la petición
+                error : function(xhr, status) {
+
+                },
+
+                // código a ejecutar sin importar si la petición falló o no
+                complete : function(xhr, status) {
+
+                }
+            });
+          }
+          </script>
+
+          <script>
+          function borrar(id){
+          swal({
+             title: 'Are you sure?',
+             text: "You won't be able to revert this!",
+             type: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             confirmButtonText: 'Yes, delete it!',
+             showLoaderOnConfirm: true,
+             preConfirm: function() {
+               return new Promise(function(resolve) {
+
+                 $.ajax({
+                  url: 'borrar_cal.php',
+                  type: 'POST',
+                  data: 'delete='+id,
+                  dataType: 'json'
+               })
+               .done(function(response){
+                  swal('Deleted!', response.message, response.status);
+                location.reload();
+               })
+               .fail(function(){
+                  swal('Oops...', 'Something went wrong with ajax !', 'error');
+               });
+               });
+             },
+             allowOutsideClick: false
+          });
+          }
+          </script>
+
+          <script type="text/javascript">
+
+          function alerta(id){
+
+
+          swal({
+          title: 'Editar calificacón',
+          html:
+          //type="hidden"  ES PARA PCULTAR UN INPUT
+
+          '<form action="actual_cal" method="post" name="data">'+
+         '<input type="hidden" name="swal-input0" id="swal-input0" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Nivel de ingles</label>' +
+          '<input name="swal-input1" onkeypress="return validar(event)" id="swal-input1"  required="true" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Calificación</label>' +
+          '<input type="number" min="0" name="swal-input2" id="swal-input2" required="true" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Unidad</label>' +
+          '<input  type="number" min="0"name="swal-input3" id="swal-input3" required="true" class="form-control border-input">' +
+          '<label for="exampleInputEmail1">Promedio</label>' +
+          '<input type="number" min="0" name="swal-input4" id="swal-input4" required="true" class="form-control border-input">' +
+
+
+          '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar</Button>'+
+          '</form>',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: '</form> Actualizar solicitud',
+          cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+          showConfirmButton: false,
+          focusConfirm: false,
+          buttonsStyling: false,
+          reverseButtons: true
+          }).then(function (result) {
+
+          swal(
+          'Actualizado!',
+          'La solicitud ha sido actualizada',
+          'success'
+          )
+          }).catch(swal.noop);
+
+          };
+          </script>
+
+
+
+                                         <!--   <tr>
+                                                    <td><?php echo $nivel; ?></td>
+                                                <td><?php echo $calificacion; ?></td>
+                                                <td><?php echo $unidad; ?></td>
+                                                <td><?php echo $promedio; ?></td>
+                                                 <td><?php echo $id; ?></td>
+                                                <td>
+                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
+                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
+                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
+                                                </td>
+                                            </tr>
+                                             <?php } ?>
+                                            <tr>
+                                                <td>Sin datos</td>
+
+                                                <td>Sin datos</td>
+                                                <td>Sin datos</td>
+                                                <td>Sin datos</td>
+                                                <td>Sin datos</td>
+                                               
+                                            </tr> -->
+
+                                           </tbody>
 
                                         </table>
 
@@ -443,6 +610,7 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
 
                 </div>
             </div>
+
 
 
 
@@ -578,6 +746,51 @@ return patron.test(te);
   <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
   <script src="assets/js/demo.js"></script>
 
+ <script type="text/javascript">
+         function alerta(id)
+        $(document).ready(function(){
+            demo.initOverviewDashboard();
+            demo.initCirclePercentage();
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#datatables').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                responsive: true,
+                language: {
+                search: "_INPUT_",
+                    searchPlaceholder: "Search records",
+                }
+            });
+
+
+            var table = $('#datatables').DataTable();
+             // Edit record
+             table.on( 'click', '.edit', function () {
+                $tr = $(this).closest('tr');
+
+                var data = table.row($tr).data();
+                alert( 'You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.' );
+             } );
+
+             // Delete a record
+             table.on( 'click', '.remove', function (e) {
+                $tr = $(this).closest('tr');
+                table.row($tr).remove().draw();
+                e.preventDefault();
+             } );
+
+            //Like record
+            table.on( 'click', '.like', function () {
+                alert('You clicked on Like button');
+             });
+
+        });
+    </script>
 
 
 
