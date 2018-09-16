@@ -12,29 +12,6 @@
 
 </head>
 
-<script src= "assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src= "assets/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src= "assets/js/perfect-scrollbar.min.js" type="text/javascript"></script>
-<script src= "assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
-<script src= "assets/js/paper-dashboard.js?v=1.2.1"></script>
-
-  <!--   Sharrre Library    -->
-  <script src= "assets/js/jquery.sharrre.js"></script>
-
-<!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-<script src="../assets/js/demo.js"></script>
-
-<!-- Promise Library for SweetAlert2 working on IE -->
-<script src= "assets/js/es6-promise-auto.min.js"></script>
-
-<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src= "assets/js/moment.min.js"></script>
-
-<!--  Date Time Picker Plugin is included in this js file -->
-<script src= "assets/js/bootstrap-datetimepicker.js"></script>
-
 <!-- Sweet Alert 2 plugin -->
 <script src= "assets/js/sweetalert2.js"></script>
 
@@ -62,7 +39,7 @@ $sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1
       type: "success"
       }).then(function() {
       // Redirect the user
-      window.location.href = "admin.php";
+      window.location.href = "destroy.php";
       console.log('The Ok Button was clicked.');
       });
            </script>
@@ -79,7 +56,7 @@ $sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1
      type: "error"
      }).then(function() {
      // Redirect the user
-     window.location.href = "admin.php";
+     window.location.href = "destroy.php";
      console.log('The Ok Button was clicked.');
      });
            </script>
@@ -88,40 +65,3 @@ $sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1
     }
     $conn->close();
     ?>
-
-
-    <script src= "assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src= "assets/js/jquery-ui.min.js" type="text/javascript"></script>
-    <script src= "assets/js/perfect-scrollbar.min.js" type="text/javascript"></script>
-    <script src= "assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-    <!--  Forms Validations Plugin -->
-    <script src= "assets/js/jquery.validate.min.js"></script>
-
-
-
-    <!-- Vector Map plugin -->
-    <script src= "assets/js/jquery-jvectormap.js"></script>
-
-
-
-    <!-- Wizard Plugin    -->
-    <script src= "assets/js/jquery.bootstrap.wizard.min.js"></script>
-
-    <!--  Bootstrap Table Plugin    -->
-    <script src= "assets/js/bootstrap-table.js"></script>
-
-    <!--  Plugin for DataTables.net  -->
-    <script src= "assets/js/jquery.datatables.js"></script>
-
-    <!--  Full Calendar Plugin    -->
-    <script src= "assets/js/fullcalendar.min.js"></script>
-
-    <!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
-    <script src= "assets/js/paper-dashboard.js?v=1.2.1"></script>
-
-      <!--   Sharrre Library    -->
-      <script src= "assets/js/jquery.sharrre.js"></script>
-
-    <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
-    <script src="../assets/js/demo.js"></script>

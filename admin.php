@@ -41,7 +41,7 @@
 		<!-- Bootstrap core CSS     -->
  		<link href="assets/css/clock.css" rel="stylesheet" />
 		<!-- Canonical SEO -->
-    <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
+
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -114,7 +114,7 @@
                 <li class="active" >
                     <a href="admin.php" aria-expanded="true">
                         <i class="ti-panel"></i>
-                        <p>Dashboard
+                        <p>Asistencia empleados
                         </p>
                     </a>
                 </li>
@@ -259,7 +259,7 @@
 													</ul>
 												</li>
 												<li>
-														<a href="destroy.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
+														<a href="checkout.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
 															 <i class="ti-share-alt" ></i>
 														<p>logout</p>
 
@@ -272,7 +272,8 @@
 						</div>
 				</nav>
 
-					<div class="content">
+					<!--<div class="content">
+						<!--
 	            <div class="container-fluid">
 	                <div class="row">
 	                    <div class="col-lg-offset-3 col-sm-6-offset-3 col-md-6">
@@ -327,6 +328,7 @@
 	                </div>
 								</div>
                 </div>
+
                                         <?php
 																				//hacemos coincidir la hora del servidor de php con la de nuestra region.
                                         date_default_timezone_set('America/Mazatlan');
@@ -399,9 +401,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-								<div class="row">
-									<div class="col-md-12">
+                                    </div>-->
+
 										<div class="card">
 											<div class="card-header">
 												<h4 class="card-title">
@@ -410,7 +411,7 @@
 												<p class="category"></p>
 											</div>
 											<div class="card-content table-responsive table-full-width">
-												<table class="table table-striped">
+												<table class="table table-striped" id="a-tables">
 													<thead>
 														<th>ID EMPLEADO</th>
 														<th>NOMBRE EMPLEADO</th>
@@ -423,7 +424,8 @@
 																$sql= "SELECT empleados.ID_EMPLEADO, usuarios.USU_NOMBRE, control_empleados.CONT_HORA_ENTRADA, control_empleados.CONT_HORA_SALIDA, control_empleados.CONT_FECHA
 																FROM usuarios, empleados, control_empleados
 																WHERE control_empleados.CON_ID_EMPLEADO = empleados.EMP_ID_USUARIO
-																AND usuarios.ID_USUARIO = control_empleados.CON_ID_EMPLEADO";
+																AND usuarios.ID_USUARIO = control_empleados.CON_ID_EMPLEADO
+																AND control_empleados.CONT_FECHA = '$diahoy'";
 																$resultado = $conn->query($sql);
 																if($resultado->num_rows > 0){
 																	while($row = $resultado->fetch_assoc()){
@@ -442,8 +444,7 @@
 												</table>
 											</div>
 										</div>
-									</div>
-								</div>
+
 	        </div>
 	    </div>
 	</div>
@@ -487,4 +488,10 @@
     <script src="assets/js/jquery.sharrre.js"></script>
 		<!--   Sharrre Library    -->
 		<script src="assets/js/clock.js"></script>
+
+		<!-- Data table plugin-->
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
+
 </html>
