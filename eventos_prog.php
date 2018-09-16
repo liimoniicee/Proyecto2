@@ -25,7 +25,6 @@
     <title>Eventos Porgramados</title>
 
     <!-- Canonical SEO -->
-    <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
 
 
      <!-- Bootstrap core CSS     -->
@@ -54,11 +53,11 @@
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CT
+                <a href="#" class="simple-text logo-mini">
+                    SH
                 </a>
 
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="#" class="simple-text logo-normal">
                  SCHOOLAR
                 </a>
             </div>
@@ -290,7 +289,7 @@
 
 
                                 <div class="card-content table-responsive table-full-width">
-                                    <table class="table">
+                                    <table class="table table-striped" id="a-tables">
                                         <thead>
 
 
@@ -350,7 +349,7 @@
 
                                                 <td class="td-actions text-right">
 
-                                                          <button onclick="alerta(<?php echo $id_b ?>), enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
+                                                          <button onclick="alerta(<?php echo $id_b ?>), enviarmod(<?php echo $id_b ?>);" title="Editar actividad" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></button>
                                                          <!-- <button onclick="borrar(<?php echo $id_b ?>)" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>-->
 
                                                 </td>
@@ -424,7 +423,7 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    Creative Tim
+                                    Interface developers
                                 </a>
                             </li>
                             <li>
@@ -517,94 +516,10 @@
     <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
 
-
-
-
-
-    <script type="text/javascript">
-
-        var $table = $('#bootstrap-table');
-
-            function operateFormatter(value, row, index) {
-                return [
-                    '<div class="table-icons">',
-                        '<a rel="tooltip" title="View" class="btn btn-simple btn-info btn-icon table-action view" href="javascript:void(0)">',
-                            '<i class="ti-image"></i>',
-                        '</a>',
-                        '<a rel="tooltip" title="Edit" class="btn btn-simple btn-warning btn-icon table-action edit" href="javascript:void(0)">',
-                            '<i class="ti-pencil-alt"></i>',
-                        '</a>',
-                        '<a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)">',
-                            '<i class="ti-close"></i>',
-                        '</a>',
-                    '</div>',
-                ].join('');
-            }
-
-            $().ready(function(){
-                window.operateEvents = {
-                    'click .view': function (e, value, row, index) {
-                        info = JSON.stringify(row);
-
-                        swal('You click view icon, row: ', info);
-                        console.log(info);
-                    },
-                    'click .edit': function (e, value, row, index) {
-                        info = JSON.stringify(row);
-
-                        swal('You click edit icon, row: ', info);
-                        console.log(info);
-                    },
-                    'click .remove': function (e, value, row, index) {
-                        console.log(row);
-                        $table.bootstrapTable('remove', {
-                            field: 'id',
-                            values: [row.id]
-                        });
-                    }
-                };
-
-                $table.bootstrapTable({
-                    toolbar: ".toolbar",
-                    clickToSelect: true,
-                    showRefresh: true,
-                    search: true,
-                    showToggle: true,
-                    showColumns: true,
-                    pagination: true,
-                    searchAlign: 'left',
-                    pageSize: 8,
-                    clickToSelect: false,
-                    pageList: [8,10,25,50,100],
-
-                    formatShowingRows: function(pageFrom, pageTo, totalRows){
-                        //do nothing here, we don't want to show the text "showing x of y from..."
-                    },
-                    formatRecordsPerPage: function(pageNumber){
-                        return pageNumber + " rows visible";
-                    },
-                    icons: {
-                        refresh: 'fa fa-refresh',
-                        toggle: 'fa fa-th-list',
-                        columns: 'fa fa-columns',
-                        detailOpen: 'fa fa-plus-circle',
-                        detailClose: 'ti-close'
-                    }
-                });
-
-                //activate the tooltips after the data table is initialized
-                $('[rel="tooltip"]').tooltip();
-
-                $(window).resize(function () {
-                    $table.bootstrapTable('resetView');
-                });
-            });
-
-    </script>
-
-
-
-
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
 
 <script>
 function enviarmod(id){
@@ -657,7 +572,7 @@ function enviarmod(id){
 
 
   swal({
- title: 'Editar solicitud',
+ title: 'Editar actividad',
  html:
 
  '<form action="editar_event.php" method="post" name="data">'+
