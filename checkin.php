@@ -93,5 +93,5 @@ $sql = "INSERT INTO control_empleados (CONT_CLAVE_AREA, CONT_FECHA, CONT_HORA_SA
        <?php
     }
   //}
-    $conn->close();
+    $conn->close();  
     ?>
