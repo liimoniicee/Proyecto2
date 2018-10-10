@@ -31,7 +31,12 @@ $id_usuario = $_SESSION["clave"];
 //hacemos un registro en la base de datos rellenando los campos con la hora actual, la fecha actual y la clave del usuario al que se
 //asignan estos datos
 
-$consu = "select e.ID_EMPLEADO, c.CONT_HOY from empleados e, control_empleados c, usuarios u
+  if(isset($_GET['editar'])){
+      
+      $editar_id = $_GET['editar']; 
+    }
+
+/*$consu = "select e.ID_EMPLEADO, c.CONT_HOY from empleados e, control_empleados c, usuarios u
 where id_usuario = $id_usuario
 and c.con_id_empleado = u.id_usuario
 and e.EMP_ID_USUARIO = u.ID_USUARIO
@@ -57,9 +62,9 @@ if($resu->num_rows > 0){
    <?php
 
 
-}else{
+}else{*/
 
-$sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1' WHERE CON_ID_EMPLEADO =  '$id_usuario'";
+$sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1' WHERE ID_CONT_EMP =  '$editar_id'";
 
     if ($conn->query($sql) === TRUE) {
       //si la consulta devuelve un estado verdadero entonces hace lo siguiente
@@ -89,13 +94,13 @@ $sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1
      type: "error"
      }).then(function() {
      // Redirect the user
-     window.location.href = "destroy.php";
+     window.location.href = "admin.php";
      console.log('The Ok Button was clicked.');
      });
            </script>
     </body>
        <?php
     }
-  }
+ // }
     $conn->close();
     ?>

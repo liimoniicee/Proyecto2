@@ -26,7 +26,7 @@ $horahoy = date("H:i:sa");
 //obtenemos la clave del usuario que desea registrar su entrada
 $id_usuario = $_SESSION["clave"];
 
-$consu = "select e.ID_EMPLEADO, c.CONT_HOY from empleados e, control_empleados c, usuarios u
+/*$consu = "select e.ID_EMPLEADO, c.CONT_HOY from empleados e, control_empleados c, usuarios u
 where id_usuario = $id_usuario
 and c.con_id_empleado = u.id_usuario
 and e.EMP_ID_USUARIO = u.ID_USUARIO
@@ -51,7 +51,7 @@ if($resu->num_rows > 0){
    <?php
 
 
-}else{
+}else{*/
 
 
 //hacemos un registro en la base de datos rellenando los campos con la hora actual, la fecha actual y la clave del usuario al que se
@@ -92,6 +92,6 @@ $sql = "INSERT INTO control_empleados (CONT_CLAVE_AREA, CONT_FECHA, CONT_HORA_SA
     </body>
        <?php
     }
-  }
+  //}
     $conn->close();
     ?>

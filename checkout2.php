@@ -49,7 +49,12 @@ session_start();
 $id_usuario = $_SESSION["clave"];
 //hacemos un registro en la base de datos rellenando los campos con la hora actual, la fecha actual y la clave del usuario al que se
 //asignan estos datos
-$sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1' WHERE CON_ID_EMPLEADO =  '$id_usuario'";
+
+  if(isset($_GET['editar'])){
+      
+      $editar_id = $_GET['editar']; 
+    }
+$sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1' WHERE ID_CONT_EMP =  '$editar_id'";
 
     if ($conn->query($sql) === TRUE) {
       //si la consulta devuelve un estado verdadero entonces hace lo siguiente
@@ -62,7 +67,7 @@ $sql = "UPDATE control_empleados SET CONT_HORA_SALIDA = CURTIME(), CONT_HOY = '1
       type: "success"
       }).then(function() {
       // Redirect the user
-      window.location.href = "admin2.php";
+      window.location.href = "destroy.php";
       console.log('The Ok Button was clicked.');
       });
            </script>

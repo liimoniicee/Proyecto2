@@ -2,7 +2,7 @@
 session_start();
 include 'fuctions.php';
 include 'conexion.php';
-verificar_sesion();
+verificar_sesion(); 
 
 
 $response = array();

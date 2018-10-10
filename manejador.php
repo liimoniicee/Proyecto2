@@ -79,7 +79,7 @@ if($tipo == 1){
 		//header("location:ingles.php");
 		//echo "<script>alert('Ingresado correctamente al modulo de ingles!')</script>";
         //echo "<script>window.open('ingles.php','_self')</script>";
-        header("location:ingles.php");
+        header("location:checkin2.php");
 	}
 	if($tipo == 5){
 		$_SESSION['clave'] = $row["ID_USUARIO"];
@@ -98,7 +98,7 @@ if($tipo == 1){
    ?>
     <body>
     <script>
-    swal({
+  swal({
   title: "Error!",
   text: "Usuario y/o contraseña incorrecto",
   type: "error"

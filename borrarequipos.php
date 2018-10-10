@@ -277,6 +277,8 @@
 																		echo "<td>".$row["EQU_TIPO_EQUIPO"]."</td> \n";
 																		echo "<td> \n";
 																		echo "<button type='submit' class='btn btn-xs btn-danger btn-info'> Borrar </button>\n";
+																																				echo "<button type='submit' class='btn btn-xs btn-danger btn-info'> Borrar </button>\n";
+
 																		echo "</form> \n";
 																		echo "</td>";
 																		echo "</tr>"."\n";

@@ -258,8 +258,25 @@
 
 													</ul>
 												</li>
+												 <?php 
+            
+            
+            $consulta = "SELECT * FROM control_empleados";
+            
+            $ejecutar = mysqli_query($conn, $consulta); 
+            
+            $i = 0;
+            
+            while($fila=mysqli_fetch_array($ejecutar)){         
+                $id  = $fila['ID_CONT_EMP'];
+            
+
+                $i++;  
+                } 
+            
+        ?>
 												<li>
-														<a href="checkout.php" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
+														<a href="checkout.php?editar=<?php echo $id; ?>" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
 															 <i class="ti-share-alt" ></i>
 														<p>logout</p>
 
@@ -267,6 +284,11 @@
 																</p>
 														</a>
 												</li>
+												                                       <?php
+        if(isset($_GET['editar'])){
+        include("editar.php");
+        }
+    ?> 
 										</ul>
 								</div>
 						</div>
@@ -403,51 +425,106 @@
                                         </div>
                                     </div>-->
 
-										<div class="card">
-											<div class="card-header">
-												<h4 class="card-title">
-													CONTROL DE ENTRADAS Y SALIDAS
-												</h4>
-												<p class="category"></p>
-											</div>
-											<div class="card-content table-responsive table-full-width">
-												<table class="table table-striped" id="a-tables">
-													<thead>
-														<th>ID EMPLEADO</th>
-														<th>NOMBRE EMPLEADO</th>
-														<th>HORA ENTRADA</th>
-														<th>HORA SALIDA</th>
-                                                        <th>FECHA</th>
-													</thead>
-													<tbody>
-															<?php
-																$sql= "SELECT empleados.ID_EMPLEADO, usuarios.USU_NOMBRE, control_empleados.CONT_HORA_ENTRADA, control_empleados.CONT_HORA_SALIDA, control_empleados.CONT_FECHA
-																FROM usuarios, empleados, control_empleados
-																WHERE control_empleados.CON_ID_EMPLEADO = empleados.EMP_ID_USUARIO
-																AND usuarios.ID_USUARIO = control_empleados.CON_ID_EMPLEADO
-																AND control_empleados.CONT_FECHA = '$diahoy'";
-																$resultado = $conn->query($sql);
-																if($resultado->num_rows > 0){
-																	while($row = $resultado->fetch_assoc()){
-																		echo "<tr>". "\n";
-																		echo "<td>".$row["ID_EMPLEADO"]."</td> \n";
-																		echo "<td>".$row["USU_NOMBRE"]."</td> \n";
-																		echo "<td>".$row["CONT_HORA_ENTRADA"]."</td> \n";
-																		echo "<td>".$row["CONT_HORA_SALIDA"]."</td> \n";
-                                                                        echo "<td>".$row["CONT_FECHA"]."</td> \n";
-																		echo "</tr>"."\n";
-																	}
-																}
-															 ?>
+										   <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="toolbar">
+                                        <!--Here you can write extra buttons/actions for the toolbar-->
+                                    </div>
+                                    <table id="bootstrap-table" class="table">
+                                        <thead>
+                                            <th data-field="state" data-checkbox="true"></th>
+                                            <th data-field="id" class="text-center">ID</th>
+                                            <th data-field="name" data-sortable="true">Name</th>
+                                            <th data-field="salary" data-sortable="true">TIME START</th>
+                                            <th data-field="country" data-sortable="true">TIME OVER</th>
+                                           <th data-field="city">DATE</th>
+                                            <th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
+                                        </thead>
+                                        <tbody>
+                                          <?php
 
-													</tbody>
-												</table>
-											</div>
-										</div>
+            include 'conexion.php';
 
-	        </div>
-	    </div>
-	</div>
+            $consulta = "SELECT empleados.ID_EMPLEADO, usuarios.USU_NOMBRE, control_empleados.CONT_HORA_ENTRADA, control_empleados.CONT_HORA_SALIDA, control_empleados.CONT_FECHA
+                                                                FROM usuarios, empleados, control_empleados
+                                                                WHERE control_empleados.CON_ID_EMPLEADO = empleados.EMP_ID_USUARIO
+                                                                AND usuarios.ID_USUARIO = control_empleados.CON_ID_EMPLEADO";
+                                                                
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
+            $i = 0;
+
+            while($row=mysqli_fetch_array($ejecutar)){
+                 $id_c       =     $row['ID_EMPLEADO'];
+          $_nom       =     $row['USU_NOMBRE'];
+          $_entrada    =    $row['CONT_HORA_ENTRADA'];
+          $_salida       =     $row['CONT_HORA_SALIDA'];
+          $_fecha       =     $row['CONT_FECHA'];
+         
+
+
+
+
+                $i++; 
+           // } //FINA DE LA CONSULTADEL PRECIO
+
+        ?>
+                                            <tr>
+                                                <td></td>
+                                                <td><?php echo $id_c ?></td>
+                                                <td><?php echo $_nom ?></td>
+                                                <td><?php echo $_entrada ?></td>
+                                                <td><?php echo $_salida ?></td>
+                                                <td><?php echo $_fecha ?></td>
+                                                
+                                          
+                                                <td></td>
+                                            </tr>
+                                      <?php } ?>
+                                        
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div><!--  end card  -->
+                        </div> <!-- end col-md-12 -->
+                    </div> <!-- end row -->
+                </div>
+            </div>
+
+				            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    GPS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Licenses
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright pull-right">
+                        &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="#">Interface</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 </body>
 	<!--   Core JS Files. Extra: TouchPunch for touch library inside jquery-ui.min.js   -->
 	<script src="assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -493,5 +570,88 @@
     <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="assets/js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#a-tables').DataTable();</script>
+
+     <script type="text/javascript">
+
+        var $table = $('#bootstrap-table');
+
+            function operateFormatter(value, row, index) {
+                return [
+                    '<div class="table-icons">',
+                        '<a rel="tooltip" title="View" class="btn btn-simple btn-info btn-icon table-action view" href="javascript:void(0)">',
+                            '<i class="ti-image"></i>',
+                        '</a>',
+                        '<a rel="tooltip" title="Edit" class="btn btn-simple btn-warning btn-icon table-action edit" href="javascript:void(0)">',
+                            '<i class="ti-pencil-alt"></i>',
+                        '</a>',
+                        '<a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)">',
+                            '<i class="ti-close"></i>',
+                        '</a>',
+                    '</div>',
+                ].join(''); 
+            }
+
+            $().ready(function(){
+                window.operateEvents = {
+                    'click .view': function (e, value, row, index) {
+                        info = JSON.stringify(row);
+
+                        swal('You click view icon, row: ', info);
+                        console.log(info);
+                    },
+                    'click .edit': function (e, value, row, index) {
+                        info = JSON.stringify(row);
+
+                        swal('You click edit icon, row: ', info);
+                        console.log(info);
+                    },
+                    'click .remove': function (e, value, row, index) {
+                        console.log(row);
+                        $table.bootstrapTable('remove', {
+                            field: 'id',
+                            values: [row.id]
+                        });
+                    }
+                };
+
+                $table.bootstrapTable({
+                    toolbar: ".toolbar",
+                    clickToSelect: true,
+                    showRefresh: true,
+                    search: true,
+                    showToggle: true,
+                    showColumns: true,
+                    pagination: true,
+                    searchAlign: 'left',
+                    pageSize: 8,
+                    clickToSelect: false,
+                    pageList: [8,10,25,50,100],
+
+                    formatShowingRows: function(pageFrom, pageTo, totalRows){
+                        //do nothing here, we don't want to show the text "showing x of y from..."
+                    },
+                    formatRecordsPerPage: function(pageNumber){
+                        return pageNumber + " rows visible";
+                    },
+                    icons: {
+                        refresh: 'fa fa-refresh',
+                        toggle: 'fa fa-th-list',
+                        columns: 'fa fa-columns',
+                        detailOpen: 'fa fa-plus-circle',
+                        detailClose: 'ti-close'
+                    }
+                });
+
+                //activate the tooltips after the data table is initialized
+                $('[rel="tooltip"]').tooltip();
+
+                $(window).resize(function () {
+                    $table.bootstrapTable('resetView');
+                });
+            });
+
+    </script>
+
+
 
 </html>
