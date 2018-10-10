@@ -9,8 +9,7 @@
  $var_tipo = $_SESSION['tipo'];
 
  if($var_tipo != 5) {
-  //echo "<script>alert('No tienes acceso a esta página!')</script>";
-    //echo "<script>window.open('index.html','_self')</script>";
+
     header("Location: error509.html");
   }
 ?>
@@ -82,14 +81,6 @@ echo "¡ No se ha encontrado ningún registro !";
     <link href="assets/css/themify-icons.css" rel="stylesheet">
 
 
-
-
-
-
-
-
-    <!-- Custom Theme Style
-    <link href="assets/build/css/custom.min.css" rel="stylesheet">-->
 </head>
 
 <body>
