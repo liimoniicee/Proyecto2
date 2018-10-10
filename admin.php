@@ -36,6 +36,7 @@
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.ico">
+	<link rel="shortcut icon" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Team Interface</title>
 		<!-- Bootstrap core CSS     -->
@@ -258,22 +259,22 @@
 
 													</ul>
 												</li>
-												 <?php 
-            
-            
-            $consulta = "SELECT * FROM control_empleados";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
-            $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
-                $id  = $fila['ID_CONT_EMP'];
-            
+												 <?php
 
-                $i++;  
-                } 
-            
+
+            $consulta = "SELECT * FROM control_empleados";
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
+            $i = 0;
+
+            while($fila=mysqli_fetch_array($ejecutar)){
+                $id  = $fila['ID_CONT_EMP'];
+
+
+                $i++;
+                }
+
         ?>
 												<li>
 														<a href="checkout.php?editar=<?php echo $id; ?>" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
@@ -288,7 +289,7 @@
         if(isset($_GET['editar'])){
         include("editar.php");
         }
-    ?> 
+    ?>
 										</ul>
 								</div>
 						</div>
@@ -453,7 +454,7 @@
                                                                 FROM usuarios, empleados, control_empleados
                                                                 WHERE control_empleados.CON_ID_EMPLEADO = empleados.EMP_ID_USUARIO
                                                                 AND usuarios.ID_USUARIO = control_empleados.CON_ID_EMPLEADO";
-                                                                
+
 
             $ejecutar = mysqli_query($conn, $consulta);
 
@@ -465,12 +466,12 @@
           $_entrada    =    $row['CONT_HORA_ENTRADA'];
           $_salida       =     $row['CONT_HORA_SALIDA'];
           $_fecha       =     $row['CONT_FECHA'];
-         
 
 
 
 
-                $i++; 
+
+                $i++;
            // } //FINA DE LA CONSULTADEL PRECIO
 
         ?>
@@ -481,12 +482,12 @@
                                                 <td><?php echo $_entrada ?></td>
                                                 <td><?php echo $_salida ?></td>
                                                 <td><?php echo $_fecha ?></td>
-                                                
-                                          
+
+
                                                 <td></td>
                                             </tr>
                                       <?php } ?>
-                                        
+
                                         </tbody>
                                     </table>
 
@@ -588,7 +589,7 @@
                             '<i class="ti-close"></i>',
                         '</a>',
                     '</div>',
-                ].join(''); 
+                ].join('');
             }
 
             $().ready(function(){

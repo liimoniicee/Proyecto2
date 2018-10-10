@@ -1,15 +1,4 @@
-<!--?php
-$nom = $_POST['nombre'];
-$ape_p = $_POST['apellidop'];
-$ape_m = $_POST['apellidom'];
-$carr = $_POST['carrera'];
-$tel = $_POST['telefono'];
-$pass= $_POST['passwordss'];
-$usu = $_POST['usuario'];
-$sexo = $_POST['opsexo'];
-$ciudad = $_POST['cabociudad'];
 
-?> -->
 
 <?php
 include 'conexion.php';

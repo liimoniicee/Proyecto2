@@ -87,6 +87,7 @@ if($resultado->num_rows > 0){
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href= "assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href= "assets/img/favicon.png">
+	<link rel="shortcut icon" href="assets/img/favicon.ico">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -335,7 +336,7 @@ if($resultado->num_rows > 0){
                                                 <th>Apellido</th>-->
 
 
-                                             
+
                                             </tr>
                                         </thead>
 
@@ -414,7 +415,7 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
                                                 <td><?php echo $nom_b; ?></td>
                                                  <td><?php echo $apellido_p; ?></td>
                                                 <td>
-                                                   
+
 
                                                 </t >
 
@@ -592,7 +593,7 @@ B.BEC_ID_USUARIO = U.ID_USUARIO";
                                                 <td>Sin datos</td>
                                                 <td>Sin datos</td>
                                                 <td>Sin datos</td>
-                                               
+
                                             </tr> -->
 
                                            </tbody>

@@ -1,15 +1,3 @@
-<!--?php
-$nom = $_POST['nombre'];
-$ape_p = $_POST['apellidop'];
-$ape_m = $_POST['apellidom'];
-$carr = $_POST['carrera'];
-$tel = $_POST['telefono'];
-$pass= $_POST['passwordss'];
-$usu = $_POST['usuario'];
-$sexo = $_POST['opsexo'];
-$ciudad = $_POST['cabociudad'];
-
-?> -->
 
 <?php
 include 'conexion.php';
@@ -30,12 +18,12 @@ echo "<br>";
 
 $sql = "INSERT INTO calificaciones (CAL_NIVEL_INGLES,
                                     CAL_CALIFICACION,
-                                    CAL_UNIDAD,  
+                                    CAL_UNIDAD,
                                      CAL_PROMEDIO,
                                      CAL_ID_BECARIO) VALUES ('$var_nivel' ,
-                                                            '$var_calificacion', 
-                                                            '$var_unidad' , 
-                                                            '$var_promedio' , 
+                                                            '$var_calificacion',
+                                                            '$var_unidad' ,
+                                                            '$var_promedio' ,
                                                             '$var_id_foranea' )";
 
 
@@ -63,8 +51,3 @@ $conn->close();
 
 
 ?>
-
-
-
-
-

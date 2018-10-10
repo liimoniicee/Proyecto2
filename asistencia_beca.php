@@ -87,6 +87,7 @@ if($resultado->num_rows > 0){
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href= "assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href= "assets/img/favicon.png">
+	<link rel="shortcut icon" href="assets/img/favicon.ico">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -328,7 +329,7 @@ if($resultado->num_rows > 0){
 				                                                <th>Asistencia</th>
 
 				                                                   <th>Fecha</th>
-				                                                
+
 				                                                <th>Porcentaje A.</th>
 
 
@@ -342,7 +343,7 @@ if($resultado->num_rows > 0){
 				                                                <th>Asistencia</th>
 
 				                                                   <th>Fecha</th>
-				                                               
+
 				                                                <th>Porcentaje A.</th>
 
 				                                            </tr>
@@ -354,7 +355,7 @@ if($resultado->num_rows > 0){
 
 				            include 'conexion.php';
 //cONSULTA PARA OBTENER EL ID DEL BECARIO
-                $sql_id_b="SELECT ID_BECARIO FROM becario where BEC_ID_USUARIO='$var_clave'"  ;      
+                $sql_id_b="SELECT ID_BECARIO FROM becario where BEC_ID_USUARIO='$var_clave'"  ;
 
                    $ejecutar4 = mysqli_query($conn, $sql_id_b);
 
@@ -362,9 +363,9 @@ if($resultado->num_rows > 0){
 
                         while($fila=mysqli_fetch_array($ejecutar4)){
 
-                            $var_id_bec  = $fila['ID_BECARIO']; 
+                            $var_id_bec  = $fila['ID_BECARIO'];
                           }
-        
+
 
 //CONSULTA PARA OBTENER LA ASISTENCIA Y NOMBRE INDIVIDUAL DEL BECARIO
 									$consulta = "  SELECT USU_NOMBRE, USU_APELLIDO_PATERNO,ID_USUARIO,ID_ASISTENCIA,ASI_ASISTENCIA,ASI_FECHA,ASI_ID_BECARIO,BEC_ID_USUARIO FROM usuarios,asistencia,becario
@@ -410,10 +411,10 @@ if($resultado->num_rows > 0){
                                                         <td><?php echo $asistencia; ?></td>
                                                         <td><?php echo $fecha; ?></td>
                                                         <td><?php echo $porcentaje; ?>%</td>
-				                                               
+
 				                                            <!--SELECT SUM(asi_asistencia)*100/30 as total FROM asistencia WHERE asi_id_becario=1-->
 				                                                <td>
-				                                                 
+
 
 
 
@@ -587,7 +588,7 @@ if($resultado->num_rows > 0){
 				                                                <td>Sin datos</td>
 				                                                <td>Sin datos</td>
 				                                                <td>
-				                                                    
+
 
 				                                                </td>
 				                                            </tr> -->

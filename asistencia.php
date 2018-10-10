@@ -51,6 +51,7 @@ echo "¡ No se ha encontrado ningún registro !";
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>Team Interface</title>
@@ -356,10 +357,10 @@ echo "¡ No se ha encontrado ningún registro !";
             $i = 0;
             $fecha_actual=date("d/m/Y");
             while($row=mysqli_fetch_array($ejecutar)){
-             
+
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
-      
+
           $var_idbec       =     $row['ID_BECARIO'];
 
           $var_id         =     $row['ID_USUARIO'];
@@ -562,7 +563,7 @@ echo "¡ No se ha encontrado ningún registro !";
                                                 <td>Sin datos</td>
                                                 <td>Sin datos</td>
                                                 <td>
-                                                    
+
 
                                                 </td>
                                             </tr> -->
@@ -582,7 +583,7 @@ echo "¡ No se ha encontrado ningún registro !";
 
                 </div>
             </div>
- 
+
 
 
 

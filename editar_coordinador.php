@@ -5,6 +5,7 @@
 
  <!--  Paper Dashboard core CSS    -->
  <link href="assets/css/paper-dashboard.css?v=1.2.1" rel="stylesheet"/>
+ <link rel="shortcut icon" href="assets/img/favicon.ico">
 
 
  <!--  CSS for Demo Purpose, don't include it in your project     -->

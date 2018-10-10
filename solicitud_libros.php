@@ -10,8 +10,7 @@ $var_clave= $_SESSION['clave'];
 $var_tipo = $_SESSION['tipo'];
 
 if($var_tipo != 3) {
- //echo "<script>alert('No tienes acceso a esta página!')</script>";
-   //echo "<script>window.open('index.html','_self')</script>";
+
    header("Location: error509.html");
  }
 
@@ -67,6 +66,7 @@ $res = $conn->query($query2);
  <meta charset="utf-8" />
  <link rel="apple-touch-icon" sizes="76x76" href= "assets/img/apple-icon.png">
  <link rel="icon" type="image/png" sizes="96x96" href= "assets/img/favicon.png">
+   <link rel="shortcut icon" href="assets/img/favicon.ico">
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
  <title>Schoolar Libros</title>

@@ -17,6 +17,7 @@
 <script src= "assets/js/jquery-ui.min.js" type="text/javascript"></script>
 <script src= "assets/js/perfect-scrollbar.min.js" type="text/javascript"></script>
 <script src= "assets/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="assets/img/favicon.ico">
 
 <!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
 <script src= "assets/js/paper-dashboard.js?v=1.2.1"></script>
