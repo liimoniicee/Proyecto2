@@ -59,9 +59,6 @@ echo "¡ No se ha encontrado ningún registro !";
 
     <title>Team Interface</title>
 
-    <!-- Canonical SEO -->
-    <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
-
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
@@ -133,7 +130,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     <li  >
                         <a href="admin.php" aria-expanded="true">
                             <i class="ti-panel"></i>
-                            <p>Dashboard
+                            <p>Asistencia Empleados
                             </p>
                         </a>
                     </li>

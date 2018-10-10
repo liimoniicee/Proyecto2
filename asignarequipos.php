@@ -92,7 +92,7 @@
 							<li>
 									<a href="admin.php" aria-expanded="true">
 											<i class="ti-panel"></i>
-											<p>Dashboard
+											<p>Asistencia empleados
 											</p>
 									</a>
 							</li>
@@ -103,14 +103,7 @@
 											</p>
 									</a>
 							</li>
-						<!--	<li>
-									<a href="agenda.php">
-											<i class="ti-calendar"></i>
-											<p>
-													Agenda
-											</p>
-									</a>
-							</li>-->
+
 							<li>
 							<a data-toggle="collapse" href="#tablesExamples">
 									<i class="ti-agenda"></i>

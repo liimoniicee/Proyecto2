@@ -92,7 +92,7 @@
 							<li>
 									<a href="admin.php" aria-expanded="true">
 											<i class="ti-panel"></i>
-											<p>Dashboard
+											<p>Asistencia empleados
 											</p>
 									</a>
 							</li>

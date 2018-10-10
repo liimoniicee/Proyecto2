@@ -80,118 +80,133 @@ if($resultado->num_rows > 0){
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
         <div class="logo">
-            <a href="#" class="simple-text logo-mini">
-                gsp
-            </a>
-            <a href="admin.php" class="simple-text logo-normal">
-                GSP Cabo
-            </a>
-        </div>
-        <div class="sidebar-wrapper">
-          <div class="user">
-							<div class="info">
-									<div class="photo">
-											<img src="<?php echo $var_foto ?>" />
-									</div>
+  				<a href="#" class="simple-text logo-mini">
+  					gsp
+  				</a>
+  				<a href="admin.php" class="simple-text logo-normal">
+  					GSP Cabo
+  				</a>
+  			</div>
+  			<div class="sidebar-wrapper">
 
-									<a data-toggle="collapse" href="#collapseExample" class="collapsed">
-											<span>
-													<?php echo $_SESSION['nombre'];?>
-													<b class="caret"></b>
-											</span>
-									</a>
-									<div class="clearfix"></div>
+  					<div class="user">
+  							<div class="info">
+  									<div class="photo">
+  											<img src="<?php echo $var_foto ?>" />
+  									</div>
 
-									<div class="collapse" id="collapseExample">
-											<ul class="nav">
-													<li>
-															<a href="">
-																	<span class="sidebar-mini"></span>
-																	<span class="sidebar-normal">c</span>
-															</a>
-													</li>
-											</ul>
-									</div>
-							</div>
-					</div>
-            <ul class="nav">
-                <li >
-                    <a href="admin.php" aria-expanded="true">
-                        <i class="ti-panel"></i>
-                        <p>Dashboard
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="perfil_admin.php">
-                        <i class="ti-user"></i>
-                        <p>Perfil
-                        </p>
-                    </a>
-                </li>
-               <!-- <li>
-                    <a data-toggle="collapse" href="#formsExamples">
-                        <i class="ti-calendar"></i>
-                        <p>
-                            Agenda
-                        </p>
-                    </a>
-                </li>-->
-                <li>
-                    <a data-toggle="collapse" href="#">
-                        <i class="ti-book"></i>
-                        <p>
-                            Control de Empleados
-                        </p>
-                    </a>
-                </li>
-                <li class="active">
-                    <a data-toggle="collapse" href="#dashboardOverview" aria-expanded="true">
-                        <i class="ti-book"></i>
-                        <p>Gestion de Equipos
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse in" id="dashboardOverview">
-                        <ul class="nav">
-                            <li class="active">
-                                <a href="teams.php">
-                                    <span class="sidebar-mini">E</span>
-                                    <span class="sidebar-normal">Equipos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="asignarequipos.php">
-                                    <span class="sidebar-mini">A</span>
-                                    <span class="sidebar-normal">Asignar Equipos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="crearequipos.php">
-                                    <span class="sidebar-mini">C</span>
-                                    <span class="sidebar-normal">Crear Equipos</span>
-                                </a>
-                            </li>
+  									<a data-toggle="collapse" href="#collapseExample" class="collapsed">
+  											<span>
+  													<?php echo $_SESSION['nombre'];?>
+  													<b class="caret"></b>
+  											</span>
+  									</a>
+  									<div class="clearfix"></div>
 
-                            <li>
-                                <a href="editarequipos.php">
-                                    <span class="sidebar-mini">E</span>
-                                    <span class="sidebar-normal">Editar Equipos</span>
-                                </a>
-                            </li>
+  									<div class="collapse" id="collapseExample">
+  											<ul class="nav">
+  													<li>
+  															<a href="">
+  																	<span class="sidebar-mini"></span>
+  																	<span class="sidebar-normal">c</span>
+  															</a>
+  													</li>
+  											</ul>
+  									</div>
+  							</div>
+  					</div>
 
-                            <li>
-                                <a href="borrarequipos.php">
-                                    <span class="sidebar-mini">B</span>
-                                    <span class="sidebar-normal">Borrar Equipos</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+  					<ul class="nav">
+  							<li>
+  									<a href="admin.php" aria-expanded="true">
+  											<i class="ti-panel"></i>
+  											<p>Asistencia empleados
+  											</p>
+  									</a>
+  							</li>
+  							<li>
+  									<a href="perfil_admin.php">
+  											<i class="ti-user"></i>
+  											<p>Perfil
+  											</p>
+  									</a>
+  							</li>
+
+  							<li>
+  							<a data-toggle="collapse" href="#tablesExamples">
+  									<i class="ti-agenda"></i>
+  									<p>
+  											Control de empleados
+  										 <b class="caret"></b>
+  									</p>
+  							</a>
+  							<div class="collapse" id="tablesExamples">
+  									<ul class="nav">
+  											<li>
+  													<a href="registro_empleados.php">
+  															<span class="sidebar-mini"></span>
+  															<span class="sidebar-normal">Agregar empleados</span>
+  													</a>
+  											</li>
+
+  											 <li>
+  													<a href="mostrar_empleados.php">
+  															<span class="sidebar-mini"></span>
+  															<span class="sidebar-normal">Mostrar empelados </span>
+  													</a>
+  											</li>
+  									</ul>
+  							</div>
 
 
-            </ul>
+  					</li>
+  							<li class="active">
+  									<a data-toggle="collapse" href="#dashboardOverview" aria-expanded="true">
+  											<i class="ti-book"></i>
+  											<p>Gestion de Equipos
+  													<b class="caret"></b>
+  											</p>
+  									</a>
+  									<div class="collapse in" id="dashboardOverview">
+  											<ul class="nav">
+  													<li class="active" >
+  															<a href="teams.php">
+  																	<span class="sidebar-mini">E</span>
+  																	<span class="sidebar-normal">Equipos</span>
+  															</a>
+  													</li>
+  													<li>
+  															<a href="asignarequipos.php">
+  																	<span class="sidebar-mini">A</span>
+  																	<span class="sidebar-normal">Asignar Equipos</span>
+  															</a>
+  													</li>
+  													<li>
+  															<a href="crearequipos.php">
+  																	<span class="sidebar-mini">C</span>
+  																	<span class="sidebar-normal">Crear Equipos</span>
+  															</a>
+  													</li>
+
+  													<li>
+  															<a href="editarequipos.php">
+  																	<span class="sidebar-mini">E</span>
+  																	<span class="sidebar-normal">Editar Equipos</span>
+  															</a>
+  													</li>
+
+  													<li>
+  															<a href="borrarequipos.php">
+  																	<span class="sidebar-mini">B</span>
+  																	<span class="sidebar-normal">Borrar Equipos</span>
+  															</a>
+  													</li>
+  											</ul>
+  									</div>
+  							</li>
+
+
+  					</ul>
         </div>
     </div>
   <div class="main-panel">

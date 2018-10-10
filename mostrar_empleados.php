@@ -133,7 +133,7 @@ echo "¡ No se ha encontrado ningún registro !";
                     <li >
                         <a href="admin2.php" aria-expanded="true">
                             <i class="ti-panel"></i>
-                            <p>Dashboard
+                            <p>Asistencia Empleados
                             </p>
                         </a>
                     </li>
