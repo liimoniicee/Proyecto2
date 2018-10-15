@@ -61,10 +61,6 @@ echo "¡ No se ha encontrado ningún registro !";
 
     <title>Aspirantes</title>
 
-    <!-- Canonical SEO -->
-    <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
-
-
      <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -91,15 +87,14 @@ echo "¡ No se ha encontrado ningún registro !";
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CT
+                <a href="#" class="simple-text logo-mini">
+                    SH
                 </a>
 
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="#" class="simple-text logo-normal">
                  SCHOOLAR
                 </a>
             </div>
-
 
             <div class="sidebar-wrapper">
 
@@ -108,25 +103,12 @@ echo "¡ No se ha encontrado ningún registro !";
                         <div class="photo">
                               <img src="<?php echo $var_foto ?>" />
                         </div>
-
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <span>
                                 <?php echo $_SESSION['nombre'];?>
                                 <b class="caret"></b>
                             </span>
                         </a>
-                        <div class="clearfix"></div>
-
-                        <div class="collapse" id="collapseExample">
-                            <ul class="nav">
-                                <li>
-                                    <a href="">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Configuración de cuenta</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
@@ -149,15 +131,6 @@ echo "¡ No se ha encontrado ningún registro !";
                             </ul>
                         </div>
                     </li>
-
-                   <!-- <li>
-                        <a data-toggle="collapse" href="#componentsExamples">
-                            <i class="ti-id-badge"></i>
-                            <p>Control Empleados
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-                    </li >-->
 
 
                         <li>
@@ -198,19 +171,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         <div class="collapse-in" id="formsExamples">
                             <ul class="nav">
 
-                                <!--<li>
-                                    <a href="reporte_bitacora.php">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Bitacora de Limpieza</span>
-                                    </a>
-                                </li>-->
-
-                                <!--<li>
-                                    <a href="forms/extended.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Asistencia Ingles</span>
-                                    </a>
-                                </li>-->
                                  <li class="active">
                                     <a href="aplicaciones.php">
                                         <span class="sidebar-mini"></span>
@@ -221,31 +181,6 @@ echo "¡ No se ha encontrado ningún registro !";
                             </ul>
                         </div>
                     </li>
-                  <!--  <li>
-                        <a data-toggle="collapse" href="#mapsExamples">
-                            <i class="ti-comments-smiley"></i>
-                            <p>
-                                Equipos
-                               <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse" id="mapsExamples">
-                            <ul class="nav">
-                                <li>
-                                    <a href="../maps/google.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Ver Equipos</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../maps/vector.html">
-                                        <span class="sidebar-mini"></span>
-                                        <span class="sidebar-normal">Nuevo Equipo</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>-->
 
                 </ul>
             </div>
@@ -269,9 +204,6 @@ echo "¡ No se ha encontrado ningún registro !";
                         </a>
                     </div>
                     <div class="collapse navbar-collapse">
-
-
-
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
@@ -292,12 +224,6 @@ echo "¡ No se ha encontrado ningún registro !";
                     </div>
                 </div>
             </nav>
-
-
-
-
-
-
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -308,70 +234,40 @@ echo "¡ No se ha encontrado ningún registro !";
   <div class="toolbar">
                                     <button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon fa fa-refresh"></i></button>
                                     </div>
-
-
-
-                                    <table id="bootstrap-table" class="table">
+                                    <table id="bootstrap-table" class="table table-striped">
                                         <thead>
-                                            <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id" class="text-center">ID</th>
                                             <th data-field="name" data-sortable="true">Nombre</th>
                                             <th data-field="salary" data-sortable="true">Apellido Paterno</th>
                                             <th data-field="country" data-sortable="true">Apellido Materno</th>
                                             <th data-field="actions" class="td-actions text-right"  >Acciones</th>
                                         </thead>
-
-
                                         <tbody>
-
-
                                              <?php
+                                             include 'conexion.php';
 
-                   include 'conexion.php';
-
-                  $sql = " SELECT
-                  ID_USUARIO,
-                  USU_NOMBRE,
-                  USU_APELLIDO_MATERNO,
-                  USU_APELLIDO_PATERNO
-                  FROM
-                  usuarios WHERE USU_ROLL=1";
-
- ?>
+                                             $sql = " SELECT ID_USUARIO, USU_NOMBRE, USU_APELLIDO_MATERNO, USU_APELLIDO_PATERNO
+                                                    FROM
+                                                    usuarios WHERE USU_ROLL=1";
 
 
-
-                                            <tr>
-                                        <?php $resultado = $conn->query($sql); ?>
-                                        <?php  if ($resultado->num_rows > 0) { ?>
-                                        <?php  while ($row= $resultado->fetch_assoc()) { $id_b=$row['ID_USUARIO']; ?>
-                                                <td></td>
+                                         $resultado = $conn->query($sql);
+                                          while ($row= $resultado->fetch_assoc()) {
+                                            $id_b=$row['ID_USUARIO']; ?>
+                                              <tr>
                                                 <td><?php echo $row['ID_USUARIO'];?></td>
                                                 <td> <?php echo $row['USU_NOMBRE'];?></td>
                                                 <td><?php echo $row['USU_APELLIDO_PATERNO']; ?></td>
                                                 <td> <?php echo $row['USU_APELLIDO_MATERNO']; ?></td>
 
                                                 <td>
-
-                                                 <button  onclick="alerta(<?php echo $id_b ?>),enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-info btn-icon table-action view" rel="tooltip" title="Ver Aplicacion" ><i class="ti-image"></i></button>
-
-                                                 <button  onclick="alerta(<?php echo $id_b ?>),enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-info btn-icon table-action view" rel="tooltip" title="Ver Aplicacion" ><i class="ti-image"></i></button>
-
-
+                                                 <button  onclick="alerta(<?php echo $id_b ?>),enviarmod(<?php echo $id_b ?>);" class="btn btn-simple btn-info btn-icon table-action edit" rel="tooltip" title="Ver reporte" ><i class="ti-pencil"></i></button>
                                                 </td>
                                             </tr>
                                               <?php  }
-
-                                            }   else {
-
-                                                     }
                                            ?>
-
                                         </tbody>
                                     </table>
-
-
-
 <script>
 
 function enviarmod(id){
@@ -397,17 +293,13 @@ function enviarmod(id){
         $("#swal-input2").val(data.data.apepat);
         $("#swal-input3").val(data.data.apemat);
       },
-
       // código a ejecutar si la petición falla;
       // son pasados como argumentos a la función
       // el objeto de la petición en crudo y código de estatus de la petición
       error : function(xhr, status) {
-
       },
-
       // código a ejecutar sin importar si la petición falló o no
       complete : function(xhr, status) {
-
       }
   });
 }

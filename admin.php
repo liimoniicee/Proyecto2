@@ -437,13 +437,11 @@
                                     </div>
                                     <table id="bootstrap-table" class="table">
                                         <thead>
-                                            <th data-field="state" data-checkbox="true"></th>
                                             <th data-field="id" class="text-center">ID</th>
-                                            <th data-field="name" data-sortable="true">Name</th>
+                                            <th data-field="name" data-sortable="true">NAME</th>
                                             <th data-field="salary" data-sortable="true">TIME START</th>
                                             <th data-field="country" data-sortable="true">TIME OVER</th>
                                            <th data-field="city">DATE</th>
-                                            <th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
                                         </thead>
                                         <tbody>
                                           <?php
@@ -457,34 +455,20 @@
 
 
             $ejecutar = mysqli_query($conn, $consulta);
-
-            $i = 0;
-
             while($row=mysqli_fetch_array($ejecutar)){
                  $id_c       =     $row['ID_EMPLEADO'];
           $_nom       =     $row['USU_NOMBRE'];
           $_entrada    =    $row['CONT_HORA_ENTRADA'];
           $_salida       =     $row['CONT_HORA_SALIDA'];
           $_fecha       =     $row['CONT_FECHA'];
-
-
-
-
-
-                $i++;
-           // } //FINA DE LA CONSULTADEL PRECIO
-
         ?>
                                             <tr>
-                                                <td></td>
+
                                                 <td><?php echo $id_c ?></td>
                                                 <td><?php echo $_nom ?></td>
                                                 <td><?php echo $_entrada ?></td>
                                                 <td><?php echo $_salida ?></td>
                                                 <td><?php echo $_fecha ?></td>
-
-
-                                                <td></td>
                                             </tr>
                                       <?php } ?>
 
@@ -617,7 +601,7 @@
 
                 $table.bootstrapTable({
                     toolbar: ".toolbar",
-                    clickToSelect: true,
+                    clickToSelect: false,
                     showRefresh: true,
                     search: true,
                     showToggle: true,

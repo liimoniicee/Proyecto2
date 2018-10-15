@@ -34,13 +34,14 @@
 		   header("Location: error509.html");
 		 }
 		$id_usuario = $_SESSION["clave"];
-		$sql= "SELECT USU_NOMBRE, USU_APELLIDO_PATERNO, USU_ROLL from usuarios where ID_USUARIO = '$id_usuario'";
+		$sql= "SELECT USU_NOMBRE, USU_APELLIDO_PATERNO, USU_ROLL, USU_IMG_PERFIL from usuarios where ID_USUARIO = '$id_usuario'";
 		$resultado = $conn->query($sql);
 		if($resultado->num_rows > 0){
 			while($row = $resultado->fetch_assoc()){
 			$var_nombre = $row["USU_NOMBRE"];
 			$var_apellido = $row["USU_APELLIDO_PATERNO"];
 			$tipo = $row["USU_ROLL"];
+			$var_foto       =     $row['USU_IMG_PERFIL'];
 			$user = $var_nombre. " ".$var_apellido;
 			}
 		}
