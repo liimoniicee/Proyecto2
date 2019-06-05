@@ -291,11 +291,11 @@ if($resultado->num_rows > 0){
 <!--Contenido principal -->
 
 
-        <div class="content">
-            <div class="container-fluid">
+        <div class="card">
+            <div class="body-card">
                 <div class="row">
                     <div class="col-lg-4 col-md-5">
-                        <div class="card card-user">
+                        <div class="card card-img">
                             <div class="image">
                                 <img src="assets/img/back.jpg" alt="..."/>
                             </div>

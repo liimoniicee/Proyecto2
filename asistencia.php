@@ -56,10 +56,6 @@ echo "¡ No se ha encontrado ningún registro !";
 
     <title>Team Interface</title>
 
-
-    <!-- Canonical SEO -->
-    <link rel="canonical" href="http://www.creative-tim.com/product/paper-dashboard-pro"/>
-
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
@@ -90,11 +86,11 @@ echo "¡ No se ha encontrado ningún registro !";
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CT
+                <a href="#" class="simple-text logo-mini">
+                    SH
                 </a>
 
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="#" class="simple-text logo-normal">
                  SCHOOLAR
                 </a>
             </div>
@@ -318,32 +314,23 @@ echo "¡ No se ha encontrado ningún registro !";
                                         <thead>
                                             <tr>
 
-                                                   <th>No.Control</th>
+                                                <th>No.Control</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                 <th>Fecha</th>
                                                 <th>Asistencia</th>
-
-
-                                                <th class="disabled-sorting">Actions</th>
                                             </tr>
                                         </thead>
-
       <tfoot>
                                             <tr>
-
-                                                   <th>No.Control</th>
+                                                <th>No.Control</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                  <th>Fecha</th>
                                                 <th>Asistencia</th>
                                             </tr>
                                         </tfoot>
-
-
                                          <?php
-                                        //Conexón a la base de datos
-
             include 'conexion.php';
             //Consulta para la informacion de los becarios por medio del id
             $consulta = "SELECT u.USU_NOMBRE, u.USU_APELLIDO_PATERNO, u.ID_USUARIO,
@@ -353,239 +340,40 @@ echo "¡ No se ha encontrado ningún registro !";
                                 b.BEC_ID_USUARIO = u.ID_USUARIO";
 
             $ejecutar = mysqli_query($conn, $consulta);
-
-            $i = 0;
             $fecha_actual=date("d/m/Y");
             while($row=mysqli_fetch_array($ejecutar)){
-
           $var_nombre     =     $row['USU_NOMBRE'];
           $var_apellidop  =     $row['USU_APELLIDO_PATERNO'];
-
           $var_idbec       =     $row['ID_BECARIO'];
-
           $var_id         =     $row['ID_USUARIO'];
-
-                $i++;
-
         ?>
 
  <form method="post" action="registrar_asistencia.php">
 
                                      <tbody>
                                             <tr>
-                                               <!--Ingresas las variables donde aparecera los datos obtenidos de la consulta -->
-                                                <!--<td><?php echo $id_c; ?></td>-->
-                                              <td><input class ="col-md-5"type="number"  name = "idbec" value="<?php echo $var_idbec; ?>" readonly="readonly"/></td>
+                                              <td id="id"><?php echo $var_idbec; ?></td>
                                                 <td><?php echo $var_nombre ?></td>
                                                 <td><?php echo $var_apellidop; ?></td>
-                                                <!--Obtiene la fecha actual por medio de php-->
-                                                <td><input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" readonly="readonly" /></td>   <!--<?php echo$fecha_actual ?>-->
-
-                                               <!-- <td contenteditable="true"> </td>-->
-                                                <td> <input type="hidden" id="checkbox"  name="asistencia" value="0" /> <center>
-                                                     <input type="checkbox" id="checkbox"  name="asistencia" value="1" /></center></td>
-                                                <td>
-                                                    <button type="submit" class="btn btn-fill btn-danger btn-wd">Add</button>
-                                                </t > </form>
+                                              <td><?php echo date("Y-m-d");?></td>
+                                              <td><input id="<?php echo $var_idbec; ?>" type="checkbox"></td>
+                                              </tr><?php  } ?>
 
 
-
-                                             <!--   no=".$fila['CAL_NIVEL_INGLES']."-->
-                                            </tr>
-
-   <!--<?php
- include 'conexion.php';
-        if(isset($_GET['editar'])){
-        include("editar_calificaciones.php");
-        }
-    ?>
-    <?php
-     include 'conexion.php';
-    if(isset($_GET['borrar'])){
-
-    $borrar_id = $_GET['borrar'];
-
-    $borrar = "DELETE FROM calificaciones WHERE ID_CALIFICACIONES='$borrar_id'";
-
-    $ejecutar = mysqli_query($conn,$borrar);
-
-        if($ejecutar){
-
-        echo "<script>alert('La calificacón ha sido borrado!')</script>";
-        echo "<script>window.open('calificaciones.php','_self')</script>";
-        }
-
-    }
-
-    ?>-->
+                                </tbody>
+                              </table>
+                              <button onclick="asistencia();" class="btn btn-fill btn-danger btn-wd" title="Los cambios no se pueden revertir">Checar asistencia</button>
+                                       </form>
+                            </div>
 
 
+                        </div>
+                    </div><!--  end card  -->
+                </div> <!-- end col-md-12 -->
+            </div> <!-- end row -->
 
-    <script>
-          function enviarmod(id){
-            $.ajax({
-                // la URL para la petición
-                url : 'mod_cal.php',
-                // la información a enviar
-                // (también es posible utilizar una cadena de datos)
-                data : {
-                   id : id
-                },
-                // especifica si será una petición POST o GET
-                type : 'POST',
-                // el tipo de información que se espera de respuesta
-                dataType : 'json',
-                // código a ejecutar si la petición es satisfactoria;
-                // la respuesta es pasada como argumento a la función
-                success : function(data) {
-                  $("#swal-input0").val(data.data.id);
-                  $("#swal-input1").val(data.data.nom);
-                  $("#swal-input2").val(data.data.mat);
-                  $("#swal-input3").val(data.data.vende);
-                  $("#swal-input4").val(data.data.canti);
-
-                },
-
-                // código a ejecutar si la petición falla;
-                // son pasados como argumentos a la función
-                // el objeto de la petición en crudo y código de estatus de la petición
-                error : function(xhr, status) {
-
-                },
-
-                // código a ejecutar sin importar si la petición falló o no
-                complete : function(xhr, status) {
-
-                }
-            });
-          }
-          </script>
-
-          <script>
-          function borrar(id){
-          swal({
-             title: 'Are you sure?',
-             text: "You won't be able to revert this!",
-             type: 'warning',
-             showCancelButton: true,
-             confirmButtonColor: '#3085d6',
-             cancelButtonColor: '#d33',
-             confirmButtonText: 'Yes, delete it!',
-             showLoaderOnConfirm: true,
-             preConfirm: function() {
-               return new Promise(function(resolve) {
-
-                 $.ajax({
-                  url: 'borrar_cal.php',
-                  type: 'POST',
-                  data: 'delete='+id,
-                  dataType: 'json'
-               })
-               .done(function(response){
-                  swal('Deleted!', response.message, response.status);
-                location.reload();
-               })
-               .fail(function(){
-                  swal('Oops...', 'Something went wrong with ajax !', 'error');
-               });
-               });
-             },
-             allowOutsideClick: false
-          });
-          }
-          </script>
-
-          <script type="text/javascript">
-
-          function alerta(id){
-
-
-          swal({
-          title: 'Editar calificacón',
-          html:
-          //type="hidden"  ES PARA PCULTAR UN INPUT
-
-          '<form action="actual_cal" method="post" name="data">'+
-         '<input type="hidden" name="swal-input0" id="swal-input0" class="form-control border-input">' +
-          '<label for="exampleInputEmail1">Nivel de ingles</label>' +
-          '<input name="swal-input1" onkeypress="return validar(event)" id="swal-input1"  required="true" class="form-control border-input">' +
-          '<label for="exampleInputEmail1">Calificación</label>' +
-          '<input type="number" min="0" name="swal-input2" id="swal-input2" required="true" class="form-control border-input">' +
-          '<label for="exampleInputEmail1">Unidad</label>' +
-          '<input  type="number" min="0"name="swal-input3" id="swal-input3" required="true" class="form-control border-input">' +
-          '<label for="exampleInputEmail1">Promedio</label>' +
-          '<input type="number" min="0" name="swal-input4" id="swal-input4" required="true" class="form-control border-input">' +
-
-
-          '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar</Button>'+
-          '</form>',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: '</form> Actualizar solicitud',
-          cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
-          showConfirmButton: false,
-          focusConfirm: false,
-          buttonsStyling: false,
-          reverseButtons: true
-          }).then(function (result) {
-
-          swal(
-          'Actualizado!',
-          'La solicitud ha sido actualizada',
-          'success'
-          )
-          }).catch(swal.noop);
-
-          };
-          </script>
-
-
-
-                                         <!--   <tr>
-                                                    <td><?php echo $nivel; ?></td>
-                                                <td><?php echo $calificacion; ?></td>
-                                                <td><?php echo $unidad; ?></td>
-                                                <td><?php echo $promedio; ?></td>
-                                                 <td><?php echo $id; ?></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i class="ti-heart"></i></a>
-                                                    <a href="#" class="btn btn-simple btn-warning btn-icon edit"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="#" class="btn btn-simple btn-danger btn-icon remove"><i class="ti-close"></i></a>
-                                                </td>
-                                            </tr>
-                                             <?php } ?>
-                                            <tr>
-                                                <td>Sin datos</td>
-
-                                                <td>Sin datos</td>
-                                                <td>Sin datos</td>
-                                                <td>Sin datos</td>
-                                                <td>Sin datos</td>
-                                                <td>
-
-
-                                                </td>
-                                            </tr> -->
-
-                                           </tbody>
-
-                                        </table>
-
-
-                                    </div>
-
-
-                                </div>
-                            </div><!--  end card  -->
-                        </div> <!-- end col-md-12 -->
-                    </div> <!-- end row -->
-
-                </div>
-            </div>
-
-
-
+        </div>
+    </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -614,10 +402,6 @@ echo "¡ No se ha encontrado ningún registro !";
                 </div>
             </footer>
         </div>
-    </div>
-
-    <div class="fixed-plugin">
-
     </div>
 
 </body>
@@ -686,14 +470,39 @@ echo "¡ No se ha encontrado ningún registro !";
     <script src="assets/js/demo.js"></script>
 
 
+<script>
+    function asistencia(){
+var selected = new Array();
+$('#datatables input[type="checkbox"]:checked').each(function() {
+    selected.push($(this).attr('id'));
+                console.log(selected[0]);
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            demo.initOverviewDashboard();
-            demo.initCirclePercentage();
 
-        });
-    </script>
+                $.post(
+                "registrar_asistencia.php",
+                { id: selected[0],
+                  id2: selected[1],
+                  id3: selected[2],
+                  id4: selected[3],
+                  id5: selected[4],
+                  id6: selected[5],
+                  id7: selected[6],
+                  id8: selected[7],
+                  id9: selected[8],
+                  id10: selected[9],
+                  id11: selected[10],
+                  id212: selected[11]},
+                function(data) {
+                   //$('#stage').html(data);
+                }
+             );
+
+});
+
+};
+</script>
+
+
     <script type="text/javascript">
         $(document).ready(function() {
 

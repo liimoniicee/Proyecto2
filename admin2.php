@@ -124,7 +124,7 @@
                     </li>
 
   </li>
-                       < <li class=" active">
+                     <li class=" active">
                         <a href="admin2.php" aria-expanded="true">
                             <i class="ti-panel"></i>
                             <p>Control de empleados
@@ -286,22 +286,22 @@
 
 													</ul>
 												</li>
-                                                                 <?php 
-            
-            
-            $consulta = "SELECT * FROM control_empleados";
-            
-            $ejecutar = mysqli_query($conn, $consulta); 
-            
-            $i = 0;
-            
-            while($fila=mysqli_fetch_array($ejecutar)){         
-                $id  = $fila['ID_CONT_EMP'];
-            
+                                                                 <?php
 
-                $i++;  
-                } 
-            
+
+            $consulta = "SELECT * FROM control_empleados";
+
+            $ejecutar = mysqli_query($conn, $consulta);
+
+            $i = 0;
+
+            while($fila=mysqli_fetch_array($ejecutar)){
+                $id  = $fila['ID_CONT_EMP'];
+
+
+                $i++;
+                }
+
         ?>
 												<li>
 														<a href="checkout2.php?editar=<?php echo $id; ?>" class="btn-rotate" onclick="demo.showSwal('warning-message-and-confirmation')">
@@ -316,7 +316,7 @@
         if(isset($_GET['editar'])){
         include("editar.php");
         }
-    ?> 
+    ?>
 										</ul>
 								</div>
 						</div>
@@ -361,12 +361,12 @@
           $_entrada    =    $row['CONT_HORA_ENTRADA'];
           $_salida       =     $row['CONT_HORA_SALIDA'];
           $_fecha       =     $row['CONT_FECHA'];
-         
 
 
 
 
-                $i++; 
+
+                $i++;
            // } //FINA DE LA CONSULTADEL PRECIO
 
         ?>
@@ -377,12 +377,12 @@
                                                 <td><?php echo $_entrada ?></td>
                                                 <td><?php echo $_salida ?></td>
                                                 <td><?php echo $_fecha ?></td>
-                                                
-                                          
+
+
                                                 <td></td>
                                             </tr>
                                       <?php } ?>
-                                        
+
                                         </tbody>
                                     </table>
 
